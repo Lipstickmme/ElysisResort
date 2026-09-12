@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Replying to studio mail from the dashboard.
+ * Replying to house mail from the dashboard.
  *
  * The rest of the dashboard writes to Supabase straight from the browser, but a
  * reply has to leave through Resend, whose key is server-only. So this is a
@@ -21,14 +21,14 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
  * The From header for a reply, always carrying a display name.
  *
  * Mail clients fall back to the local part of the address when there is none,
- * so a reply from contact@merkelconstructions.com shows in the recipient's
- * inbox as "contact" rather than the studio's name.
+ * so a reply from reservations@elysisluxuryresort.com shows in the recipient's
+ * inbox as "reservations" rather than the name of the house.
  */
 function senderIdentity() {
   const configured = config.mailboxAddress() || config.formFrom();
   const { name, email } = config.parseAddress(configured);
   if (!email) return configured;
-  return name ? configured : `${config.studioName()} <${email}>`;
+  return name ? configured : `${config.houseName()} <${email}>`;
 }
 
 /** Keep one "Re: " on the front, however the subject arrived. */

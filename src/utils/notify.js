@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Routes enquiries, chat messages and inbound mail to a human inbox.
+ * Routes reservation enquiries, chat messages and inbound mail to a human inbox.
  *
  * Channels (independent, each a no-op until configured):
  *   1. Email via Resend  ->  RESEND_API_KEY + FORM_TO (or CONTACT_NOTIFY_EMAIL)
@@ -26,7 +26,7 @@ function defaultTo() {
 
 /** Verified sender identity. */
 function defaultFrom() {
-  return process.env.FORM_FROM || process.env.NOTIFY_FROM || 'Merkel Website <onboarding@resend.dev>';
+  return process.env.FORM_FROM || process.env.NOTIFY_FROM || 'Elysis Website <onboarding@resend.dev>';
 }
 
 /**
@@ -70,14 +70,14 @@ async function send(opts) {
     });
     const text = await res.text().catch(() => '');
     if (!res.ok) {
-      console.warn('[merkel] notify email failed:', res.status, text);
+      console.warn('[elysis] notify email failed:', res.status, text);
       return { ok: false, error: `resend_${res.status}` };
     }
     let id;
     try { id = JSON.parse(text).id; } catch (e) { /* id is a bonus, not a requirement */ }
     return { ok: true, id };
   } catch (err) {
-    console.warn('[merkel] notify email error:', err.message);
+    console.warn('[elysis] notify email error:', err.message);
     return { ok: false, error: err.message };
   }
 }
@@ -97,10 +97,10 @@ async function sendWebhook(subject, text, data) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: `${subject}\n\n${text}`, content: `${subject}\n\n${text}`, subject, data }),
     });
-    if (!res.ok) console.warn('[merkel] notify webhook failed:', res.status);
+    if (!res.ok) console.warn('[elysis] notify webhook failed:', res.status);
     return res.ok;
   } catch (err) {
-    console.warn('[merkel] notify webhook error:', err.message);
+    console.warn('[elysis] notify webhook error:', err.message);
     return false;
   }
 }
@@ -113,20 +113,32 @@ async function notify(subject, text, data, emailOpts = {}) {
   return results.some(Boolean);
 }
 
-/** A new contact-form enquiry. Replies go straight back to the sender. */
-function enquiry(record) {
+/**
+ * A new reservation enquiry. Replies go straight back to the guest, so the desk
+ * can answer from the notification without opening the dashboard.
+ */
+function reservation(record) {
+  const stay = record.arrival && record.departure
+    ? `${record.arrival} to ${record.departure}${record.nights ? ` (${record.nights} nights)` : ''}`
+    : 'Dates open';
+  const party = `${record.adults || 2} adults${record.children ? `, ${record.children} children` : ''}`;
   const lines = [
     `Name:       ${record.name}`,
     `Email:      ${record.email}`,
-    `Company:    ${record.company || '-'}`,
-    `Discipline: ${record.service || '-'}`,
+    `Phone:      ${record.phone || '-'}`,
+    `Residence:  ${record.suiteName || 'No preference'}`,
+    `Stay:       ${stay}`,
+    `Party:      ${party}`,
     '',
     record.message,
     '',
     `Received:   ${record.receivedAt}`,
     `Reference:  ${record.id}`,
   ].join('\n');
-  return notify(`New enquiry from ${record.name}`, lines, record, { replyTo: record.email });
+  const subject = record.suiteName
+    ? `Reservation enquiry: ${record.suiteName}, ${record.name}`
+    : `Reservation enquiry from ${record.name}`;
+  return notify(subject, lines, record, { replyTo: record.email });
 }
 
 /** A job application from /careers. Replies go straight back to the applicant. */
@@ -151,7 +163,18 @@ function application(record) {
 function chatMessage(sessionId, text) {
   if (String(process.env.CHAT_NOTIFY || 'on').toLowerCase() === 'off') return Promise.resolve(false);
   const lines = [`Session: ${sessionId}`, '', text, '', `Received: ${new Date().toISOString()}`].join('\n');
-  return notify('New live chat message', lines, { sessionId, text });
+  return notify('New concierge chat message', lines, { sessionId, text });
 }
 
-module.exports = { notify, send, sendEmail, enquiry, application, chatMessage, defaultTo, defaultFrom };
+module.exports = {
+  notify,
+  send,
+  sendEmail,
+  reservation,
+  // The name this was called when the form was a contact form.
+  enquiry: reservation,
+  application,
+  chatMessage,
+  defaultTo,
+  defaultFrom,
+};

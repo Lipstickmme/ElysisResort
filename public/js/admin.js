@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Studio desk: the staff side of enquiries, live chat and studio mail.
+ * The desk: the staff side of reservations, the concierge chat and house mail.
  *
  * Everything on this page is read and written straight from the browser as
  * the signed-in user, so the policies in supabase/migrations decide what is
@@ -196,6 +196,20 @@
     return wrap;
   }
 
+  /** "12 May to 19 May, 7 nights", from whichever of the columns exist. */
+  function stay(row) {
+    if (!row.arrival && !row.departure) return '';
+    const nights = row.nights ? `, ${row.nights} night${row.nights === 1 ? '' : 's'}` : '';
+    return `${row.arrival || 'open'} to ${row.departure || 'open'}${nights}`;
+  }
+
+  function party(row) {
+    if (row.adults == null && row.children == null) return '';
+    const adults = row.adults == null ? 0 : row.adults;
+    const children = row.children || 0;
+    return `${adults} adult${adults === 1 ? '' : 's'}${children ? `, ${children} child${children === 1 ? '' : 'ren'}` : ''}`;
+  }
+
   function renderEnquiries() {
     const list = $('enquiry-list');
     fill(
@@ -204,7 +218,7 @@
         listRow({
           id: row.id,
           title: row.name || 'Enquiry',
-          sub: row.email || '',
+          sub: [row.service, row.arrival ? `arriving ${row.arrival}` : null].filter(Boolean).join(' \u00b7 ') || row.email || '',
           meta: when(row.created_at),
           status: row.status,
           activeId: state.active.enquiries,
@@ -214,7 +228,7 @@
           },
         })
       ),
-      'No enquiries yet. The contact form opens them.'
+      'No reservation enquiries yet. The reserve form opens them.'
     );
 
     const detail = $('enquiry-detail');
@@ -255,9 +269,13 @@
       }
       facts.appendChild(dd);
     };
-    fact('Email', row.email, `mailto:${row.email}?subject=${encodeURIComponent('Re: your enquiry to Merkel Constructions')}`);
-    fact('Company', row.company);
-    fact('Discipline', row.service);
+    fact('Email', row.email, `mailto:${row.email}?subject=${encodeURIComponent('Re: your enquiry to Elysis')}`);
+    fact('Telephone', row.phone, row.phone ? `tel:${String(row.phone).replace(/[^+\d]/g, '')}` : null);
+    fact('Residence', row.service);
+    // The stay columns arrive with 0003_reservations.sql. Until that has been
+    // run they are simply absent, and the dates are still in the message below.
+    fact('Stay', stay(row));
+    fact('Party', party(row));
     fact('Received', when(row.created_at));
     detail.appendChild(facts);
 
@@ -331,7 +349,7 @@
       facts.appendChild(dd);
     };
     fact('Role', row.role_title);
-    fact('Email', row.email, `mailto:${row.email}?subject=${encodeURIComponent(`Your application: ${row.role_title || 'Merkel Constructions'}`)}`);
+    fact('Email', row.email, `mailto:${row.email}?subject=${encodeURIComponent(`Your application to Elysis: ${row.role_title || 'speculative'}`)}`);
     fact('Phone', row.phone, row.phone ? `tel:${row.phone}` : null);
     fact('Experience', row.experience);
     fact('Portfolio', row.portfolio, row.portfolio);
@@ -464,7 +482,7 @@
   function renderEmail() {
     const list = $('email-list');
     if (!state.emailAvailable) {
-      fill(list, [], 'Studio mail is not set up. Run supabase/migrations/0002_email.sql and point Resend Inbound at /api/inbound/resend.');
+      fill(list, [], 'House mail is not set up. Run supabase/migrations/0002_email.sql and point Resend Inbound at /api/inbound/resend.');
       $('email-detail').textContent = '';
       return;
     }
@@ -573,7 +591,7 @@
   /* ---------------------------------------------------------- settings --- */
 
   const SETTINGS_FIELDS = [
-    ['address', 'Studio address', 'text'],
+    ['address', 'Resort address', 'text'],
     ['email', 'Email', 'email'],
     ['phone', 'Telephone', 'tel'],
     ['hours', 'Opening hours', 'text'],
@@ -610,7 +628,7 @@
     head.appendChild(el('h2', null, 'Contact details'));
     panel.appendChild(head);
     panel.appendChild(el('p', 'admin-sub',
-      'These appear in the footer, on the contact page and in the enquiry section of the home page. A change here reaches every page on its next load. No redeploy.'));
+      'These appear in the footer, on the reserve page and in the enquiry section of the home page. A change here reaches every page on its next load. No redeploy.'));
 
     if (!state.settingsEditable) {
       panel.appendChild(el('p', 'admin-empty',
@@ -854,10 +872,10 @@
     }
     if (!cfg.supabaseUrl || !cfg.supabaseAnonKey) return explainUnconfigured(cfg);
 
-    client = window.MerkelSupabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+    client = window.ElysisSupabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
       // Its own key, so a member of staff signing in here does not displace
       // the anonymous session the chat widget uses on the public pages.
-      storageKey: 'merkel-admin-auth',
+      storageKey: 'elysis-admin-auth',
     });
 
     wire();

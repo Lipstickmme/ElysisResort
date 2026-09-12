@@ -7,34 +7,53 @@ function clean(str, max) {
   return String(str == null ? '' : str).trim().slice(0, max);
 }
 
-// Lightweight rule-based responder. This is the seam where a real agent,
-// a human hand-off, or a third-party desk (Intercom, etc.) would plug in.
+// Lightweight rule-based responder. This is the seam where a real agent, a
+// human hand-off, or a third-party desk (Intercom, etc.) would plug in. It only
+// ever holds the conversation until someone at the desk picks it up.
 function autoReply(text) {
   const t = text.toLowerCase();
   const has = (...words) => words.some((w) => t.includes(w));
 
-  if (has('hello', 'hi ', 'hey', 'good morning', 'good afternoon') || t === 'hi') {
-    return "Hi, you're through to Merkel Constructions. What are you building, and how can we help?";
+  if (has('hello', 'hi ', 'hey', 'good morning', 'good evening', 'kalimera') || t === 'hi') {
+    return 'Good day, you are through to the Elysis concierge. How can we help with your stay?';
+  }
+  if (has('available', 'availability', 'book', 'reserve', 'reservation', 'vacancy', 'free')) {
+    return 'Happy to check. Which dates are you looking at, and how many of you are travelling? The reservations desk replies to every enquiry within a day.';
+  }
+  if (has('rate', 'price', 'cost', 'how much', 'per night', 'tariff')) {
+    return 'Rates run from EUR 510 a night for a Salt White Suite to EUR 5,600 for the Nefeli Estate, breakfast, the beach and pool clubs and airport transfers included. Tell me your dates and I will have the desk send exact rates.';
+  }
+  if (has('suite', 'villa', 'residence', 'room', 'bedroom', 'pool suite')) {
+    return 'There are eighteen residences, from 44 square metre suites to a four bedroom estate. You can see all of them under Suites, or tell me how many of you there are and I will suggest two or three.';
+  }
+  if (has('restaurant', 'dinner', 'dining', 'eat', 'food', 'breakfast', 'menu', 'chef')) {
+    return 'Four kitchens and bars: Thalassa for dinner over the water, Olivo all day in the grove, Alati for raw fish on the sand, and Ampeli for sunset. The kitchen will also lay a private table anywhere on the property.';
+  }
+  if (has('spa', 'massage', 'hammam', 'treatment', 'yoga', 'wellness')) {
+    return 'The spa has four treatment rooms and a marble hammam, and yoga is at seven on the deck six mornings a week. Shall I ask the spa to hold a treatment for the day you arrive?';
+  }
+  if (has('beach', 'pool', 'swim', 'sail', 'boat', 'dive', 'snorkel', 'kayak')) {
+    return 'The bay is private, the pool is twenty five metres and heated, and the catamaran goes out at six each evening. Diving, kayaks and paddleboards are all arranged here.';
+  }
+  if (has('child', 'kids', 'family', 'baby', 'cot')) {
+    return 'Children are very welcome. Little Elysis runs every morning for ages four to eleven, and the Elaia Family Residence was designed around young children. Cots, high chairs and babysitting are all arranged.';
+  }
+  if (has('airport', 'ferry', 'transfer', 'arrive', 'getting here', 'taxi', 'flight')) {
+    return 'Paros airport is 22 minutes away and Parikia port 18. Transfers by car, launch or helicopter are arranged before you travel and are included with every residence.';
+  }
+  if (has('wedding', 'event', 'party', 'proposal', 'anniversary', 'buyout')) {
+    return 'We take a small number of private events each season, and the whole resort can be bought out. Tell me the dates and the number of guests and the desk will come back to you personally.';
   }
   if (has('career', 'job', 'hiring', 'vacancy', 'apply', 'position', 'role')) {
-    return 'We are hiring across structural, civil, mechanical and digital teams. You can see open roles on our Careers page, or tell me which discipline interests you.';
+    return 'We hire for the season from April. Open roles are on the Careers page, and speculative applications are read by the people you would work with.';
   }
-  if (has('quote', 'cost', 'price', 'fee', 'budget')) {
-    return 'Fees depend on scope and stage. If you share a short project brief along with your email, a principal engineer will come back to you with a considered response.';
+  if (has('contact', 'call', 'phone', 'email', 'speak', 'human')) {
+    return 'You can write to reservations@elysisluxuryresort.com at any time, or leave your email here and the desk will reach you today.';
   }
-  if (has('project', 'portfolio', 'work', 'reference', 'example')) {
-    return 'You can browse selected projects on our Projects page, spanning towers, bridges, industrial plant and transit. Is there a sector you would like to see?';
+  if (has('thanks', 'thank you', 'cheers', 'lovely', 'great')) {
+    return 'With pleasure. Anything else I can arrange before you arrive?';
   }
-  if (has('bridge', 'structural', 'seismic', 'civil', 'mechanical', 'hvac', 'bim', 'digital twin', 'facade')) {
-    return 'That is squarely in our wheelhouse. Share a few details about the project and where it gets difficult, and we will point you to the right engineer.';
-  }
-  if (has('contact', 'call', 'phone', 'email', 'meet', 'speak')) {
-    return 'The fastest route is the contact page, or email studio@merkelconstructions.com. Leave your email here and we will reach out within two working days.';
-  }
-  if (has('thanks', 'thank you', 'cheers', 'great')) {
-    return 'Any time. Anything else I can help with?';
-  }
-  return "Thanks for the message. A member of the studio will follow up. If you leave your email and a one-line brief, we'll route it to the right engineer.";
+  return 'Thank you for the message. Someone at the desk will pick this up shortly. If you leave your email and your dates, we will come back to you today.';
 }
 
 /**
@@ -59,12 +78,12 @@ exports.postMessage = async (req, res, next) => {
     const now = new Date().toISOString();
     const messages = [{ role: 'user', text, at: now }];
 
-    // Stay quiet once a member of the studio has picked the conversation up.
+    // Stay quiet once someone at the desk has picked the conversation up.
     let handedOver = false;
     try {
       handedOver = await chatStore.isHandedOver(sessionId);
     } catch (err) {
-      console.error('[merkel] chat handover check failed:', err.message);
+      console.error('[elysis] chat handover check failed:', err.message);
     }
 
     const reply = handedOver ? null : { role: 'agent', text: autoReply(text), at: new Date(Date.now() + 1).toISOString() };
@@ -75,7 +94,7 @@ exports.postMessage = async (req, res, next) => {
       await chatStore.append(sessionId, messages);
     } catch (err) {
       stored = false;
-      console.error('[merkel] failed to persist chat message:', err.message);
+      console.error('[elysis] failed to persist chat message:', err.message);
     }
 
     // Route the visitor's message to the inbox so a human can pick it up.
@@ -116,7 +135,7 @@ exports.notifyMessage = async (req, res, next) => {
         replied = true;
       }
     } catch (err) {
-      console.error('[merkel] failed to post chat reply:', err.message);
+      console.error('[elysis] failed to post chat reply:', err.message);
     }
 
     await notify.chatMessage(sessionId, text);
@@ -139,7 +158,7 @@ exports.getHistory = async (req, res, next) => {
       convo = await chatStore.load(sessionId);
     } catch (err) {
       // A storage fault should cost the visitor their history, not the widget.
-      console.error('[merkel] failed to load chat history:', err.message);
+      console.error('[elysis] failed to load chat history:', err.message);
     }
     return res.json({ sessionId, messages: convo.messages });
   } catch (err) {

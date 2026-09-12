@@ -50,15 +50,16 @@ const resendApiKey = () => pick('RESEND_API_KEY');
 const resendWebhookSecret = () => pick('RESEND_WEBHOOK_SECRET');
 
 const formTo = () => pick('FORM_TO', 'CONTACT_NOTIFY_EMAIL');
-const formFrom = () => pick('FORM_FROM', 'NOTIFY_FROM') || 'Merkel Website <onboarding@resend.dev>';
+const formFrom = () => pick('FORM_FROM', 'NOTIFY_FROM') || 'Elysis Website <onboarding@resend.dev>';
 const mailboxAddress = () => pick('MAILBOX_ADDRESS');
 const forwardTo = () => pick('FORWARD_TO');
 
 /**
  * The name a recipient sees beside the address. Without one, mail clients fall
- * back to the local part, so a reply from contact@ shows up as "contact".
+ * back to the local part, so a reply from reservations@ shows up as
+ * "reservations".
  */
-const studioName = () => pick('STUDIO_NAME') || 'Merkel Constructions';
+const houseName = () => pick('HOUSE_NAME', 'RESORT_NAME', 'STUDIO_NAME') || 'Elysis Luxury Resort';
 
 /** Bare address out of "Name <a@b.c>". */
 function parseAddress(value) {
@@ -112,7 +113,9 @@ module.exports = {
   formFrom,
   mailboxAddress,
   forwardTo,
-  studioName,
+  houseName,
+  // The name this was called before the site was a resort.
+  studioName: houseName,
   parseAddress,
   ownAddresses,
   forwardWouldLoop,

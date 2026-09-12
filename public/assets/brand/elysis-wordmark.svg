@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Elysis">
+  <g transform="translate(210.0 12) scale(1)">
+  <path d="M50 5 C 61 23, 77 39, 95 50 C 77 61, 61 77, 50 95 C 39 77, 23 61, 5 50 C 23 39, 39 23, 50 5 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(0 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(45 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(90 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(135 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(180 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(225 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(270 50 50)"/>
+  <path d="M50 50 C 57 38, 58 28, 50 17 C 42 28, 43 38, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(315 50 50)"/>
+  <path d="M50 50 C 55 43, 56 38, 50 31 C 44 38, 45 43, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(45 50 50)"/>
+  <path d="M50 50 C 55 43, 56 38, 50 31 C 44 38, 45 43, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(135 50 50)"/>
+  <path d="M50 50 C 55 43, 56 38, 50 31 C 44 38, 45 43, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(225 50 50)"/>
+  <path d="M50 50 C 55 43, 56 38, 50 31 C 44 38, 45 43, 50 50 Z" fill="none" stroke="#6b5433" stroke-width="2.6" stroke-linejoin="round" transform="rotate(315 50 50)"/>
+  <circle cx="50" cy="50" r="6.5" fill="none" stroke="#6b5433" stroke-width="2.6"/>
+  </g>
+  <text x="260.0" y="255" text-anchor="middle"
+    font-family="'Cormorant Garamond', 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif"
+    font-size="132" letter-spacing="2" fill="#6b5433">Elysis</text>
+</svg>

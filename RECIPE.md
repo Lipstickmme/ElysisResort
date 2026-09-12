@@ -13,6 +13,8 @@ supabase/
                              chat_sessions, chat_messages, touch trigger,
                              realtime publication
   migrations/0002_email.sql  email_threads, email_messages, touch trigger
+  migrations/0003_reservations.sql  the stay on an enquiry: arrival, departure,
+                             nights, adults, children, suite_id, phone
   grant-admin.sql            one-off: make yourself an admin
 src/
   utils/
@@ -26,7 +28,7 @@ src/
     webhookSignature.js      Svix HMAC over the raw request bytes
   controllers/
     systemController.js      /api/public-config, /api/health
-    contactController.js     validation, honeypot, write, notify
+    reservationsController.js validation, honeypot, write, notify
     chatController.js        rule-based responder + notification
     inboundController.js     signed webhook -> email_threads -> forward
   routes/                    mounted under /api
@@ -45,7 +47,7 @@ api/[...path].js             Vercel serverless entry (the whole API)
    yet (see Status).*
 
 2. **Forms never touch the database from the browser.** `enquiries` has no anon
-   policy at all; writes go through `POST /api/contact`, which holds the
+   policy at all; writes go through `POST /api/reservations`, which holds the
    service-role key. A leaked anon key cannot stuff the inbox. **Done.**
 
 3. **Chat rows are written from the browser**, under the visitor's own session,

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-label="Sunset sailing, placeholder artwork">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6e6a8e"/>
+      <stop offset="100%" stop-color="#f2c49a"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b5e7a"/>
+      <stop offset="100%" stop-color="#22384f"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8fd0d8"/>
+      <stop offset="100%" stop-color="#2f8ba0"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#ffd9a1" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffd9a1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.14"/>
+      <stop offset="42%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </linearGradient>
+  </defs>
+  
+  <g>
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <circle cx="960" cy="463.68" r="370.91" fill="url(#glow)"/>
+  <circle cx="960" cy="463.68" r="109.09" fill="#ffd9a1" opacity="0.95"/>
+  
+  <rect x="0" y="552" width="1600" height="648" fill="url(#sea)"/>
+  <rect x="0" y="552" width="1600" height="3.82" fill="#ffffff" opacity="0.4"/>
+  <path d="M144.06 606.55 q 92.16 -19.09 184.32 0 t 184.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M116.9 678.55 q 92.29 -19.09 184.57 0 t 184.57 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M40.93 750.55 q 100.54 -19.09 201.07 0 t 201.07 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M403.9 822.55 q 148.09 -19.09 296.18 0 t 296.18 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M211.71 894.55 q 125.54 -19.09 251.08 0 t 251.08 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M95.7 966.55 q 147.92 -19.09 295.84 0 t 295.84 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M566.04 1038.55 q 88.23 -19.09 176.46 0 t 176.46 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M160.97 1110.55 q 123.6 -19.09 247.21 0 t 247.21 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M305.88 1182.55 q 66.91 -19.09 133.82 0 t 133.82 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/>
+  <path d="M864 552 q 112 312 0 648 q -112 -312 0 -648 Z" fill="#ffd9a1" opacity="0.32"/>
+  
+  <g transform="translate(528 888) scale(2.73)">
+    <path d="M-80 0 h160 l-24 26 h-112 Z" fill="#3b2f26" opacity="0.72"/>
+    <path d="M-4 -10 v-132 l88 132 Z" fill="#f6ead9"/>
+    <path d="M-14 -10 l-58 0 l58 -92 Z" fill="#e3d0b9"/>
+    <ellipse cx="0" cy="28" rx="96" ry="7" fill="#ffffff" opacity="0.25"/>
+  </g>
+  
+  <g transform="translate(1280 696) scale(1.17)">
+    <path d="M-80 0 h160 l-24 26 h-112 Z" fill="#3b2f26" opacity="0.72"/>
+    <path d="M-4 -10 v-132 l88 132 Z" fill="#f6ead9"/>
+    <path d="M-14 -10 l-58 0 l58 -92 Z" fill="#e3d0b9"/>
+    <ellipse cx="0" cy="28" rx="96" ry="7" fill="#ffffff" opacity="0.25"/>
+  </g></g>
+  <rect width="1600" height="1200" fill="url(#veil)"/>
+  <g>
+    <g transform="translate(60.8 1152.12) scale(0.88)" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.8">
+    <path d="M0 -22 C 7 -9, 9 -7, 22 0 C 9 7, 7 9, 0 22 C -7 9, -9 7, -22 0 C -9 -7, -7 -9, 0 -22 Z"/>
+    <circle cx="0" cy="0" r="6.5"/>
+  </g>
+    <text x="95" y="1165.8"
+      font-family="Jost, Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="22.8" letter-spacing="5.93"
+      fill="#ffffff" fill-opacity="0.82">SUNSET SAILING</text>
+  </g>
+</svg>

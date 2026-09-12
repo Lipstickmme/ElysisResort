@@ -1,42 +1,50 @@
 [
   {
-    "id": "senior-structural",
-    "title": "Senior Structural Engineer",
-    "team": "Structural",
-    "location": "Studio",
-    "type": "Full time",
-    "summary": "Lead the structural design of tall buildings and long-span structures from concept through to site."
+    "id": "guest-relations",
+    "title": "Guest Relations Manager",
+    "team": "Front of house",
+    "location": "Paros, live-in available",
+    "type": "Seasonal, April to October",
+    "summary": "Own the arrival and the whole stay for a house of eighteen residences, and know every guest by name by the second morning."
   },
   {
-    "id": "bridge-engineer",
-    "title": "Bridge Engineer",
-    "team": "Civil & Infrastructure",
-    "location": "Site based",
-    "type": "Full time",
-    "summary": "Design bridges and marine structures for demanding wind and durability requirements."
+    "id": "sous-chef",
+    "title": "Sous Chef, Thalassa",
+    "team": "Kitchen",
+    "location": "Paros, live-in available",
+    "type": "Seasonal, April to October",
+    "summary": "Run the charcoal and wood oven section on a menu that is rewritten every afternoon around what the boats landed."
   },
   {
-    "id": "bim-coordinator",
-    "title": "BIM Coordinator",
-    "team": "Digital Engineering",
-    "location": "Studio",
-    "type": "Full time",
-    "summary": "Keep multi-discipline models coordinated and drive our digital-twin workflows."
+    "id": "spa-therapist",
+    "title": "Spa Therapist",
+    "team": "Wellness",
+    "location": "Paros, live-in available",
+    "type": "Seasonal, May to October",
+    "summary": "Deliver hammam rituals and deep tissue work in four treatment rooms cut into the hillside."
   },
   {
-    "id": "mechanical-graduate",
-    "title": "Graduate Mechanical Engineer",
-    "team": "Mechanical Systems",
-    "location": "Studio",
-    "type": "Graduate",
-    "summary": "Join our systems team on energy, HVAC and process work with senior mentorship."
+    "id": "residence-host",
+    "title": "Residence Host",
+    "team": "Residences",
+    "location": "Paros",
+    "type": "Seasonal, April to October",
+    "summary": "Look after the villas and residences: breakfast in-house, the day put together before it is asked for, nothing announced."
   },
   {
-    "id": "project-engineer",
-    "title": "Project Engineer",
-    "team": "Civil & Infrastructure",
-    "location": "Site based",
-    "type": "Full time",
-    "summary": "Coordinate delivery on major infrastructure commissions across sectors and borders."
+    "id": "sommelier",
+    "title": "Sommelier",
+    "team": "Kitchen",
+    "location": "Paros",
+    "type": "Full season, with winter buying trips",
+    "summary": "Build and pour a four hundred label cellar that leans hard into Greek producers, and host two tastings a week."
+  },
+  {
+    "id": "boat-skipper",
+    "title": "Skipper, Elysis catamaran",
+    "team": "The bay",
+    "location": "Paros",
+    "type": "Seasonal, May to September",
+    "summary": "Take ten guests out at six, find the cove with nobody in it, and have them back under the stars."
   }
 ]

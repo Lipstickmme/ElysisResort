@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000" role="img" aria-label="Floor plan, placeholder artwork">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe7db"/>
+      <stop offset="100%" stop-color="#f8f3ea"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fa7b5"/>
+      <stop offset="100%" stop-color="#5b8494"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8fd0d8"/>
+      <stop offset="100%" stop-color="#2f8ba0"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#fff6e2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fff6e2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.14"/>
+      <stop offset="42%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </linearGradient>
+  </defs>
+  
+  <g>
+  <rect width="1200" height="1000" fill="#f6f1e7"/>
+  <g stroke="#4a3f31" stroke-opacity="0.12" stroke-width="1">
+    <path d="M100 100 V 900"/><path d="M162.5 100 V 900"/><path d="M225 100 V 900"/><path d="M287.5 100 V 900"/><path d="M350 100 V 900"/><path d="M412.5 100 V 900"/><path d="M475 100 V 900"/><path d="M537.5 100 V 900"/><path d="M600 100 V 900"/><path d="M662.5 100 V 900"/><path d="M725 100 V 900"/><path d="M787.5 100 V 900"/><path d="M850 100 V 900"/><path d="M912.5 100 V 900"/><path d="M975 100 V 900"/><path d="M1037.5 100 V 900"/><path d="M1100 100 V 900"/>
+    <path d="M100 100 H 1100"/><path d="M100 166.67 H 1100"/><path d="M100 233.33 H 1100"/><path d="M100 300 H 1100"/><path d="M100 366.67 H 1100"/><path d="M100 433.33 H 1100"/><path d="M100 500 H 1100"/><path d="M100 566.67 H 1100"/><path d="M100 633.33 H 1100"/><path d="M100 700 H 1100"/><path d="M100 766.67 H 1100"/><path d="M100 833.33 H 1100"/><path d="M100 900 H 1100"/>
+  </g>
+  <g fill="none" stroke="#4a3f31" stroke-width="12.5" stroke-opacity="0.85">
+    <rect x="100" y="100" width="1000" height="800" rx="4"/>
+    <path d="M650 100 V 580 H 1100"/>
+    <path d="M100 580 H 650"/>
+  </g>
+  <g fill="#4a3f31" opacity="0.42">
+    <rect x="180" y="196" width="300" height="240" rx="6"/>
+    <rect x="760" y="180" width="240" height="144" rx="6"/>
+    <rect x="220" y="676" width="360" height="112" rx="6"/>
+  </g>
+  <g opacity="0.6" fill="none" stroke="#8a6a3c" stroke-width="10.23">
+    <rect x="720" y="660" width="300" height="144" rx="8"/>
+    <path d="M650 372 a 60 60 0 0 0 60 60"/>
+  </g></g>
+  <rect width="1200" height="1000" fill="url(#veil)"/>
+  <g>
+    <g transform="translate(45.6 960.1) scale(0.73)" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.8">
+    <path d="M0 -22 C 7 -9, 9 -7, 22 0 C 9 7, 7 9, 0 22 C -7 9, -9 7, -22 0 C -9 -7, -7 -9, 0 -22 Z"/>
+    <circle cx="0" cy="0" r="6.5"/>
+  </g>
+    <text x="74.1" y="971.5"
+      font-family="Jost, Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="19" letter-spacing="4.94"
+      fill="#ffffff" fill-opacity="0.82">FLOOR PLAN</text>
+  </g>
+</svg>

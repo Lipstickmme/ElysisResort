@@ -1,30 +1,31 @@
 'use strict';
 
 (function () {
-  const M = window.MERKEL; if (!M) return;
+  const E = window.ELYSIS; if (!E) return;
   const wrap = document.getElementById('roles');
   if (!wrap) return;
-  const esc = M.esc;
+  const esc = E.esc;
+
   const FALLBACK = [
-    { id: 'senior-structural', title: 'Senior Structural Engineer', team: 'Structural', location: 'Studio', type: 'Full time', summary: 'Lead the structural design of tall buildings and long-span structures from concept through to site.' },
-    { id: 'bridge-engineer', title: 'Bridge Engineer', team: 'Civil & Infrastructure', location: 'Site based', type: 'Full time', summary: 'Design bridges and marine structures for demanding wind and durability requirements.' }
+    { id: 'guest-relations', title: 'Guest Relations Manager', team: 'Front of house', location: 'Paros, live-in available', type: 'Seasonal, April to October', summary: 'Own the arrival and the whole stay for a house of eighteen residences.' },
+    { id: 'sous-chef', title: 'Sous Chef, Thalassa', team: 'Kitchen', location: 'Paros, live-in available', type: 'Seasonal, April to October', summary: 'Run the charcoal and wood oven section on a menu rewritten every afternoon.' },
   ];
 
   const role = (r) => `
     <div class="role" data-reveal>
       <div>
-        <div class="team">${esc(r.team)}</div>
+        <span class="eyebrow">${esc(r.team)}</span>
         <h3>${esc(r.title)}</h3>
-        <p class="role-sum">${esc(r.summary)}</p>
+        <p>${esc(r.summary)}</p>
       </div>
       <div class="role-meta">${esc(r.location)}<br>${esc(r.type)}</div>
-      <a class="apply" href="/apply?role=${encodeURIComponent(r.id)}">Apply <span class="arw">&rsaquo;</span></a>
+      <a class="btn ghost" href="/apply?role=${encodeURIComponent(r.id)}">Apply</a>
     </div>`;
 
   (async () => {
     let roles = FALLBACK;
-    try { const d = await M.fetchJSON('/api/careers'); roles = d.roles || FALLBACK; } catch (e) {}
+    try { const d = await E.fetchJSON('/api/careers'); roles = d.roles || FALLBACK; } catch (e) { /* the two above stand */ }
     wrap.innerHTML = roles.map(role).join('');
-    M.observeReveals();
+    E.observeReveals();
   })();
 })();

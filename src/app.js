@@ -5,6 +5,7 @@
  * Assembles middleware, API routes, static hosting and error handling.
  */
 
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
   const start = Date.now();
   res.on('finish', () => {
     const ms = Date.now() - start;
-    console.log(`[merkel] ${req.method} ${req.originalUrl} -> ${res.statusCode} (${ms}ms)`);
+    console.log(`[elysis] ${req.method} ${req.originalUrl} -> ${res.statusCode} (${ms}ms)`);
   });
   next();
 });
@@ -53,8 +54,12 @@ const publicDir = path.join(__dirname, '..', 'public');
 app.use(
   express.static(publicDir, {
     extensions: ['html'],
+    // The page routes below decide what /suites means, not a directory listing
+    // redirect: public/suites/ is a folder of profiles and public/suites.html
+    // is the index of them.
+    redirect: false,
     setHeaders(res, filePath) {
-      // Long cache for static media (hero slides, logos); versioned per deploy.
+      // Long cache for static media (hero artwork, marks); versioned per deploy.
       if (/\.(webp|png|jpg|jpeg|svg|mp4|woff2?)$/i.test(filePath)) {
         res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
       }
@@ -65,16 +70,36 @@ app.use(
 // Clean-URL page routes. Each maps to a pre-built static HTML page.
 const sendPage = (file) => (req, res) => res.sendFile(path.join(publicDir, file));
 
+/**
+ * A residence, an experience or any other profile built as its own file.
+ *
+ * Every profile is a real page on disk (built by scripts/build-pages.js), so the
+ * id is only ever used to find a file that the build already wrote. Anything
+ * that is not a plain slug, or has no page, falls through to the 404.
+ */
+const sendProfile = (dir, fallback) => (req, res, next) => {
+  const id = String(req.params.id || '');
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(id)) return next();
+  const file = path.join(publicDir, dir, `${id}.html`);
+  if (!fs.existsSync(file)) {
+    if (fallback) return res.status(404).sendFile(path.join(publicDir, fallback));
+    return next();
+  }
+  return res.sendFile(file);
+};
+
 app.get('/', sendPage('index.html'));
-app.get('/projects', sendPage('projects.html'));
-// Project detail pages resolve the id client-side from the path.
-app.get('/projects/:id', sendPage('project.html'));
-app.get('/services', sendPage('services.html'));
-// Service detail pages resolve the id client-side from the path.
-app.get('/services/:id', sendPage('service.html'));
+app.get('/suites', sendPage('suites.html'));
+app.get('/suites/:id', sendProfile('suites', '404.html'));
+app.get('/experiences', sendPage('experiences.html'));
+app.get('/experiences/:id', sendProfile('experiences', '404.html'));
+app.get('/dining', sendPage('dining.html'));
+app.get('/gallery', sendPage('gallery.html'));
+app.get('/reserve', sendPage('reserve.html'));
+// The page this used to be called. Guests who bookmarked it still arrive.
+app.get('/contact', (req, res) => res.redirect(301, '/reserve'));
 app.get('/careers', sendPage('careers.html'));
 app.get('/apply', sendPage('apply.html'));
-app.get('/contact', sendPage('contact.html'));
 // Staff dashboard. Access is decided by Supabase auth on the page itself.
 app.get('/admin', sendPage('admin.html'));
 

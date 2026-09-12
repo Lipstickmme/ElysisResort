@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-label="The infinity pool, placeholder artwork">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bcd8e6"/>
+      <stop offset="100%" stop-color="#eef4f3"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a7f99"/>
+      <stop offset="100%" stop-color="#1f5468"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8fd0d8"/>
+      <stop offset="100%" stop-color="#2f8ba0"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#fff3d8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fff3d8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.14"/>
+      <stop offset="42%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(1600 0) scale(-1 1)">
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <circle cx="1312" cy="171.36" r="213.27" fill="url(#glow)"/>
+  <circle cx="1312" cy="171.36" r="62.73" fill="#fff3d8" opacity="0.95"/>
+  
+  <path d="M0 408 C 128 250.58, 416 307.53, 800 408 Z" fill="#1f5468" opacity="0.2"/>
+  <path d="M704 408 C 992 307.53, 1344 250.58, 1600 375.27 L 1600 408 Z" fill="#1f5468" opacity="0.26"/>
+  
+  <rect x="0" y="408" width="1600" height="264" fill="url(#sea)"/>
+  <rect x="0" y="408" width="1600" height="3.82" fill="#ffffff" opacity="0.4"/>
+  <path d="M161.76 462.55 q 64.24 -19.09 128.49 0 t 128.49 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M382.03 491.88 q 149.22 -19.09 298.44 0 t 298.44 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M370.18 521.21 q 69.63 -19.09 139.26 0 t 139.26 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M24.84 550.55 q 80.83 -19.09 161.67 0 t 161.67 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M631.82 579.88 q 95.97 -19.09 191.95 0 t 191.95 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M106.99 609.21 q 64.91 -19.09 129.81 0 t 129.81 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M82.09 638.55 q 130.39 -19.09 260.79 0 t 260.79 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M402.4 667.88 q 146.49 -19.09 292.98 0 t 292.98 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/><path d="M310.06 697.21 q 65.22 -19.09 130.45 0 t 130.45 0" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/>
+  
+  <rect x="0" y="672" width="1600" height="528" fill="#fbf8f2"/>
+  <rect x="0" y="672" width="1600" height="43.64" fill="#ece4d6"/>
+  <path d="M228.57 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/><path d="M457.14 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/><path d="M685.71 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/><path d="M914.29 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/><path d="M1142.86 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/><path d="M1371.43 715.64 V 1200" stroke="#4a3f31" stroke-opacity="0.07" stroke-width="5.45"/>
+  <path d="M0 893.76 H 1600" stroke="#4a3f31" stroke-opacity="0.06" stroke-width="5.45"/>
+  
+  <g>
+    <rect x="115.88" y="703.52" width="1368.24" height="336.24" rx="18.18" fill="#fbf8f2" opacity="0.9"/>
+    <rect x="128" y="715.64" width="1344" height="312" rx="10.1" fill="url(#water)"/>
+    <path d="M530.49 930.06 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/><path d="M313.42 781.64 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/><path d="M527.39 805.7 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/><path d="M461.94 805.4 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/><path d="M682.17 830.39 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/><path d="M441.88 812.75 q 16.16 -5.25 32.32 0 t 32.32 0" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.22" stroke-linecap="round"/>
+  </g>
+  
+  <g transform="translate(208 1164) scale(2.93)">
+    <rect x="-2.5" y="-92" width="5" height="92" fill="#9c7b51"/>
+    <path d="M-66 -86 q 66 -44 132 0 q -66 -18 -132 0 Z" fill="#fbf8f2"/>
+    <path d="M-66 -86 q 66 -18 132 0" fill="none" stroke="#8a6a3c" stroke-width="2.5" opacity="0.45"/>
+    <path d="M0 -100 v 8" stroke="#9c7b51" stroke-width="4"/>
+  </g>
+  
+  <g transform="translate(1392 1164) scale(2.93)">
+    <rect x="-2.5" y="-92" width="5" height="92" fill="#9c7b51"/>
+    <path d="M-66 -86 q 66 -44 132 0 q -66 -18 -132 0 Z" fill="#fbf8f2"/>
+    <path d="M-66 -86 q 66 -18 132 0" fill="none" stroke="#8a6a3c" stroke-width="2.5" opacity="0.45"/>
+    <path d="M0 -100 v 8" stroke="#9c7b51" stroke-width="4"/>
+  </g>
+  
+  <g transform="translate(480 1164) scale(2)">
+    <path d="M0 0 h78 v10 h-78 Z" fill="#fbf8f2"/>
+    <path d="M52 0 l24 -34 h13 l-21 34 Z" fill="#fbf8f2"/>
+    <rect x="8" y="-5" width="46" height="6" rx="3" fill="#8a6a3c" opacity="0.35"/>
+    <rect x="7" y="10" width="5" height="14" fill="#9c7b51"/>
+    <rect x="66" y="10" width="5" height="14" fill="#9c7b51"/>
+  </g>
+  <g transform="translate(695.63 1164) scale(2)">
+    <path d="M0 0 h78 v10 h-78 Z" fill="#fbf8f2"/>
+    <path d="M52 0 l24 -34 h13 l-21 34 Z" fill="#fbf8f2"/>
+    
+    <rect x="7" y="10" width="5" height="14" fill="#9c7b51"/>
+    <rect x="66" y="10" width="5" height="14" fill="#9c7b51"/>
+  </g>
+  <g transform="translate(911.25 1164) scale(2)">
+    <path d="M0 0 h78 v10 h-78 Z" fill="#fbf8f2"/>
+    <path d="M52 0 l24 -34 h13 l-21 34 Z" fill="#fbf8f2"/>
+    <rect x="8" y="-5" width="46" height="6" rx="3" fill="#8a6a3c" opacity="0.35"/>
+    <rect x="7" y="10" width="5" height="14" fill="#9c7b51"/>
+    <rect x="66" y="10" width="5" height="14" fill="#9c7b51"/>
+  </g>
+  <path transform="translate(48 699.27) scale(1.68)" d="M0 0 c -20 -8 -22 -76 0 -122 c 22 46 20 114 0 122 Z" fill="#4e5c40" opacity="0.82"/>
+  
+  <g transform="translate(1536 726.55) scale(1.78)">
+    <circle cx="-14" cy="-58" r="20" fill="#6f7f5c" opacity="0.85"/>
+    <circle cx="14" cy="-64" r="22" fill="#4e5c40" opacity="0.75"/>
+    <circle cx="0" cy="-82" r="17" fill="#6f7f5c" opacity="0.8"/>
+    <path d="M-22 -38 h44 l-7 38 h-30 Z" fill="#8a6a3c" opacity="0.75"/>
+    <rect x="-25" y="-42" width="50" height="8" rx="3" fill="#8a6a3c" opacity="0.85"/>
+  </g></g>
+  <rect width="1600" height="1200" fill="url(#veil)"/>
+  <g>
+    <g transform="translate(60.8 1152.12) scale(0.88)" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.8">
+    <path d="M0 -22 C 7 -9, 9 -7, 22 0 C 9 7, 7 9, 0 22 C -7 9, -9 7, -22 0 C -9 -7, -7 -9, 0 -22 Z"/>
+    <circle cx="0" cy="0" r="6.5"/>
+  </g>
+    <text x="95" y="1165.8"
+      font-family="Jost, Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      font-size="22.8" letter-spacing="5.93"
+      fill="#ffffff" fill-opacity="0.82">THE INFINITY POOL</text>
+  </g>
+</svg>

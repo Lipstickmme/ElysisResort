@@ -1,7 +1,7 @@
 {
-  "name": "merkel-constructions",
+  "name": "elysis-luxury-resort",
   "version": "1.0.0",
-  "description": "Merkel Constructions corporate website and API server",
+  "description": "Elysis Luxury Resort website and API server: eighteen residences on Paros, with a reservations desk, concierge chat and shared mailbox behind it",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
@@ -9,6 +9,8 @@
     "dev": "node scripts/build-pages.js && node --watch server.js",
     "build": "node scripts/build-pages.js",
     "prestart": "node scripts/build-pages.js",
+    "placeholders": "node scripts/make-placeholders.js",
+    "icons": "node scripts/make-brand-icons.js",
     "check:vercel": "node scripts/check-vercel-upload.js",
     "test": "node test/api.test.js",
     "test:browser": "node test/browser.test.js && node test/fallback.test.js"
@@ -17,11 +19,12 @@
     "node": ">=18"
   },
   "keywords": [
-    "engineering",
+    "resort",
+    "hotel",
     "express",
     "website"
   ],
-  "author": "Merkel Constructions",
+  "author": "Elysis Luxury Resort",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {

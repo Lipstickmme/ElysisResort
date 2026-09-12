@@ -1,12 +1,15 @@
 'use strict';
 
 /**
- * Resolves the page-level image slots at build time.
+ * Resolves image slots against whatever photography has actually been supplied.
  *
- * Every slot names the file it would rather have and the placeholder it uses
- * until that file exists. So adding real photography is a file drop, not a
- * code change: put merkel1 .. merkel5 into public/assets/img/ in any common
- * format and the next build picks them up.
+ * Every slot names the files it would rather have and the artwork it falls back
+ * on until one of them exists, so adding real photography is a file drop into
+ * public/assets/img/ rather than a code change. See that directory's README for
+ * the names each slot accepts.
+ *
+ * Used by the page build and by the API, so a card rendered into the HTML and
+ * the same card fetched as JSON always point at the same file.
  */
 
 const fs = require('fs');
@@ -18,14 +21,14 @@ const PUBLIC_DIR = path.join(__dirname, '..', '..', 'public');
 // Preference order, best format first. WebP wins, so a converted copy is used
 // in place of a heavy original without anyone having to delete the original.
 const EXTENSIONS = ['.webp', '.avif', '.jpg', '.jpeg', '.png', '.svg'];
-const DIRS = ['/assets/img/', '/assets/slides/'];
+const DIRS = ['/assets/img/', '/assets/placeholder/'];
 
 const found = [];
 
 /**
  * Every candidate file, indexed by lower-cased name.
  *
- * Case-insensitive on purpose: an upload named Merkel3.png has to be found on
+ * Case-insensitive on purpose: an upload named Elysis3.PNG has to be found on
  * Linux, where the deploy runs, not only on the machine it was named on.
  */
 const index = new Map();
@@ -56,11 +59,20 @@ function lookUp(names) {
   return null;
 }
 
+/**
+ * The best file for a slot.
+ * @param {string[]} prefer base names, best first
+ * @param {string} fallback what to use until one of them is there
+ */
+function pick(prefer, fallback) {
+  const hit = lookUp(prefer);
+  if (hit && hit.indexOf('/assets/placeholder/') !== 0) found.push(hit);
+  return hit || fallback;
+}
+
 function resolve(spec) {
   if (typeof spec === 'string') return spec;
-  const hit = lookUp(spec.prefer);
-  if (hit) found.push(hit);
-  return hit || spec.fallback;
+  return pick(spec.prefer, spec.fallback);
 }
 
 const images = {};
@@ -69,7 +81,8 @@ Object.entries(data.slots).forEach(([slot, spec]) => {
 });
 images.heroSlides = data.heroSlides.map(resolve);
 
-/** What the build should report: which real images were picked up, if any. */
+/** What the build should report: which real photographs were picked up, if any. */
 images._resolved = found;
+images.pick = pick;
 
 module.exports = images;

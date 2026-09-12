@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * The studio's contact details.
+ * The resort's contact details.
  *
  * Pages are built with the values in src/data/site.json, so the static HTML is
- * always correct on its own. The studio desk can then change them, and the
+ * always correct on its own. The desk can then change them, and the
  * change is stored in `site_settings` and picked up by every page on its next
  * load, with no rebuild and no deploy.
  *

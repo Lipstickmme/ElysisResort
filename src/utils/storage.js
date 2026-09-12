@@ -12,12 +12,15 @@ const path = require('path');
 const { dataDir } = require('./paths');
 const { getSupabase } = require('./supabase');
 
+/** PostgREST hands timestamps back as strings; a file read may hold a Date. */
+const asIso = (v) => (v instanceof Date ? v.toISOString() : v);
+
 /**
  * One store per kind of record. Enquiries and job applications differ only in
  * their table, their file and the shape of a row, so the mechanics of falling
  * back to disk, serialising writes and mapping columns live here once.
  */
-function createStore({ table, file, toRow, fromRow }) {
+function createStore({ table, file, toRow, toBaseRow, fromRow }) {
   const filePath = () => path.join(dataDir(), file);
   let writeChain = Promise.resolve();
 
@@ -45,7 +48,17 @@ function createStore({ table, file, toRow, fromRow }) {
     async append(record) {
       const supabase = getSupabase();
       if (supabase) {
-        await supabase.insert(table, toRow(record));
+        try {
+          await supabase.insert(table, toRow(record));
+        } catch (err) {
+          // A database that has not run the newest migration is missing the
+          // newest columns. Rather than lose the record, write the columns
+          // every version of the schema has; the migration only ever added
+          // structure for values the message body already carries.
+          if (!toBaseRow || !/column|PGRST204|schema cache/i.test(err.message)) throw err;
+          console.warn(`[elysis] ${table}: writing without the newer columns (${err.message})`);
+          await supabase.insert(table, toBaseRow(record));
+        }
         return record;
       }
 
@@ -62,6 +75,14 @@ function createStore({ table, file, toRow, fromRow }) {
   };
 }
 
+/**
+ * Reservation enquiries.
+ *
+ * `service` carries the residence asked for, which is what the desk sorts by,
+ * and `message` carries the whole enquiry including the dates. The stay columns
+ * beside them arrive with 0003_reservations.sql and are written when they
+ * exist; see the fallback in `append` above for a database still on 0001.
+ */
 const enquiries = createStore({
   table: 'enquiries',
   file: 'submissions.json',
@@ -69,9 +90,26 @@ const enquiries = createStore({
     id: r.id,
     name: r.name,
     email: r.email,
-    company: r.company,
-    service: r.service,
-    message: r.message,
+    company: r.company || null,
+    service: r.suiteName || r.service || null,
+    message: r.summary || r.message,
+    phone: r.phone || null,
+    arrival: r.arrival || null,
+    departure: r.departure || null,
+    nights: r.nights || null,
+    adults: r.adults == null ? null : r.adults,
+    children: r.children == null ? null : r.children,
+    suite_id: r.suiteId || null,
+    ip: r.ip,
+    created_at: r.receivedAt,
+  }),
+  toBaseRow: (r) => ({
+    id: r.id,
+    name: r.name,
+    email: r.email,
+    company: r.company || null,
+    service: r.suiteName || r.service || null,
+    message: r.summary || r.message,
     ip: r.ip,
     created_at: r.receivedAt,
   }),
@@ -81,7 +119,15 @@ const enquiries = createStore({
     email: row.email,
     company: row.company,
     service: row.service,
+    suiteName: row.service,
     message: row.message,
+    phone: row.phone,
+    arrival: row.arrival,
+    departure: row.departure,
+    nights: row.nights,
+    adults: row.adults,
+    children: row.children,
+    suiteId: row.suite_id,
     ip: row.ip,
     receivedAt: asIso(row.created_at),
   }),

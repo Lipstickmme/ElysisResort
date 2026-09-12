@@ -29,9 +29,9 @@ async function chat(browser, base) {
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto(base + '/contact', { waitUntil: 'networkidle' });
+  await page.goto(base + '/reserve', { waitUntil: 'networkidle' });
   await page.click('#chat-toggle');
-  await page.fill('#chat-input', 'Do you take on marine structures?');
+  await page.fill('#chat-input', 'Do you have anything free in July for two?');
   await page.press('#chat-input', 'Enter');
   await page.waitForFunction(
     () => document.querySelectorAll('#chat-log .chat-msg.agent:not(.typing)').length >= 1,
@@ -57,7 +57,7 @@ async function chat(browser, base) {
       CHAT_NOTIFY: 'off',
     });
     let drawn = await chat(browser, `http://127.0.0.1:${site.address().port}`);
-    assert.ok(drawn.some((t) => t.includes('marine structures')), JSON.stringify(drawn));
+    assert.ok(drawn.some((t) => t.includes('anything free in July')), JSON.stringify(drawn));
     assert.ok(drawn.length >= 2, 'still got a reply: ' + JSON.stringify(drawn));
     assert.strictEqual(sb.db.chat_sessions.rows.length, 1, 'server wrote the session');
     assert.strictEqual(sb.db.chat_messages.rows.length, 2, 'server wrote both rows');
@@ -67,7 +67,7 @@ async function chat(browser, base) {
     sb.close();
 
     /* --- no database at all: local files --- */
-    const dir = require('fs').mkdtempSync('/tmp/merkel-chat-');
+    const dir = require('fs').mkdtempSync('/tmp/elysis-chat-');
     site = await serve({ DATA_DIR: dir, CHAT_NOTIFY: 'off' });
     drawn = await chat(browser, `http://127.0.0.1:${site.address().port}`);
     assert.ok(drawn.length >= 2, 'reply without a database: ' + JSON.stringify(drawn));

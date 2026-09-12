@@ -1,10 +1,10 @@
--- Merkel Constructions backend schema.
+-- Elysis Luxury Resort backend schema.
 --
 -- Safe to run more than once: every statement is guarded, so re-running the
 -- file after an edit updates what changed rather than erroring half way.
 --
 -- Five areas: the contact inbox (enquiries), job applications, a two-table
--- live chat, the admin list, and the studio's own contact details. Everything is behind row level security. The only writes the
+-- live chat, the admin list, and the resort's own contact details. Everything is behind row level security. The only writes the
 -- browser makes directly are a visitor creating their own chat session and
 -- posting into it. Contact submissions never touch the database from the
 -- browser: they go through POST /api/contact, which holds the service role key
@@ -111,7 +111,7 @@ create policy "admins update enquiries"
 -- Site settings
 -- ---------------------------------------------------------------------------
 
--- The studio's contact details, so they can be changed from the dashboard and
+-- The resort's contact details, so they can be changed from the dashboard and
 -- take effect on the next page load rather than the next deploy. One row.
 create table if not exists public.site_settings (
   id         text primary key default 'default',
@@ -192,7 +192,7 @@ create table if not exists public.chat_sessions (
   status          public.item_status not null default 'new'
 );
 
--- Set once a member of the studio answers, so the canned responder steps
+-- Set once someone at the desk answers, so the canned responder steps
 -- aside and the visitor is not talked over. It cannot be read off `status`:
 -- the trigger below returns a thread to 'new' every time the visitor speaks.
 alter table public.chat_sessions

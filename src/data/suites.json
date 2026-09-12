@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "aegean-loft",
+    "name": "Aegean Loft Suite",
+    "collection": "Suites",
+    "view": "Open Aegean, west",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "48 m2",
+    "sizeImperial": "517 sq ft",
+    "bed": "One king",
+    "rateFrom": 620,
+    "terrace": "18 m2 private terrace with day bed",
+    "position": "Upper terrace, west wing",
+    "minStay": "2 nights",
+    "image": "/assets/placeholder/suite-sea-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-01.svg",
+      "/assets/placeholder/suite-bath-01.svg",
+      "/assets/placeholder/suite-terrace-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-01.svg",
+    "prefer": [
+      "suite-aegean-loft",
+      "suite-01"
+    ],
+    "blurb": "A single lime-washed room under a cedar ceiling, with the whole western sea in the doorway.",
+    "lede": "The smallest of our residences and the one guests ask for again. One room, one terrace, and nothing between the bed and the horizon but a pair of cedar shutters.",
+    "description": [
+      "The Aegean Loft sits at the top of the west terrace, where the path runs out and the view opens. The room is one volume: a vaulted ceiling in cedar, walls finished by hand in lime, a stone floor that stays cool through August. Furniture is spare and low, so nothing competes with what is outside the door.",
+      "The terrace is the other half of the suite. A canvas day bed under an olive, a table for two, and an outdoor shower screened in dry stone. Most guests take breakfast there, then again at sunset with something from the bar."
+    ],
+    "amenities": [
+      "Private terrace with day bed",
+      "Outdoor rain shower",
+      "Cedar shutters and blackout drapes",
+      "Marble bathroom with deep tub",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "Air conditioning and ceiling fan",
+      "Twice daily housekeeping"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Couples, and a first stay"
+      },
+      {
+        "k": "Sunset",
+        "v": "Straight ahead, from the terrace"
+      },
+      {
+        "k": "To the beach",
+        "v": "4 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "olive-garden-suite",
+    "name": "Olive Garden Suite",
+    "collection": "Suites",
+    "view": "Olive grove and hills",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "45 m2",
+    "sizeImperial": "484 sq ft",
+    "bed": "One king or two singles",
+    "rateFrom": 540,
+    "terrace": "22 m2 walled garden",
+    "position": "Garden wing, ground level",
+    "minStay": "2 nights",
+    "image": "/assets/placeholder/suite-garden-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-02.svg",
+      "/assets/placeholder/suite-bath-02.svg",
+      "/assets/placeholder/garden-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-02.svg",
+    "prefer": [
+      "suite-olive-garden",
+      "suite-02"
+    ],
+    "blurb": "A walled garden of its own, under trees that were here long before the resort was.",
+    "lede": "Cooler than the sea-facing rooms and quieter than all of them. The garden suites open onto their own walled patch of the old grove.",
+    "description": [
+      "Six olive trees on this plot are more than two hundred years old, and the wing was set out around them rather than through them. The result is a suite whose terrace is a room in its own right: dry stone walls at shoulder height, gravel underfoot, shade from morning until the light goes amber.",
+      "Inside, the room faces east, so it wakes gently and stays cool in the afternoon. It is the residence we suggest to guests who sleep lightly, and to anyone spending the middle of the day reading rather than swimming."
+    ],
+    "amenities": [
+      "Walled private garden",
+      "Outdoor shower and stone basin",
+      "King or twin configuration",
+      "Marble bathroom with walk-in shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "Air conditioning",
+      "Twice daily housekeeping"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Long, quiet stays"
+      },
+      {
+        "k": "Shade",
+        "v": "All afternoon"
+      },
+      {
+        "k": "To the pool",
+        "v": "2 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "cycladic-terrace-suite",
+    "name": "Cycladic Terrace Suite",
+    "collection": "Suites",
+    "view": "Bay and headland",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "52 m2",
+    "sizeImperial": "560 sq ft",
+    "bed": "One king",
+    "rateFrom": 690,
+    "terrace": "26 m2 terrace with dining table",
+    "position": "Mid terrace, sea side",
+    "minStay": "2 nights",
+    "image": "/assets/placeholder/suite-terrace-02.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-03.svg",
+      "/assets/placeholder/suite-bath-03.svg",
+      "/assets/placeholder/suite-sea-02.svg"
+    ],
+    "plan": "/assets/placeholder/plan-03.svg",
+    "prefer": [
+      "suite-cycladic-terrace",
+      "suite-03"
+    ],
+    "blurb": "A deep vaulted room that opens along its whole length onto a terrace set for dinner.",
+    "lede": "The classic Elysis room: a barrel-vaulted ceiling, three arched doors onto the terrace, and a table where most guests end up eating at least once.",
+    "description": [
+      "This is the plan the architect drew first and the one the rest of the resort grew from. The vault runs the length of the room and the three arched doors fold back completely, so in the evening the terrace and the room become the same space.",
+      "The terrace looks across the bay to the headland, which means sun from mid-morning and the last of the light at the far end of the day. In-suite dining is served here, and the kitchen will lay a table for six if you ask."
+    ],
+    "amenities": [
+      "Terrace dining for six",
+      "Folding arched doors",
+      "Marble bathroom with double vanity",
+      "Outdoor rain shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "Air conditioning and ceiling fan",
+      "Twice daily housekeeping"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Dining in"
+      },
+      {
+        "k": "Light",
+        "v": "Mid-morning to sunset"
+      },
+      {
+        "k": "To the beach",
+        "v": "3 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "salt-white-suite",
+    "name": "Salt White Suite",
+    "collection": "Suites",
+    "view": "Courtyard and hills",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "44 m2",
+    "sizeImperial": "474 sq ft",
+    "bed": "One king or two singles",
+    "rateFrom": 510,
+    "terrace": "14 m2 courtyard terrace",
+    "position": "Courtyard wing, upper level",
+    "minStay": "2 nights",
+    "image": "/assets/placeholder/suite-garden-02.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-04.svg",
+      "/assets/placeholder/suite-bath-04.svg",
+      "/assets/placeholder/garden-02.svg"
+    ],
+    "plan": "/assets/placeholder/plan-04.svg",
+    "prefer": [
+      "suite-salt-white",
+      "suite-04"
+    ],
+    "blurb": "The quietest room in the house, off a courtyard with a fig tree and a single lantern.",
+    "lede": "Set back from the sea and priced accordingly, without giving up anything that matters: the same beds, the same marble, the same breakfast.",
+    "description": [
+      "The Salt White rooms sit around a small courtyard on the landward side, where the walls hold the cool and the only sound after eleven is the wind in the fig. They are the rooms our own team book when family visits.",
+      "Everything inside is identical to the sea-facing suites. What you trade is the horizon, and what you get back is silence and a rate that lets you stay a week instead of three nights."
+    ],
+    "amenities": [
+      "Courtyard terrace",
+      "King or twin configuration",
+      "Marble bathroom with walk-in shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "Air conditioning",
+      "Writing desk",
+      "Twice daily housekeeping"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Longer stays"
+      },
+      {
+        "k": "Quietest",
+        "v": "In the resort"
+      },
+      {
+        "k": "To the beach",
+        "v": "6 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "meltemi-junior-suite",
+    "name": "Meltemi Junior Suite",
+    "collection": "Suites",
+    "view": "Open sea, north west",
+    "sleeps": 3,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "56 m2",
+    "sizeImperial": "603 sq ft",
+    "bed": "One king and a day bed",
+    "rateFrom": 740,
+    "terrace": "24 m2 terrace, part shaded",
+    "position": "North terrace, sea side",
+    "minStay": "2 nights",
+    "image": "/assets/placeholder/suite-sea-03.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-05.svg",
+      "/assets/placeholder/suite-bath-05.svg",
+      "/assets/placeholder/suite-terrace-03.svg"
+    ],
+    "plan": "/assets/placeholder/plan-05.svg",
+    "prefer": [
+      "suite-meltemi",
+      "suite-05"
+    ],
+    "blurb": "A sitting room as well as a bedroom, and the terrace that catches the north wind in August.",
+    "lede": "Named for the wind that makes a Cycladic August bearable, and sited to take it. A separate sitting area makes this the smallest residence that works for three.",
+    "description": [
+      "The Meltemi is a junior suite in the true sense: the bed sits in its own alcove behind a half wall, with a proper sitting area in front of it and a day bed that a third guest sleeps on comfortably.",
+      "Its corner of the terrace is the coolest place on the property in high summer. There is a reason the loungers here are booked out first in the first week of August."
+    ],
+    "amenities": [
+      "Separate sitting area",
+      "Day bed for a third guest",
+      "Shaded and open terrace",
+      "Marble bathroom with deep tub",
+      "Outdoor rain shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "Air conditioning and ceiling fan"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Three, or a longer stay for two"
+      },
+      {
+        "k": "Coolest",
+        "v": "Terrace in high summer"
+      },
+      {
+        "k": "To the beach",
+        "v": "5 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "thalassa-pool-suite",
+    "name": "Thalassa Pool Suite",
+    "collection": "Pool Suites",
+    "view": "Bay, west",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "62 m2",
+    "sizeImperial": "667 sq ft",
+    "bed": "One king",
+    "rateFrom": 860,
+    "terrace": "34 m2 terrace with 4 x 3 m plunge pool",
+    "position": "Lower terrace, sea side",
+    "minStay": "3 nights",
+    "image": "/assets/placeholder/villa-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-06.svg",
+      "/assets/placeholder/suite-bath-06.svg",
+      "/assets/placeholder/pool-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-06.svg",
+    "prefer": [
+      "suite-thalassa",
+      "suite-06"
+    ],
+    "blurb": "A heated plunge pool on a walled terrace, four steps above the sea path.",
+    "lede": "The first of the pool suites, and the one closest to the water. The pool is heated from April and screened on three sides, so it is yours from breakfast until well after dark.",
+    "description": [
+      "Thalassa takes the lower terrace, where the ground drops towards the sea path and the walls can be kept low without losing privacy. The pool is four metres by three, heated in the shoulder months, and lit from below at night.",
+      "Inside, the room is arranged around the view rather than the bed: a long window seat under the west window, and the bed set back where it stays dark in the morning."
+    ],
+    "amenities": [
+      "Heated 4 x 3 m plunge pool",
+      "Walled terrace with loungers",
+      "Window seat and reading light",
+      "Marble bathroom with deep tub",
+      "Outdoor rain shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "In-suite dining service"
+    ],
+    "highlights": [
+      {
+        "k": "Pool",
+        "v": "Heated, private, lit at night"
+      },
+      {
+        "k": "Best for",
+        "v": "Couples who swim before breakfast"
+      },
+      {
+        "k": "To the beach",
+        "v": "2 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "kyma-pool-suite",
+    "name": "Kyma Pool Suite",
+    "collection": "Pool Suites",
+    "view": "Open sea and sunset",
+    "sleeps": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size": "65 m2",
+    "sizeImperial": "700 sq ft",
+    "bed": "One king",
+    "rateFrom": 910,
+    "terrace": "38 m2 terrace with 5 x 3 m pool",
+    "position": "West point, sea side",
+    "minStay": "3 nights",
+    "image": "/assets/placeholder/villa-02.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-07.svg",
+      "/assets/placeholder/suite-bath-07.svg",
+      "/assets/placeholder/pool-02.svg"
+    ],
+    "plan": "/assets/placeholder/plan-07.svg",
+    "prefer": [
+      "suite-kyma",
+      "suite-07"
+    ],
+    "blurb": "The westernmost residence, with a pool that finishes level with the horizon.",
+    "lede": "Built on the point, where the terrace wall is the last thing between you and open water. The pool is cut to catch the sun until the moment it goes.",
+    "description": [
+      "Kyma stands alone on the western point, which gives it two things nothing else here has: no neighbour on either side, and a straight, uninterrupted sunset from the water. The pool edge is set flush with the terrace so that swimming in it, the sea and the pool read as one surface.",
+      "The room behind is deliberately simple. A vaulted ceiling, a wall of cedar joinery, and a bed you can see the sea from without sitting up."
+    ],
+    "amenities": [
+      "Heated 5 x 3 m pool with flush edge",
+      "No adjoining residence",
+      "Outdoor dining for four",
+      "Marble bathroom with double vanity",
+      "Outdoor rain shower",
+      "Nespresso and island tea tray",
+      "Smart TV and Sonos",
+      "In-suite dining service"
+    ],
+    "highlights": [
+      {
+        "k": "Sunset",
+        "v": "Dead ahead, from the pool"
+      },
+      {
+        "k": "Privacy",
+        "v": "No adjoining residence"
+      },
+      {
+        "k": "To the beach",
+        "v": "5 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "helios-pool-villa",
+    "name": "Helios Pool Villa",
+    "collection": "Villas",
+    "view": "Bay and headland",
+    "sleeps": 3,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "size": "95 m2",
+    "sizeImperial": "1,023 sq ft",
+    "bed": "One king and a day bed",
+    "rateFrom": 1380,
+    "terrace": "60 m2 terrace with 8 x 3 m pool",
+    "position": "South slope, private drive",
+    "minStay": "3 nights",
+    "image": "/assets/placeholder/villa-03.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-08.svg",
+      "/assets/placeholder/suite-bath-08.svg",
+      "/assets/placeholder/pool-03.svg"
+    ],
+    "plan": "/assets/placeholder/plan-08.svg",
+    "prefer": [
+      "villa-helios",
+      "villa-01"
+    ],
+    "blurb": "A one bedroom villa on its own path, with an eight metre pool and a kitchen you can actually cook in.",
+    "lede": "The first of the freestanding villas. Its own gate, its own path down to the sea, and a pool long enough to swim lengths in before breakfast.",
+    "description": [
+      "Helios is a whole small house: entrance courtyard, living room, separate bedroom, two bathrooms, and a galley kitchen fitted properly rather than token. Guests who stay a fortnight tend to take this one and cook once or twice a week.",
+      "The terrace runs the length of the building and steps down twice, so the pool, the dining table and the loungers each sit at their own level. The lowest step is the one to be on at seven in the evening."
+    ],
+    "amenities": [
+      "8 x 3 m heated private pool",
+      "Separate living room",
+      "Fitted kitchen and wine fridge",
+      "Two bathrooms, one outdoor shower",
+      "Outdoor dining for six",
+      "Private gate and parking",
+      "Smart TV and Sonos throughout",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Pool",
+        "v": "8 m, heated"
+      },
+      {
+        "k": "Best for",
+        "v": "Two or three, staying a while"
+      },
+      {
+        "k": "To the beach",
+        "v": "6 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "selene-pool-villa",
+    "name": "Selene Pool Villa",
+    "collection": "Villas",
+    "view": "Open sea, north west",
+    "sleeps": 3,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "size": "98 m2",
+    "sizeImperial": "1,055 sq ft",
+    "bed": "One king and a day bed",
+    "rateFrom": 1420,
+    "terrace": "64 m2 terrace with 8 x 3 m pool",
+    "position": "North slope, private drive",
+    "minStay": "3 nights",
+    "image": "/assets/placeholder/villa-04.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-09.svg",
+      "/assets/placeholder/suite-bath-09.svg",
+      "/assets/placeholder/pool-04.svg"
+    ],
+    "plan": "/assets/placeholder/plan-09.svg",
+    "prefer": [
+      "villa-selene",
+      "villa-02"
+    ],
+    "blurb": "Helios's twin on the cool side of the hill, with a moon terrace and an outdoor bath.",
+    "lede": "The same plan as Helios, turned to face north west. It loses an hour of afternoon sun and gains the coolest evening terrace at Elysis.",
+    "description": [
+      "Selene was built as the pair to Helios and set on the opposite slope. The change of aspect matters more than the plan: the terrace here is shaded by two o'clock and cool by five, which in July is worth more than another hour of sun.",
+      "A copper bath stands on the upper terrace under a reed canopy, filled on request with hot water and sea salt. It is the detail guests write to us about afterwards."
+    ],
+    "amenities": [
+      "8 x 3 m heated private pool",
+      "Outdoor copper bath",
+      "Separate living room",
+      "Fitted kitchen and wine fridge",
+      "Two bathrooms, one outdoor shower",
+      "Private gate and parking",
+      "Smart TV and Sonos throughout",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Terrace",
+        "v": "Shaded from two o'clock"
+      },
+      {
+        "k": "Signature",
+        "v": "Outdoor copper bath"
+      },
+      {
+        "k": "To the beach",
+        "v": "7 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "oleander-villa",
+    "name": "Oleander Villa",
+    "collection": "Villas",
+    "view": "Garden and sea beyond",
+    "sleeps": 5,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": "140 m2",
+    "sizeImperial": "1,507 sq ft",
+    "bed": "One king, two singles, one day bed",
+    "rateFrom": 1980,
+    "terrace": "80 m2 terrace with 10 x 4 m pool",
+    "position": "Garden terraces, private drive",
+    "minStay": "4 nights",
+    "image": "/assets/placeholder/villa-05.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-10.svg",
+      "/assets/placeholder/suite-bath-10.svg",
+      "/assets/placeholder/garden-03.svg"
+    ],
+    "plan": "/assets/placeholder/plan-10.svg",
+    "prefer": [
+      "villa-oleander",
+      "villa-03"
+    ],
+    "blurb": "Two bedrooms either side of a living room, a ten metre pool, and oleander over every wall.",
+    "lede": "The first of the two bedroom villas, laid out so that the two ends of the house are genuinely separate. Families and pairs of couples take this one.",
+    "description": [
+      "The plan puts a bedroom at each end with the living room, kitchen and terrace between them, which is the difference between a villa that sleeps four and one that four people can actually live in. The second bedroom takes two singles or a second king.",
+      "The pool is ten metres and unheated by choice; by late May it holds the day's heat until midnight. The garden around it is the oldest planting on the property."
+    ],
+    "amenities": [
+      "10 x 4 m private pool",
+      "Two bedrooms at opposite ends",
+      "Fitted kitchen and wine fridge",
+      "Outdoor dining for eight",
+      "Barbecue and pizza oven",
+      "Private gate and parking",
+      "Smart TV and Sonos throughout",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Families, or two couples"
+      },
+      {
+        "k": "Pool",
+        "v": "10 m, garden enclosed"
+      },
+      {
+        "k": "To the beach",
+        "v": "8 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "myrtos-villa",
+    "name": "Myrtos Villa",
+    "collection": "Villas",
+    "view": "Olive grove, sea glimpse",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": "132 m2",
+    "sizeImperial": "1,421 sq ft",
+    "bed": "Two kings",
+    "rateFrom": 1740,
+    "terrace": "72 m2 terrace with 9 x 4 m pool",
+    "position": "Upper grove, private drive",
+    "minStay": "4 nights",
+    "image": "/assets/placeholder/villa-06.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-11.svg",
+      "/assets/placeholder/suite-bath-11.svg",
+      "/assets/placeholder/garden-04.svg"
+    ],
+    "plan": "/assets/placeholder/plan-11.svg",
+    "prefer": [
+      "villa-myrtos",
+      "villa-04"
+    ],
+    "blurb": "Set high in the grove, with two equal bedrooms and the best shade on the property.",
+    "lede": "Two matched king bedrooms, which is what two couples travelling together actually want, and a terrace under old trees rather than under canvas.",
+    "description": [
+      "Myrtos sits at the top of the grove where the trees are thickest. Both bedrooms are the same size and have the same bathroom, so nobody is quietly given the worse room.",
+      "The terrace is shaded by the grove itself for most of the day, which keeps the house ten degrees cooler than the sea-facing villas in August and makes long lunches at the outdoor table possible at any hour."
+    ],
+    "amenities": [
+      "9 x 4 m private pool",
+      "Two matched king bedrooms",
+      "Fitted kitchen and wine fridge",
+      "Outdoor dining for eight under the trees",
+      "Barbecue",
+      "Private gate and parking",
+      "Smart TV and Sonos throughout",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Two couples"
+      },
+      {
+        "k": "Shade",
+        "v": "Natural, most of the day"
+      },
+      {
+        "k": "To the beach",
+        "v": "10 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "anemos-residence",
+    "name": "Anemos Residence",
+    "collection": "Residences",
+    "view": "Bay, west and north",
+    "sleeps": 5,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "size": "165 m2",
+    "sizeImperial": "1,776 sq ft",
+    "bed": "Two kings and a day bed",
+    "rateFrom": 2360,
+    "terrace": "95 m2 terrace with 12 x 4 m pool",
+    "position": "West headland, private drive",
+    "minStay": "4 nights",
+    "image": "/assets/placeholder/residence-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-12.svg",
+      "/assets/placeholder/suite-bath-12.svg",
+      "/assets/placeholder/pool-05.svg"
+    ],
+    "plan": "/assets/placeholder/plan-12.svg",
+    "prefer": [
+      "residence-anemos",
+      "residence-01"
+    ],
+    "blurb": "A twelve metre pool on the headland, a proper kitchen, and a cook who will use it.",
+    "lede": "The first of the residences: a house with staff attached. Breakfast is cooked in your own kitchen, and dinner can be too.",
+    "description": [
+      "Anemos takes the whole west headland. The living room opens on two sides, the pool runs twelve metres along the seaward edge, and the kitchen is a working one, with a six burner range and a cold room rather than a token hob.",
+      "A residence booking includes a cook for breakfast each morning and the option of a chef for dinner, arranged the day before. Guests who take Anemos for a week usually eat in three or four nights."
+    ],
+    "amenities": [
+      "12 x 4 m heated pool on the headland",
+      "Breakfast cooked in-residence daily",
+      "Chef for dinner on request",
+      "Two kings, three bathrooms",
+      "Working kitchen and cold room",
+      "Outdoor dining for ten",
+      "Private gate and parking",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Included",
+        "v": "Breakfast cooked in-house"
+      },
+      {
+        "k": "Pool",
+        "v": "12 m, heated"
+      },
+      {
+        "k": "Best for",
+        "v": "A family, or a week of hosting"
+      }
+    ]
+  },
+  {
+    "id": "kastro-residence",
+    "name": "Kastro Residence",
+    "collection": "Residences",
+    "view": "Bay, headland and village lights",
+    "sleeps": 6,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "size": "210 m2",
+    "sizeImperial": "2,260 sq ft",
+    "bed": "Three kings, one convertible to twins",
+    "rateFrom": 2980,
+    "terrace": "120 m2 terrace with 14 x 4 m pool",
+    "position": "Old tower terrace, private drive",
+    "minStay": "5 nights",
+    "image": "/assets/placeholder/residence-02.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-13.svg",
+      "/assets/placeholder/suite-bath-13.svg",
+      "/assets/placeholder/pool-06.svg"
+    ],
+    "plan": "/assets/placeholder/plan-13.svg",
+    "prefer": [
+      "residence-kastro",
+      "residence-02"
+    ],
+    "blurb": "Built around the shell of a nineteenth century watchtower, with three bedrooms and the longest pool at Elysis.",
+    "lede": "The oldest structure on the estate and the largest of the three bedroom residences. The tower is now the library; everything else was built around it.",
+    "description": [
+      "The watchtower on this corner was a ruin when the land was bought, and the condition of keeping it was written into the plans. Its ground floor is now a small library with the original stone left exposed, and the residence wraps around it in two low wings.",
+      "Three bedrooms, each with its own bathroom, a living room that seats ten, and a fourteen metre pool along the terrace edge. At night the lights of Naoussa are visible across the water from the pool."
+    ],
+    "amenities": [
+      "14 x 4 m heated pool",
+      "Three en-suite bedrooms",
+      "Library in the original tower",
+      "Breakfast cooked in-residence daily",
+      "Chef and server for dinner on request",
+      "Outdoor dining for twelve",
+      "Private gate and parking for two cars",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "The tower",
+        "v": "Nineteenth century, now the library"
+      },
+      {
+        "k": "Pool",
+        "v": "14 m, the longest here"
+      },
+      {
+        "k": "Best for",
+        "v": "Three couples, or a family of six"
+      }
+    ]
+  },
+  {
+    "id": "elaia-family-residence",
+    "name": "Elaia Family Residence",
+    "collection": "Residences",
+    "view": "Garden and bay",
+    "sleeps": 7,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "size": "195 m2",
+    "sizeImperial": "2,099 sq ft",
+    "bed": "One king, two twin rooms, one cot",
+    "rateFrom": 2640,
+    "terrace": "100 m2 terrace with 12 x 5 m pool, shallow end",
+    "position": "Garden terraces, private drive",
+    "minStay": "4 nights",
+    "image": "/assets/placeholder/residence-03.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-14.svg",
+      "/assets/placeholder/kids-01.svg",
+      "/assets/placeholder/garden-05.svg"
+    ],
+    "plan": "/assets/placeholder/plan-14.svg",
+    "prefer": [
+      "residence-elaia",
+      "residence-03"
+    ],
+    "blurb": "Designed around children: a shallow pool end, a walled lawn, and bedrooms that are actually near each other.",
+    "lede": "The residence we built after a decade of watching families try to make a luxury villa work with a four year old in it.",
+    "description": [
+      "Everything here answers a practical problem. The pool has a shallow shelf at the near end and a gate on the terrace. The two twin rooms sit either side of the main bedroom rather than across the house. There is a lawn, which on a Cycladic hillside takes some doing, and it is walled.",
+      "The kitchen is stocked before you arrive from a list you send us, and Little Elysis, the kids club, is a three minute walk down the path."
+    ],
+    "amenities": [
+      "12 x 5 m pool with shallow shelf and gate",
+      "Walled lawn",
+      "Three bedrooms, two in twin",
+      "Cot, high chair and buggy on request",
+      "Kitchen pre-stocked to your list",
+      "Babysitting by arrangement",
+      "Outdoor dining for ten",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Best for",
+        "v": "Families with young children"
+      },
+      {
+        "k": "Pool",
+        "v": "Shallow shelf, gated terrace"
+      },
+      {
+        "k": "Kids club",
+        "v": "3 minutes on foot"
+      }
+    ]
+  },
+  {
+    "id": "lighthouse-loft",
+    "name": "Lighthouse Loft",
+    "collection": "Signature",
+    "view": "360 degrees, sea on three sides",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": "120 m2",
+    "sizeImperial": "1,292 sq ft",
+    "bed": "Two kings",
+    "rateFrom": 2150,
+    "terrace": "70 m2 over two levels, roof terrace",
+    "position": "The point, above the beach path",
+    "minStay": "4 nights",
+    "image": "/assets/placeholder/penthouse-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-15.svg",
+      "/assets/placeholder/suite-bath-14.svg",
+      "/assets/placeholder/suite-sea-04.svg"
+    ],
+    "plan": "/assets/placeholder/plan-15.svg",
+    "prefer": [
+      "signature-lighthouse",
+      "signature-01"
+    ],
+    "blurb": "A split level on the point with a roof terrace, sea on three sides and a stair down to the beach path.",
+    "lede": "Two floors on the narrowest part of the point. Sea through every window, a roof terrace above the roofline of everything else, and thirty steps to the water.",
+    "description": [
+      "The lower floor holds the two bedrooms, cut into the rock and cool all day. Above them the living room opens on three sides, and above that the roof terrace looks over the whole bay with nothing in the way.",
+      "Sunrise and sunset are both visible from the roof, which is true of no other residence here. Breakfast is served up there if you want it, and the bar will set up for eight."
+    ],
+    "amenities": [
+      "Roof terrace with 360 degree view",
+      "Two floors, two king bedrooms",
+      "Outdoor shower on the rock",
+      "Direct stair to the beach path",
+      "Breakfast served on the roof",
+      "Outdoor dining for eight",
+      "Smart TV and Sonos throughout",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "The roof",
+        "v": "Sunrise and sunset both"
+      },
+      {
+        "k": "To the water",
+        "v": "30 steps"
+      },
+      {
+        "k": "Best for",
+        "v": "Two couples who want the view"
+      }
+    ]
+  },
+  {
+    "id": "aithra-penthouse",
+    "name": "Aithra Penthouse",
+    "collection": "Signature",
+    "view": "Open sea and sunset, west",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "size": "180 m2",
+    "sizeImperial": "1,938 sq ft",
+    "bed": "Two kings",
+    "rateFrom": 3400,
+    "terrace": "140 m2 roof terrace with 10 x 4 m pool",
+    "position": "Above the main house, private lift",
+    "minStay": "5 nights",
+    "image": "/assets/placeholder/penthouse-02.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-16.svg",
+      "/assets/placeholder/suite-bath-15.svg",
+      "/assets/placeholder/bar-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-16.svg",
+    "prefer": [
+      "signature-aithra",
+      "signature-02"
+    ],
+    "blurb": "The whole top of the main house: a rooftop pool, an outdoor kitchen and a private lift.",
+    "lede": "A hundred and forty square metres of roof terrace with a ten metre pool on it, reached by a lift that stops nowhere else.",
+    "description": [
+      "Aithra occupies the entire upper floor of the main house. The interior is two bedroom suites and a living room; the point of it is what is outside, where the terrace runs the full footprint of the building with a pool along the western edge and an outdoor kitchen at the other end.",
+      "The bar sends someone up at seven each evening unless you tell them not to. It is the residence taken for anniversaries and, twice a season, for a proposal."
+    ],
+    "amenities": [
+      "10 x 4 m heated rooftop pool",
+      "140 m2 private roof terrace",
+      "Outdoor kitchen and bar",
+      "Private lift",
+      "Two en-suite bedrooms, third bathroom",
+      "Evening bar service on the terrace",
+      "Chef for dinner on request",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "Terrace",
+        "v": "140 m2, all yours"
+      },
+      {
+        "k": "Access",
+        "v": "Private lift"
+      },
+      {
+        "k": "Best for",
+        "v": "The occasion"
+      }
+    ]
+  },
+  {
+    "id": "elysis-beach-house",
+    "name": "Elysis Beach House",
+    "collection": "Signature",
+    "view": "Beachfront, sea at the door",
+    "sleeps": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": "175 m2",
+    "sizeImperial": "1,884 sq ft",
+    "bed": "Two kings",
+    "rateFrom": 3900,
+    "terrace": "110 m2 deck with 10 x 4 m pool, on the sand",
+    "position": "South end of the private beach",
+    "minStay": "5 nights",
+    "image": "/assets/placeholder/beach-house-01.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-17.svg",
+      "/assets/placeholder/beach-01.svg",
+      "/assets/placeholder/bonfire-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-17.svg",
+    "prefer": [
+      "signature-beach-house",
+      "signature-03"
+    ],
+    "blurb": "The only building on the sand: a two bedroom house with a deck, a pool and the bay for a garden.",
+    "lede": "At the far end of the private beach, where the rock closes the bay. Step off the deck onto sand, and there is nobody between you and the water.",
+    "description": [
+      "The Beach House was the original fisherman's store and is the only structure at sea level. It was rebuilt in timber and stone with a deck across the whole front, a pool set into it, and two bedroom suites behind.",
+      "Its own stretch of beach is screened by the rock at the south end, so it stays private even when the beach club is busy. The bonfire on Thursday nights is lit fifty metres from the deck, which guests either love or ask us to move; it does not move."
+    ],
+    "amenities": [
+      "Beachfront deck on the sand",
+      "10 x 4 m heated pool",
+      "Two en-suite bedrooms",
+      "Screened private stretch of beach",
+      "Kayaks and paddleboards at the door",
+      "Outdoor dining for eight",
+      "Breakfast served on the deck",
+      "Daily housekeeping and turndown"
+    ],
+    "highlights": [
+      {
+        "k": "On the sand",
+        "v": "The only residence at sea level"
+      },
+      {
+        "k": "Water",
+        "v": "At the edge of the deck"
+      },
+      {
+        "k": "Best for",
+        "v": "Swimmers, and the fire on Thursdays"
+      }
+    ]
+  },
+  {
+    "id": "nefeli-estate",
+    "name": "Nefeli Estate",
+    "collection": "Signature",
+    "view": "The whole bay, from the ridge",
+    "sleeps": 8,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "size": "320 m2",
+    "sizeImperial": "3,444 sq ft",
+    "bed": "Four kings, two convertible to twins",
+    "rateFrom": 5600,
+    "terrace": "220 m2 terraces with 18 x 5 m pool",
+    "position": "The ridge, gated, own drive",
+    "minStay": "7 nights",
+    "image": "/assets/placeholder/residence-04.svg",
+    "gallery": [
+      "/assets/placeholder/suite-interior-18.svg",
+      "/assets/placeholder/pool-07.svg",
+      "/assets/placeholder/dining-01.svg"
+    ],
+    "plan": "/assets/placeholder/plan-18.svg",
+    "prefer": [
+      "signature-nefeli",
+      "signature-04"
+    ],
+    "blurb": "Four bedrooms on the ridge with an eighteen metre pool, a staffed kitchen and a gate of its own.",
+    "lede": "The whole ridge, taken as one house. Four bedroom suites, an eighteen metre pool, and a team of three who work only for the estate while you are in it.",
+    "description": [
+      "Nefeli is the largest thing Elysis has and the least visible: it sits behind the ridge line, screened from the rest of the resort by the grove, with its own gate off the coast road and a drive that goes nowhere else.",
+      "Four bedroom suites open onto a courtyard; the living rooms and the long terrace face the bay. A cook, a housekeeper and a house manager are assigned to the estate for the duration of a booking, and the wine cellar downstairs is stocked to a list you send ahead."
+    ],
+    "amenities": [
+      "18 x 5 m heated pool",
+      "Four en-suite bedroom suites",
+      "Cook, housekeeper and house manager",
+      "Private wine cellar, stocked to order",
+      "Gym and treatment room",
+      "Gated drive and parking for four cars",
+      "Outdoor dining for sixteen",
+      "Full board arranged on request"
+    ],
+    "highlights": [
+      {
+        "k": "Staff",
+        "v": "Three, assigned to the estate"
+      },
+      {
+        "k": "Pool",
+        "v": "18 m, heated"
+      },
+      {
+        "k": "Best for",
+        "v": "A family taking the whole ridge"
+      }
+    ]
+  }
+]

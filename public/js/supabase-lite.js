@@ -35,7 +35,7 @@
 
   function createClient(url, anonKey, options) {
     const base = String(url || '').replace(/\/+$/, '');
-    const storageKey = (options && options.storageKey) || 'merkel-auth';
+    const storageKey = (options && options.storageKey) || 'elysis-auth';
     const listeners = [];
 
     let session = null;
@@ -181,5 +181,7 @@
     };
   }
 
-  global.MerkelSupabase = { createClient };
+  global.ElysisSupabase = { createClient };
+  // The name this was published under before the site was a resort.
+  global.MerkelSupabase = global.ElysisSupabase;
 })(window);

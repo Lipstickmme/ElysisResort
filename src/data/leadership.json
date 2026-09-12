@@ -1,10 +1,11 @@
 [
   {
-    "id": "tommy-kowalski",
-    "name": "Tommy Kowalski",
-    "role": "Founding Principal & CEO",
-    "image": "/assets/img/ceo.jpg",
-    "quote": "The best-performing structures are engineered early, while ideas are still cheap to change.",
-    "bio": "Tommy founded Merkel Constructions in 1998 after a decade designing tall buildings across Europe, and holds a doctorate in structural engineering. Since then they have led the practice through more than six hundred commissions, from super-tall frames to fjord-spanning bridges, and still review every major structural scheme the studio puts its name to."
+    "id": "marina-stavrou",
+    "name": "Marina Stavrou",
+    "role": "General Manager",
+    "image": "/assets/placeholder/portrait-01.svg",
+    "prefer": ["gm", "portrait-gm"],
+    "quote": "Eighteen residences is not a limitation. It is the whole promise, and everything else follows from it.",
+    "bio": "Marina grew up in Naoussa, two bays east of here, and spent fifteen years in hotels in Athens, Paris and Kyoto before coming home to open Elysis in 2019. They read every message that arrives through this site, and answer most of them personally."
   }
 ]

@@ -174,7 +174,7 @@ async function withApp(env, fn) {
         SUPABASE_URL: `http://127.0.0.1:${receiving.address().port}`,
         SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY,
         SUPABASE_ANON_KEY: mock.ANON_KEY,
-        MAILBOX_ADDRESS: 'Merkel Constructions <contact@merkel.test>',
+        MAILBOX_ADDRESS: 'Elysis Luxury Resort <reservations@elysis.test>',
       },
       async (base) => {
         const res = await req(base, 'GET', '/api/health?probe=1');
@@ -195,14 +195,76 @@ async function withApp(env, fn) {
     await withApp(
       { SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`, SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY },
       async (base) => {
-        const res = await req(base, 'POST', '/api/contact', {
-          name: 'Ada Kolen', email: 'ada@example.com', company: 'Kolen BV', service: 'Structural',
-          message: 'A 40m span over a canal, tight headroom.',
+        const res = await req(base, 'POST', '/api/reservations', {
+          name: 'Ada Kolen', email: 'ada@example.com', phone: '+31 6 1234 5678',
+          suite: 'kyma-pool-suite', arrival: '2026-07-10', departure: '2026-07-17',
+          adults: 2, children: 1,
+          message: 'Our anniversary. Late arrival on the 10th, and we would like the boat one evening.',
         });
         assert.strictEqual(res.status, 201, JSON.stringify(res.body));
         assert.strictEqual(sb.db.enquiries.rows.length, 1);
-        assert.strictEqual(sb.db.enquiries.rows[0].email, 'ada@example.com');
-        console.log('  ok  contact enquiry persisted');
+        const booked = sb.db.enquiries.rows[0];
+        assert.strictEqual(booked.email, 'ada@example.com');
+        assert.strictEqual(booked.service, 'Kyma Pool Suite', 'the residence asked for is filed');
+        // This database is still on 0001, so the stay columns do not exist and
+        // the write fell back. The dates must survive that in the message.
+        assert.match(booked.message, /2026-07-10 to 2026-07-17 \(7 nights\)/);
+        assert.match(booked.message, /2 adults, 1 child/);
+        console.log('  ok  reservation enquiry persisted, with the stay in the message');
+
+        // The name the form used to post to still reaches the same desk.
+        const legacy = await req(base, 'POST', '/api/contact', {
+          name: 'Tom Bakker', email: 'tom@example.nl',
+          message: 'Writing from an old bookmark of the contact form.',
+        });
+        assert.strictEqual(legacy.status, 201, JSON.stringify(legacy.body));
+        assert.strictEqual(sb.db.enquiries.rows.length, 2);
+        console.log('  ok  /api/contact still lands, for anything still posting to it');
+
+        const bad = await req(base, 'POST', '/api/reservations', {
+          name: 'X', email: 'nope', message: 'short',
+        });
+        assert.strictEqual(bad.status, 422);
+        assert.deepStrictEqual(Object.keys(bad.body.fields).sort(), ['email', 'message', 'name']);
+        console.log('  ok  validation reports every bad field at once');
+
+        const backwards = await req(base, 'POST', '/api/reservations', {
+          name: 'Ada Kolen', email: 'ada@example.com',
+          arrival: '2026-07-20', departure: '2026-07-11',
+          message: 'Dates the wrong way round, which the desk should not have to notice.',
+        });
+        assert.strictEqual(backwards.status, 422);
+        assert.ok(backwards.body.fields.departure, 'a departure before the arrival is refused');
+        console.log('  ok  a departure before the arrival is refused');
+      }
+    );
+    sb.close();
+  }
+
+  /* ---- 5b. the same enquiry against a database that has run 0003 ---- */
+  {
+    const sb = await mock.start({});
+    // What 0003_reservations.sql adds.
+    sb.db.enquiries.columns.push('phone', 'arrival', 'departure', 'nights', 'adults', 'children', 'suite_id');
+    await withApp(
+      { SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`, SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY },
+      async (base) => {
+        const res = await req(base, 'POST', '/api/reservations', {
+          name: 'Ada Kolen', email: 'ada@example.com', phone: '+31 6 1234 5678',
+          suite: 'kyma-pool-suite', arrival: '2026-07-10', departure: '2026-07-17',
+          adults: 2, children: 1,
+          message: 'Our anniversary. Late arrival on the 10th.',
+        });
+        assert.strictEqual(res.status, 201, JSON.stringify(res.body));
+        const row = sb.db.enquiries.rows[0];
+        assert.strictEqual(row.arrival, '2026-07-10');
+        assert.strictEqual(row.departure, '2026-07-17');
+        assert.strictEqual(row.nights, 7);
+        assert.strictEqual(row.adults, 2);
+        assert.strictEqual(row.children, 1);
+        assert.strictEqual(row.suite_id, 'kyma-pool-suite');
+        assert.strictEqual(row.phone, '+31 6 1234 5678');
+        console.log('  ok  with 0003 applied the stay is written to its own columns');
       }
     );
     sb.close();
@@ -330,16 +392,16 @@ async function withApp(env, fn) {
       { SUPABASE_URL: url, SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY },
       async (base) => {
         const res = await req(base, 'POST', '/api/applications', {
-          name: 'Sanne Vermeer', email: 'sanne@example.nl', roleId: 'bridge-engineer',
+          name: 'Sanne Vermeer', email: 'sanne@example.nl', roleId: 'sous-chef',
           phone: '+31 6 1234 5678', experience: '4 to 8',
-          message: 'Six years on bridges, mostly cable stayed and one lock gate.',
+          message: 'Six seasons on the line, the last two running fish over charcoal.',
         });
         assert.strictEqual(res.status, 201);
         assert.strictEqual(res.body.stored, 'enquiries', 'it must land somewhere');
         assert.strictEqual(sb.db.enquiries.rows.length, 1);
         const filed = sb.db.enquiries.rows[0];
         assert.match(filed.service, /^Application: /);
-        assert.match(filed.message, /Six years on bridges/);
+        assert.match(filed.message, /Six seasons on the line/);
         assert.match(filed.message, /\+31 6 1234 5678/, 'the phone survives the fallback');
         console.log('  ok  an application is filed as an enquiry when its own table is missing');
       }
@@ -385,7 +447,7 @@ async function withApp(env, fn) {
   /* ---- 15. a signed Resend delivery reaches the admin inbox ---- */
   {
     const { sign } = require(ROOT + '/src/utils/webhookSignature');
-    const SECRET = 'whsec_' + Buffer.from('merkel-inbound-test-secret').toString('base64');
+    const SECRET = 'whsec_' + Buffer.from('elysis-inbound-test-secret').toString('base64');
     const sb = await mock.start({});
     await withApp(
       {
@@ -393,7 +455,7 @@ async function withApp(env, fn) {
         SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY,
         SUPABASE_ANON_KEY: mock.ANON_KEY,
         RESEND_WEBHOOK_SECRET: SECRET,
-        MAILBOX_ADDRESS: 'Merkel Constructions <contact@merkel.test>',
+        MAILBOX_ADDRESS: 'Elysis Luxury Resort <reservations@elysis.test>',
         // No forwarding here: this asserts the archive that /admin reads.
         FORWARD_TO: '',
         RESEND_API_KEY: '',
@@ -416,7 +478,7 @@ async function withApp(env, fn) {
           type: 'email.received',
           data: {
             from: 'Ada Kolen <ada@example.com>',
-            to: ['contact@merkel.test'],
+            to: ['reservations@elysis.test'],
             subject: 'Re: A 40m span',
             text: 'Can you quote the canal crossing?',
             message_id: '<m1@example.com>',
@@ -432,7 +494,7 @@ async function withApp(env, fn) {
         assert.strictEqual(sb.db.email_threads.rows[0].subject, 'A 40m span');
         assert.strictEqual(sb.db.email_messages.rows.length, 1);
         assert.strictEqual(sb.db.email_messages.rows[0].direction, 'inbound');
-        assert.strictEqual(sb.db.email_messages.rows[0].to_email, 'contact@merkel.test');
+        assert.strictEqual(sb.db.email_messages.rows[0].to_email, 'reservations@elysis.test');
         console.log('  ok  a signed inbound delivery lands in the admin inbox');
 
         const tampered = body.replace('Ada Kolen', 'Mallory Vane');
@@ -470,7 +532,7 @@ async function withApp(env, fn) {
         SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`,
         SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY,
         RESEND_WEBHOOK_SECRET: SECRET, RESEND_API_KEY: 'test-key',
-        MAILBOX_ADDRESS: 'contact@merkel.test', FORWARD_TO: '',
+        MAILBOX_ADDRESS: 'reservations@elysis.test', FORWARD_TO: '',
       },
       async (base) => {
         // Shaped like a real Resend delivery: envelope only, no text or html.
@@ -481,9 +543,9 @@ async function withApp(env, fn) {
             email_id: '4a93e097-c85c-408f-89fd-67bc22511be5',
             from: 'ada@example.com',
             message_id: '<ada-2@example.com>',
-            received_for: ['contact@merkel.test'],
+            received_for: ['reservations@elysis.test'],
             subject: 'Canal crossing',
-            to: ['contact@merkel.test'],
+            to: ['reservations@elysis.test'],
           },
         });
         const id = 'msg_body', ts = String(Math.floor(Date.now() / 1000));
@@ -542,7 +604,7 @@ async function withApp(env, fn) {
       return res.json();
     };
 
-    const staff = await signIn('desk@merkel.test', 'pw-desk');
+    const staff = await signIn('desk@elysis.test', 'pw-desk');
     const outsider = await signIn('nosy@example.com', 'pw-nosy');
     sb.db.admins.rows.push({ user_id: staff.user.id, email: staff.user.email });
 
@@ -555,14 +617,14 @@ async function withApp(env, fn) {
     sb.db.email_messages.rows.push({
       id: 'aaaaaaaa-2222-4333-8444-555555555555', created_at: new Date().toISOString(),
       thread_id: thread.id, direction: 'inbound', from_email: 'ada@example.com',
-      to_email: 'contact@merkel.test', subject: 'A 40m span', message_id: '<ada-1@example.com>',
+      to_email: 'reservations@elysis.test', subject: 'A 40m span', message_id: '<ada-1@example.com>',
       has_attachments: false,
     });
 
     await withApp(
       {
         SUPABASE_URL: sbUrl, SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY,
-        RESEND_API_KEY: 'test-key', MAILBOX_ADDRESS: 'contact@merkel.test',
+        RESEND_API_KEY: 'test-key', MAILBOX_ADDRESS: 'reservations@elysis.test',
       },
       async (base) => {
         const reply = (token, payload) => fetch(base + '/api/emails/reply', {
@@ -599,7 +661,7 @@ async function withApp(env, fn) {
         assert.strictEqual(sentMail[0].headers['In-Reply-To'], '<ada-1@example.com>');
         // A bare MAILBOX_ADDRESS would otherwise show in the recipient's inbox
         // as "contact", the local part, rather than as the studio.
-        assert.strictEqual(sentMail[0].from, 'Merkel Constructions <contact@merkel.test>');
+        assert.strictEqual(sentMail[0].from, 'Elysis Luxury Resort <reservations@elysis.test>');
         // Written by a person, so no monospace HTML part goes with it.
         assert.strictEqual(sentMail[0].html, undefined);
         assert.strictEqual(sentMail[0].text, 'Quoting next week.');
@@ -613,6 +675,38 @@ async function withApp(env, fn) {
     );
 
     global.fetch = realFetch;
+    sb.close();
+  }
+
+  /* ---- 16. the content behind the pages ---- */
+  {
+    const sb = await mock.start({});
+    await withApp(
+      { SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`, SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY, SUPABASE_ANON_KEY: mock.ANON_KEY },
+      async (base) => {
+        const suites = await req(base, 'GET', '/api/suites');
+        assert.strictEqual(suites.body.count, 18, 'eighteen residences, and no more');
+        assert.ok(suites.body.suites.every((s) => s.image && s.gallery.length && s.plan), 'every residence has its pictures');
+        assert.ok(suites.body.collections.length >= 4);
+        console.log(`  ok  ${suites.body.count} residences, each with a hero, a gallery and a plan`);
+
+        const one = await req(base, 'GET', '/api/suites/nefeli-estate');
+        assert.strictEqual(one.status, 200);
+        assert.strictEqual(one.body.suite.bedrooms, 4);
+        assert.ok(one.body.next.id, 'a residence knows the one after it');
+        const missing = await req(base, 'GET', '/api/suites/no-such-residence');
+        assert.strictEqual(missing.status, 404);
+        console.log('  ok  a residence resolves by id, and an unknown one 404s');
+
+        const experiences = await req(base, 'GET', '/api/experiences');
+        const dining = await req(base, 'GET', '/api/dining');
+        const gallery = await req(base, 'GET', '/api/gallery');
+        const resort = await req(base, 'GET', '/api/resort');
+        assert.ok(experiences.body.count >= 10 && dining.body.count >= 4 && gallery.body.count >= 12);
+        assert.strictEqual(resort.body.residences, 18);
+        console.log('  ok  experiences, dining, gallery and the house facts all serve');
+      }
+    );
     sb.close();
   }
 

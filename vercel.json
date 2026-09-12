@@ -5,9 +5,8 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/projects/:id", "destination": "/project.html" },
-    { "source": "/services/:id", "destination": "/service.html" }
+  "redirects": [
+    { "source": "/contact", "destination": "/reserve", "permanent": true }
   ],
   "headers": [
     {

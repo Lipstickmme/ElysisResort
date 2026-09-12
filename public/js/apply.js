@@ -3,7 +3,7 @@
 /* The recruitment form. Roles come from the same API the careers page uses,
    and the one named in ?role= is preselected so the apply link carries over. */
 (function () {
-  const M = window.MERKEL; if (!M) return;
+  const E = window.ELYSIS; if (!E) return;
   const form = document.getElementById('apply-form');
   if (!form) return;
 
@@ -35,9 +35,9 @@
     titleEl.textContent = role.title;
     subEl.textContent = role.summary;
     metaEl.innerHTML = `
-      <div class="row"><div class="k">Team</div><div class="val">${M.esc(role.team)}</div></div>
-      <div class="row"><div class="k">Location</div><div class="val">${M.esc(role.location)}</div></div>
-      <div class="row"><div class="k">Contract</div><div class="val">${M.esc(role.type)}</div></div>`;
+      <div class="row"><div class="k">Team</div><div class="val">${E.esc(role.team)}</div></div>
+      <div class="row"><div class="k">Location</div><div class="val">${E.esc(role.location)}</div></div>
+      <div class="row"><div class="k">Contract</div><div class="val">${E.esc(role.type)}</div></div>`;
   }
 
   function validate() {
@@ -107,11 +107,11 @@
         statusEl.textContent = 'Too many attempts. Please wait a moment and try again.';
       } else {
         statusEl.className = 'form-status bad';
-        statusEl.textContent = data.message || `Something went wrong. Please email ${M.site.email}.`;
+        statusEl.textContent = data.message || `Something went wrong. Please email ${E.site.email}.`;
       }
     } catch (err) {
       statusEl.className = 'form-status bad';
-      statusEl.textContent = `Network error. Please email ${M.site.email}.`;
+      statusEl.textContent = `Network error. Please email ${E.site.email}.`;
     } finally {
       btn.disabled = false;
       btn.innerHTML = original;
@@ -119,7 +119,7 @@
   });
 
   (async () => {
-    try { const d = await M.fetchJSON('/api/careers'); roles = d.roles || []; } catch (e) {}
+    try { const d = await E.fetchJSON('/api/careers'); roles = d.roles || []; } catch (e) {}
     roles.forEach((r) => {
       const option = document.createElement('option');
       option.value = r.id;

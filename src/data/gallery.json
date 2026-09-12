@@ -1,0 +1,24 @@
+{
+  "_comment": "The gallery grid. Categories drive the filter chips on /gallery. Swap in real photography by dropping a file named in prefer into public/assets/img, or by pointing image at the real path.",
+  "items": [
+    { "id": "arrival", "title": "The arrival court", "category": "The Resort", "image": "/assets/placeholder/village-03.svg", "prefer": ["gallery-arrival"] },
+    { "id": "west-terrace", "title": "The west terrace at seven", "category": "The Resort", "image": "/assets/placeholder/header-01.svg", "prefer": ["gallery-terrace"] },
+    { "id": "grove", "title": "The old grove", "category": "The Resort", "image": "/assets/placeholder/garden-09.svg", "prefer": ["gallery-grove"] },
+    { "id": "suite-terrace", "title": "A suite terrace, morning", "category": "Residences", "image": "/assets/placeholder/suite-terrace-04.svg", "prefer": ["gallery-suite-terrace"] },
+    { "id": "suite-vault", "title": "Under the vault", "category": "Residences", "image": "/assets/placeholder/suite-interior-19.svg", "prefer": ["gallery-suite-interior"] },
+    { "id": "villa-pool", "title": "A villa pool at noon", "category": "Residences", "image": "/assets/placeholder/villa-07.svg", "prefer": ["gallery-villa"] },
+    { "id": "beach-morning", "title": "The bay before eight", "category": "The Beach", "image": "/assets/placeholder/beach-08.svg", "prefer": ["gallery-beach"] },
+    { "id": "beach-club", "title": "Loungers, north end", "category": "The Beach", "image": "/assets/placeholder/beach-09.svg", "prefer": ["gallery-beach-club"] },
+    { "id": "kayaks", "title": "Kayaks on the sand", "category": "The Beach", "image": "/assets/placeholder/beach-10.svg", "prefer": ["gallery-kayaks"] },
+    { "id": "infinity", "title": "The infinity edge", "category": "The Pool", "image": "/assets/placeholder/pool-11.svg", "prefer": ["gallery-pool"] },
+    { "id": "pool-night", "title": "Lengths after dark", "category": "The Pool", "image": "/assets/placeholder/pool-12.svg", "prefer": ["gallery-pool-night"] },
+    { "id": "thalassa-terrace", "title": "Thalassa, laid for dinner", "category": "The Table", "image": "/assets/placeholder/dining-11.svg", "prefer": ["gallery-thalassa"] },
+    { "id": "raw-bar", "title": "The counter at Alati", "category": "The Table", "image": "/assets/placeholder/bar-08.svg", "prefer": ["gallery-alati"] },
+    { "id": "cellar", "title": "Down in the cellar", "category": "The Table", "image": "/assets/placeholder/wine-03.svg", "prefer": ["gallery-cellar"] },
+    { "id": "hammam", "title": "The hammam", "category": "The Spa", "image": "/assets/placeholder/spa-05.svg", "prefer": ["gallery-hammam"] },
+    { "id": "treatment", "title": "A treatment room in the rock", "category": "The Spa", "image": "/assets/placeholder/spa-06.svg", "prefer": ["gallery-spa"] },
+    { "id": "bonfire", "title": "Thursday, on the sand", "category": "Nights", "image": "/assets/placeholder/bonfire-05.svg", "prefer": ["gallery-bonfire"] },
+    { "id": "sunset-sail", "title": "Coming back in", "category": "Nights", "image": "/assets/placeholder/sail-03.svg", "prefer": ["gallery-sailing"] },
+    { "id": "lanterns", "title": "Lanterns on the path", "category": "Nights", "image": "/assets/placeholder/garden-10.svg", "prefer": ["gallery-lanterns"] }
+  ]
+}
