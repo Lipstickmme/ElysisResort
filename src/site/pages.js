@@ -61,7 +61,7 @@ function suiteCard(s, eager = false) {
             <span>${esc(s.view)}</span>
           </div>
           <div class="s-card-foot">
-            <span class="rate"><em>from ${rate(s.rateFrom)}</em> per night</span>
+            <span class="rate"><em>from ${rate(s.rateFrom)}</em><small>per night</small></span>
             <span class="go">View residence</span>
           </div>
         </div>
