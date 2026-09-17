@@ -199,17 +199,21 @@ Resend.
 
 ## Images
 
-Nothing in `public/assets/placeholder/` is a photograph. It is artwork drawn by
-`scripts/make-placeholders.js`, one file per image slot the content asks for, so
-the site can be reviewed and signed off before the shoot.
+Twenty photographs are in `public/assets/img/`, covering the whole landing page,
+every page header, the gallery, twelve of the eighteen residences, two of the
+five kitchens and two experiences. Every other slot falls back to drawn artwork
+from `scripts/make-placeholders.js`, so nothing is ever broken or blank.
 
-Swapping in real photography is a file drop, not a code change: put a file named
-after the slot into `public/assets/img/` and the next build picks it up.
-`public/assets/img/README.md` lists every name, and the build log says which
-photographs it found.
+- `npm run photos` prints what is photographed and the exact file name each
+  empty slot is waiting for. The list is generated from the content.
+- `npm run optimise` writes the WebP copies the site actually serves (the
+  supplied photographs: 24 MB as PNG, 1.9 MB as WebP).
+- Adding one is a file drop: name it after the slot and rebuild. See
+  `public/assets/img/README.md`.
 
-Per-entry names come from the `prefer` array on each residence, experience,
-venue and gallery frame; page-level slots come from `src/data/images.json`.
+Floor plans are drawn on purpose. Extra gallery frames are optional: a file
+named `<slot>-2`, `-3` or `-4` beside a hero opens a gallery band on that page
+by itself.
 
 ## Configuration
 

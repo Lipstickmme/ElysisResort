@@ -13,7 +13,9 @@
     "icons": "node scripts/make-brand-icons.js",
     "check:vercel": "node scripts/check-vercel-upload.js",
     "test": "node test/api.test.js",
-    "test:browser": "node test/browser.test.js && node test/fallback.test.js"
+    "test:browser": "node test/browser.test.js && node test/fallback.test.js",
+    "optimise": "node scripts/optimise-images.js",
+    "photos": "node scripts/photo-status.js"
   },
   "engines": {
     "node": ">=18"
@@ -29,5 +31,8 @@
   "private": true,
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
   }
 }

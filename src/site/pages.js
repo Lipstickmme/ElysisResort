@@ -14,7 +14,7 @@ const images = require('./images');
 const site = require('../data/site.json');
 const { reserveForm, esc } = require('./layout');
 
-const { suites, experiences, dining, gallery, resort, leadership, collections } = content;
+const { suites, experiences, dining, gallery, resort, leadership, collections, isPhoto } = content;
 const rate = content.rate;
 
 /* ---------------------------------------------------------------- *
@@ -158,6 +158,19 @@ const suitesSection = chapter({
       </div>`,
 });
 
+/**
+ * The landing page shows the photographed rooms, tables and days, and says in
+ * a line what else there is. A drawn stand-in beside a photograph reads as a
+ * missing photograph; a sentence does not.
+ */
+const shown = (list) => {
+  const shot = list.filter((entry) => isPhoto(entry.image));
+  return shot.length ? shot : list;
+};
+
+const diningShown = shown(dining).slice(0, 4);
+const diningRest = dining.filter((v) => !diningShown.includes(v));
+
 const diningSection = chapter({
   id: 'dining',
   label: 'The table',
@@ -171,15 +184,19 @@ const diningSection = chapter({
         </div>
         <a href="/dining" class="btn ghost">Dining at Elysis</a>
       </div>
-      <div class="d-strip">
-        ${dining.slice(0, 4).map((v) => `
+      <div class="d-strip${diningShown.length < 3 ? ' is-few' : ''}">
+        ${diningShown.map((v) => `
         <a class="d-strip-item" href="/dining#${esc(v.id)}" data-reveal>
           <div class="d-strip-media"><img src="${v.image}" alt="${esc(v.name)}" loading="lazy" decoding="async" /></div>
           <h3>${esc(v.name)}</h3>
           <span class="d-strip-kind">${esc(v.kind)}</span>
         </a>`).join('')}
-      </div>`,
+      </div>
+      ${diningRest.length ? `<p class="also" data-reveal>Also ${diningRest.map((v) => `<a href="/dining#${esc(v.id)}">${esc(v.name)}</a>`).join(', ')}.</p>` : ''}`,
 });
+
+const experiencesShown = shown(experiences).slice(0, 6);
+const experiencesRest = experiences.filter((e) => !experiencesShown.includes(e));
 
 const experiencesSection = chapter({
   id: 'experiences',
@@ -194,9 +211,10 @@ const experiencesSection = chapter({
         </div>
         <a href="/experiences" class="btn ghost">All experiences</a>
       </div>
-      <div class="e-grid">
-        ${[0, 3, 2, 4, 1, 7].map((i) => experienceCard(experiences[i])).join('\n')}
-      </div>`,
+      <div class="e-grid${experiencesShown.length < 3 ? ' is-few' : ''}">
+        ${experiencesShown.map((e) => experienceCard(e)).join('\n')}
+      </div>
+      ${experiencesRest.length ? `<p class="also" data-reveal>And ${experiencesRest.length} more, from the spa and the hammam to sunset sailing, diving and the cooking school. <a href="/experiences">See them all</a>.</p>` : ''}`,
 });
 
 const hostSection = chapter({
@@ -299,6 +317,9 @@ const suitesContent = `
 /** One residence, as its own page. */
 function suiteProfile(s) {
   const after = content.nextSuite(s.id);
+  // Only the photographed frames. A residence whose gallery is still drawn
+  // artwork shows its plan and its words rather than three obvious stand-ins.
+  const shots = s.gallery.filter(isPhoto);
   return `
   ${pageHeader({
     eyebrow: s.collection,
@@ -348,10 +369,11 @@ function suiteProfile(s) {
 
   <section class="section-pad alt">
     <div class="wrap">
+      ${shots.length ? `
       <div class="section-head" data-reveal><span class="eyebrow">The residence</span><h2>${esc(s.name)}, in pictures.</h2></div>
       <div class="profile-gallery">
-        ${s.gallery.map((src, i) => `<figure data-reveal><img src="${src}" alt="${esc(s.name)}, view ${i + 2}" loading="lazy" decoding="async" /></figure>`).join('\n        ')}
-      </div>
+        ${shots.map((src, i) => `<figure data-reveal><img src="${src}" alt="${esc(s.name)}, view ${i + 2}" loading="lazy" decoding="async" /></figure>`).join('\n        ')}
+      </div>` : ''}
       <div class="profile-plan" data-reveal>
         <figure><img src="${s.plan}" alt="Floor plan of the ${esc(s.name)}" loading="lazy" decoding="async" /><figcaption>Floor plan, indicative</figcaption></figure>
         <div>
@@ -404,6 +426,7 @@ const experiencesContent = `
 
 function experienceProfile(e) {
   const after = content.nextExperience(e.id);
+  const shots = e.gallery.filter(isPhoto);
   return `
   ${pageHeader({
     eyebrow: `${e.code} &mdash; ${e.category}`,
@@ -429,13 +452,14 @@ function experienceProfile(e) {
     </div>
   </section>
 
+  ${shots.length ? `
   <section class="section-pad alt">
     <div class="wrap">
       <div class="profile-gallery two">
-        ${e.gallery.map((src, i) => `<figure data-reveal><img src="${src}" alt="${esc(e.title)}, view ${i + 2}" loading="lazy" decoding="async" /></figure>`).join('\n        ')}
+        ${shots.map((src, i) => `<figure data-reveal><img src="${src}" alt="${esc(e.title)}, view ${i + 2}" loading="lazy" decoding="async" /></figure>`).join('\n        ')}
       </div>
     </div>
-  </section>
+  </section>` : ''}
 
   <nav class="next-link"><div class="wrap"><a href="/experiences/${esc(after.id)}">
     <span><span class="lbl">Next</span><span class="nm">${esc(after.title)}</span></span>

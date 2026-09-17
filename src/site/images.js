@@ -62,7 +62,8 @@ function lookUp(names) {
 /**
  * The best file for a slot.
  * @param {string[]} prefer base names, best first
- * @param {string} fallback what to use until one of them is there
+ * @param {string|null} fallback what to use until one of them is there. Pass
+ *   null for an optional slot: the caller gets null and can leave it out.
  */
 function pick(prefer, fallback) {
   const hit = lookUp(prefer);

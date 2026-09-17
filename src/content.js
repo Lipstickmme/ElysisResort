@@ -32,11 +32,12 @@ function withMedia(entry) {
     ...entry,
     image: images.pick(prefer, entry.image),
   };
-  if (Array.isArray(entry.gallery)) {
-    out.gallery = entry.gallery.map((src, i) =>
-      images.pick(prefer.map((name) => `${name}-${i + 2}`), src)
-    );
-  }
+  // Extra frames are whatever has actually been supplied: suite-kyma-2.webp,
+  // -3 and -4 beside suite-kyma.webp. Nothing is demanded, so a residence with
+  // one photograph shows one photograph rather than three stand-ins.
+  out.gallery = [2, 3, 4]
+    .map((n) => images.pick(prefer.map((name) => `${name}-${n}`), null))
+    .filter(Boolean);
   if (entry.plan) out.plan = images.pick(prefer.map((name) => `${name}-plan`), entry.plan);
   return out;
 }
@@ -46,6 +47,15 @@ const experiences = experiencesRaw.map(withMedia);
 const dining = diningRaw.map(withMedia);
 const gallery = galleryRaw.items.map(withMedia);
 const leadership = leadershipRaw.map(withMedia);
+
+/**
+ * True for a supplied photograph, false for the drawn stand-in artwork.
+ *
+ * Photography lives in /assets/img and artwork in /assets/placeholder, so the
+ * pages can tell the difference and leave out a band that would otherwise show
+ * one photograph above three drawings.
+ */
+const isPhoto = (src) => typeof src === 'string' && src.indexOf('/assets/img/') === 0;
 
 /** The order collections appear in, everywhere. */
 const COLLECTIONS = ['Suites', 'Pool Suites', 'Villas', 'Residences', 'Signature'];
@@ -73,6 +83,7 @@ function rate(value) {
 }
 
 module.exports = {
+  isPhoto,
   suites,
   experiences,
   dining,

@@ -686,9 +686,17 @@ async function withApp(env, fn) {
       async (base) => {
         const suites = await req(base, 'GET', '/api/suites');
         assert.strictEqual(suites.body.count, 18, 'eighteen residences, and no more');
-        assert.ok(suites.body.suites.every((s) => s.image && s.gallery.length && s.plan), 'every residence has its pictures');
+        assert.ok(suites.body.suites.every((s) => s.image && s.plan), 'every residence has a hero and a plan');
+        // Extra frames are whatever photography has actually been supplied, so
+        // a residence may have none; what it must never have is a broken one.
+        assert.ok(
+          suites.body.suites.every((s) => Array.isArray(s.gallery) && s.gallery.every(Boolean)),
+          'extra frames, where supplied, are real paths'
+        );
+        const photographed = suites.body.suites.filter((s) => s.image.startsWith('/assets/img/'));
+        assert.ok(photographed.length >= 12, `residences on real photography: ${photographed.length}`);
         assert.ok(suites.body.collections.length >= 4);
-        console.log(`  ok  ${suites.body.count} residences, each with a hero, a gallery and a plan`);
+        console.log(`  ok  ${suites.body.count} residences with a hero and a plan, ${photographed.length} of them photographed`);
 
         const one = await req(base, 'GET', '/api/suites/nefeli-estate');
         assert.strictEqual(one.status, 200);

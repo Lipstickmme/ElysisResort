@@ -8,18 +8,34 @@
     "dress": "As you are, but bring a layer",
     "seats": 48,
     "image": "/assets/placeholder/dining-04.svg",
-    "gallery": ["/assets/placeholder/dining-05.svg", "/assets/placeholder/bar-04.svg"],
-    "prefer": ["dining-thalassa", "restaurant-01"],
+    "prefer": [
+      "dining-thalassa",
+      "restaurant-01"
+    ],
     "lede": "Our main table, and the only one we ask you to book.",
     "body": [
       "The boats come into Naoussa between six and seven in the morning and the kitchen buys off them. What was landed decides the menu, which is written by hand each afternoon and is shorter than most guests expect: six or seven things, all of them cooked over charcoal or in the wood oven.",
       "The terrace sits directly above the water at the north end of the bay. Tables are spaced for conversation rather than covers, which costs us twenty seats and is worth it."
     ],
-    "signature": ["Whole fish, salt baked", "Grilled octopus, fava, caper leaf", "Lobster pasta from the wood oven", "Kalathaki cheese, thyme honey, walnut"],
+    "signature": [
+      "Whole fish, salt baked",
+      "Grilled octopus, fava, caper leaf",
+      "Lobster pasta from the wood oven",
+      "Kalathaki cheese, thyme honey, walnut"
+    ],
     "details": [
-      { "k": "Booking", "v": "Ask the concierge or the desk; residences are held a table until seven" },
-      { "k": "Children", "v": "Welcome, with an early sitting at 18:30" },
-      { "k": "Private", "v": "The terrace end seats twelve" }
+      {
+        "k": "Booking",
+        "v": "Ask the concierge or the desk; residences are held a table until seven"
+      },
+      {
+        "k": "Children",
+        "v": "Welcome, with an early sitting at 18:30"
+      },
+      {
+        "k": "Private",
+        "v": "The terrace end seats twelve"
+      }
     ]
   },
   {
@@ -31,18 +47,34 @@
     "dress": "Swimwear with a cover-up is fine",
     "seats": 60,
     "image": "/assets/placeholder/dining-06.svg",
-    "gallery": ["/assets/placeholder/garden-08.svg", "/assets/placeholder/dining-07.svg"],
-    "prefer": ["dining-olivo", "restaurant-02"],
+    "prefer": [
+      "dining-olivo",
+      "restaurant-02"
+    ],
     "lede": "The room everyone starts the day in, and half of them never leave.",
     "body": [
       "Breakfast is cooked to order rather than laid out in trays: eggs any way, yoghurt with the thyme honey, bread and pastry from the oven behind the kitchen, and fruit from the garden or the Tuesday market. It runs until noon, because a holiday in which breakfast ends at ten is not a holiday.",
       "From one it becomes a lunch table: salads, grilled vegetables from the garden, a daily pasta, sandwiches for anyone heading out on a boat. Service continues to the loungers at the pool and down at the beach club."
     ],
-    "signature": ["Eggs with graviera and wild greens", "Tomato fritters, Parian style", "Garden salad, thirty days of the same bed", "Peach and almond tart"],
+    "signature": [
+      "Eggs with graviera and wild greens",
+      "Tomato fritters, Parian style",
+      "Garden salad, thirty days of the same bed",
+      "Peach and almond tart"
+    ],
     "details": [
-      { "k": "Breakfast", "v": "08:00 to 12:00, included with every residence" },
-      { "k": "Lunch", "v": "13:00 to 17:00, no booking needed" },
-      { "k": "Service", "v": "To the pool and the beach club" }
+      {
+        "k": "Breakfast",
+        "v": "08:00 to 12:00, included with every residence"
+      },
+      {
+        "k": "Lunch",
+        "v": "13:00 to 17:00, no booking needed"
+      },
+      {
+        "k": "Service",
+        "v": "To the pool and the beach club"
+      }
     ]
   },
   {
@@ -54,18 +86,34 @@
     "dress": "Barefoot",
     "seats": 24,
     "image": "/assets/placeholder/bar-05.svg",
-    "gallery": ["/assets/placeholder/beach-07.svg", "/assets/placeholder/dining-08.svg"],
-    "prefer": ["dining-alati", "restaurant-03"],
+    "prefer": [
+      "dining-alati",
+      "restaurant-03"
+    ],
     "lede": "Twelve stools and a marble counter, with the sea two steps behind you.",
     "body": [
       "Alati is small on purpose. A marble counter, twelve stools, four tables in the sand, and a menu of things that are not cooked: sea bream with citrus and chilli, red prawns with nothing on them, oysters from the Halkidiki beds, sea urchin when the divers bring it.",
       "On Friday nights it reopens at nine with a short list of cocktails and someone playing records. It is the closest thing Elysis has to a late bar, and the fact that it is on sand is not an accident."
     ],
-    "signature": ["Sea bream, citrus, chilli", "Red prawn crudo", "Oysters, mignonette of Parian wine", "Sea urchin on bread, when there is any"],
+    "signature": [
+      "Sea bream, citrus, chilli",
+      "Red prawn crudo",
+      "Oysters, mignonette of Parian wine",
+      "Sea urchin on bread, when there is any"
+    ],
     "details": [
-      { "k": "Booking", "v": "Walk up; the counter is first come" },
-      { "k": "Friday late", "v": "21:00 until the last guest goes" },
-      { "k": "Children", "v": "Welcome at lunch" }
+      {
+        "k": "Booking",
+        "v": "Walk up; the counter is first come"
+      },
+      {
+        "k": "Friday late",
+        "v": "21:00 until the last guest goes"
+      },
+      {
+        "k": "Children",
+        "v": "Welcome at lunch"
+      }
     ]
   },
   {
@@ -77,18 +125,34 @@
     "dress": "Anything",
     "seats": 40,
     "image": "/assets/placeholder/bar-06.svg",
-    "gallery": ["/assets/placeholder/bar-07.svg", "/assets/placeholder/pool-10.svg"],
-    "prefer": ["dining-ampeli", "bar-01"],
+    "prefer": [
+      "dining-ampeli",
+      "bar-01"
+    ],
     "lede": "Where the resort meets between six and eight, whether or not anyone planned to.",
     "body": [
       "The bar takes the whole west terrace above the pool, which means it takes the sunset too. Cocktails lean on what is made here: mastiha, tsipouro, raki infused in the kitchen, citrus from the garden, and a short list of classics done properly.",
       "There is a pianist on Saturdays and nothing at all on Mondays, by request of a guest who stayed three weeks in 2021 and was, on reflection, right."
     ],
-    "signature": ["Mastiha and grapefruit, long", "Tsipouro sour, thyme honey", "Negroni with Parian vermouth", "Assyrtiko by the glass, six of them"],
+    "signature": [
+      "Mastiha and grapefruit, long",
+      "Tsipouro sour, thyme honey",
+      "Negroni with Parian vermouth",
+      "Assyrtiko by the glass, six of them"
+    ],
     "details": [
-      { "k": "Sunset", "v": "Between 19:40 and 20:55, depending on the month" },
-      { "k": "Music", "v": "Piano on Saturdays" },
-      { "k": "Food", "v": "Bar menu until 23:00" }
+      {
+        "k": "Sunset",
+        "v": "Between 19:40 and 20:55, depending on the month"
+      },
+      {
+        "k": "Music",
+        "v": "Piano on Saturdays"
+      },
+      {
+        "k": "Food",
+        "v": "Bar menu until 23:00"
+      }
     ]
   },
   {
@@ -100,18 +164,34 @@
     "dress": "Yours to decide",
     "seats": 16,
     "image": "/assets/placeholder/dining-09.svg",
-    "gallery": ["/assets/placeholder/dining-10.svg", "/assets/placeholder/bonfire-04.svg"],
-    "prefer": ["dining-private", "restaurant-04"],
+    "prefer": [
+      "dining-private",
+      "restaurant-04"
+    ],
     "lede": "The kitchen will cook anywhere on this property that a table can be carried to.",
     "body": [
       "A chef and a server come to you: on your own terrace, at the cellar table for eight, on the beach after the club closes, or at the top of the ridge where the only light is what we bring. The menu is agreed the day before, and it is a conversation rather than a list.",
       "Residences on full board eat this way most nights. For everyone else it is the thing to do once, usually on the last evening."
     ],
-    "signature": ["Menus built around what you ate and liked", "Wine pairing from the cellar", "Whole lamb or fish for a table of eight or more", "Breakfast set up wherever you wake"],
+    "signature": [
+      "Menus built around what you ate and liked",
+      "Wine pairing from the cellar",
+      "Whole lamb or fish for a table of eight or more",
+      "Breakfast set up wherever you wake"
+    ],
     "details": [
-      { "k": "Notice", "v": "A day, more for larger tables" },
-      { "k": "From", "v": "140 per guest, plus wine" },
-      { "k": "Where", "v": "Your terrace, the cellar, the beach, the ridge" }
+      {
+        "k": "Notice",
+        "v": "A day, more for larger tables"
+      },
+      {
+        "k": "From",
+        "v": "140 per guest, plus wine"
+      },
+      {
+        "k": "Where",
+        "v": "Your terrace, the cellar, the beach, the ridge"
+      }
     ]
   }
 ]

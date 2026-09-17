@@ -28,9 +28,10 @@ and local JSON files otherwise, so development works offline with no setup.
 
 ## Step 1: Add your photography
 
-Nothing in `public/assets/placeholder/` is a photograph. It is artwork drawn by
-`npm run placeholders`, one file per image slot the content asks for, so the
-site can be reviewed and signed off before the shoot.
+Twenty photographs are already in `public/assets/img/`. Everything else falls
+back to artwork drawn by `npm run placeholders`, so the site is complete either
+way. **`npm run photos`** prints exactly what is still drawn and the file name
+each slot wants; **`npm run optimise`** writes the WebP copies the site serves.
 
 Swapping in the real thing is a file drop, not a code change: **put a file into
 `public/assets/img/` named after the slot that wants it** and the next build

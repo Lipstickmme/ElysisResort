@@ -6,20 +6,39 @@
     "category": "Water",
     "summary": "Four hundred metres of private shoreline, twenty eight loungers, and a kitchen that sends lunch down to the sand.",
     "image": "/assets/placeholder/beach-02.svg",
-    "gallery": ["/assets/placeholder/beach-03.svg", "/assets/placeholder/bar-02.svg"],
-    "prefer": ["experience-beach-club", "beach"],
+    "prefer": [
+      "experience-beach-club",
+      "beach"
+    ],
     "lede": "The bay is ours as far as the rock at either end, which is the reason the resort is where it is.",
     "body": [
       "Kolymbithres is a granite bay, so the sand is coarse, the water is clear to four metres and the swimming is good from May. Twenty eight loungers are set out in pairs with a metre of space more than is usual between them, and they are never resold once a residence has claimed one for the day.",
       "The club kitchen runs from eleven to six: grilled fish, salads from the garden behind the kitchen, and a raw bar after one. Attendants bring cold towels, sunscreen and a jug of water without being asked, and take orders without hovering."
     ],
     "details": [
-      { "k": "Open", "v": "08:00 to sunset, April to October" },
-      { "k": "Kitchen", "v": "11:00 to 18:00" },
-      { "k": "Included", "v": "Loungers, towels, kayaks, paddleboards" },
-      { "k": "Children", "v": "Welcome; shallow water at the north end" }
+      {
+        "k": "Open",
+        "v": "08:00 to sunset, April to October"
+      },
+      {
+        "k": "Kitchen",
+        "v": "11:00 to 18:00"
+      },
+      {
+        "k": "Included",
+        "v": "Loungers, towels, kayaks, paddleboards"
+      },
+      {
+        "k": "Children",
+        "v": "Welcome; shallow water at the north end"
+      }
     ],
-    "includes": ["Loungers and shade", "Towels and cold water", "Kayaks and paddleboards", "Attendant service"]
+    "includes": [
+      "Loungers and shade",
+      "Towels and cold water",
+      "Kayaks and paddleboards",
+      "Attendant service"
+    ]
   },
   {
     "id": "infinity-pool",
@@ -28,20 +47,39 @@
     "category": "Water",
     "summary": "Twenty five metres on the main terrace, heated from April, with the bay filling the far edge.",
     "image": "/assets/placeholder/pool-08.svg",
-    "gallery": ["/assets/placeholder/pool-09.svg", "/assets/placeholder/bar-03.svg"],
-    "prefer": ["experience-pool", "pool"],
+    "prefer": [
+      "experience-pool",
+      "pool"
+    ],
     "lede": "A pool built to swim in rather than to photograph, which happens to photograph well.",
     "body": [
       "The main pool is twenty five metres, four lanes wide at the shallow end and level with the bay at the far edge. It is heated to 27 degrees from the start of April to the end of October, and lit from below after dark for anyone who wants to swim late.",
       "Lengths before nine are unspoken house etiquette, and the terrace is quiet until breakfast finishes. From eleven the bar is open and the water is anyone's."
     ],
     "details": [
-      { "k": "Size", "v": "25 m, four lanes" },
-      { "k": "Heated", "v": "27 degrees, April to October" },
-      { "k": "Open", "v": "07:00 to 23:00" },
-      { "k": "Bar", "v": "11:00 to sunset" }
+      {
+        "k": "Size",
+        "v": "25 m, four lanes"
+      },
+      {
+        "k": "Heated",
+        "v": "27 degrees, April to October"
+      },
+      {
+        "k": "Open",
+        "v": "07:00 to 23:00"
+      },
+      {
+        "k": "Bar",
+        "v": "11:00 to sunset"
+      }
     ],
-    "includes": ["Loungers and cabanas", "Towels", "Pool bar service", "Evening lighting"]
+    "includes": [
+      "Loungers and cabanas",
+      "Towels",
+      "Pool bar service",
+      "Evening lighting"
+    ]
   },
   {
     "id": "elysis-spa",
@@ -50,20 +88,39 @@
     "category": "Wellness",
     "summary": "Four treatment rooms cut into the rock, a marble hammam, and therapists who work with island oil and salt.",
     "image": "/assets/placeholder/spa-01.svg",
-    "gallery": ["/assets/placeholder/spa-02.svg", "/assets/placeholder/spa-03.svg"],
-    "prefer": ["experience-spa", "spa"],
+    "prefer": [
+      "experience-spa",
+      "spa"
+    ],
     "lede": "Built into the hillside, so it is dark, cool and quiet at the hour when nothing else on the island is.",
     "body": [
       "The spa runs back into the rock behind the main house: four treatment rooms, a marble hammam heated each morning, a cold plunge and a small relaxation room that looks out at knee height onto the garden.",
       "Treatments are built around olive oil pressed eight kilometres from here, sea salt, and thyme honey. The signature is a ninety minute hammam and massage; the one our own team book is the sixty minute deep tissue after a day of swimming."
     ],
     "details": [
-      { "k": "Open", "v": "09:00 to 20:00" },
-      { "k": "Rooms", "v": "Four, two with double beds" },
-      { "k": "Hammam", "v": "Heated from 09:00, booked in 45 minute slots" },
-      { "k": "Booking", "v": "Through the concierge, or at the spa desk" }
+      {
+        "k": "Open",
+        "v": "09:00 to 20:00"
+      },
+      {
+        "k": "Rooms",
+        "v": "Four, two with double beds"
+      },
+      {
+        "k": "Hammam",
+        "v": "Heated from 09:00, booked in 45 minute slots"
+      },
+      {
+        "k": "Booking",
+        "v": "Through the concierge, or at the spa desk"
+      }
     ],
-    "includes": ["Hammam and cold plunge", "Relaxation room", "Island oil and salt rituals", "In-residence treatments on request"]
+    "includes": [
+      "Hammam and cold plunge",
+      "Relaxation room",
+      "Island oil and salt rituals",
+      "In-residence treatments on request"
+    ]
   },
   {
     "id": "bonfire-nights",
@@ -72,20 +129,39 @@
     "category": "Evening",
     "summary": "Thursday, on the sand: driftwood fire, a lamb on the spit, raki, and whoever on the island turns up with an instrument.",
     "image": "/assets/placeholder/bonfire-02.svg",
-    "gallery": ["/assets/placeholder/bonfire-03.svg", "/assets/placeholder/beach-04.svg"],
-    "prefer": ["experience-bonfire", "bonfire"],
+    "prefer": [
+      "experience-bonfire",
+      "bonfire"
+    ],
     "lede": "The one fixed event in the week, and the reason half our guests book a Thursday into their stay.",
     "body": [
       "The fire is lit at eight on the beach below the club. There is a lamb on the spit from five in the afternoon, bread baked that day, wine from the cellar in jugs, and raki that the kitchen makes no apology for. Tables are long and shared; nobody is seated by residence.",
       "Music starts when it starts. Two of the kitchen team play, a lyra player comes over from Naoussa most weeks, and by midnight it is usually guests. It runs until the fire is out, which is later in August than in May."
     ],
     "details": [
-      { "k": "When", "v": "Thursdays from 20:00, May to September" },
-      { "k": "Where", "v": "The private beach" },
-      { "k": "Table", "v": "Long and shared, no seating plan" },
-      { "k": "Price", "v": "Included for residences on full board, otherwise 95 per guest" }
+      {
+        "k": "When",
+        "v": "Thursdays from 20:00, May to September"
+      },
+      {
+        "k": "Where",
+        "v": "The private beach"
+      },
+      {
+        "k": "Table",
+        "v": "Long and shared, no seating plan"
+      },
+      {
+        "k": "Price",
+        "v": "Included for residences on full board, otherwise 95 per guest"
+      }
     ],
-    "includes": ["Whole lamb and mezze", "Wine, beer and raki", "Live music", "Blankets when the wind turns"]
+    "includes": [
+      "Whole lamb and mezze",
+      "Wine, beer and raki",
+      "Live music",
+      "Blankets when the wind turns"
+    ]
   },
   {
     "id": "sunset-sailing",
@@ -94,20 +170,39 @@
     "category": "Water",
     "summary": "A twelve metre catamaran out of the bay at six, around Antiparos, back under the stars.",
     "image": "/assets/placeholder/sail-01.svg",
-    "gallery": ["/assets/placeholder/sail-02.svg", "/assets/placeholder/dive-01.svg"],
-    "prefer": ["experience-sailing", "sail"],
+    "prefer": [
+      "experience-sailing",
+      "sail"
+    ],
     "lede": "The best three hours available on this island, and the reason to keep one evening free.",
     "body": [
       "Elysis keeps a twelve metre catamaran on a mooring in the bay. She takes ten guests comfortably, with a skipper and one crew, and there is a tender to get you off the beach without wading.",
       "The standard run leaves at six, crosses to the Antiparos side, anchors for a swim in a cove that has no road to it, and comes back with the light going. Mezze and a cold box of wine are aboard. Longer day charters to Despotiko and the small islands can be arranged with a day's notice."
     ],
     "details": [
-      { "k": "Departure", "v": "18:00 from the bay, daily in season" },
-      { "k": "Duration", "v": "Three hours" },
-      { "k": "Guests", "v": "Up to ten" },
-      { "k": "Price", "v": "From 180 per guest, or 1,400 for a private charter" }
+      {
+        "k": "Departure",
+        "v": "18:00 from the bay, daily in season"
+      },
+      {
+        "k": "Duration",
+        "v": "Three hours"
+      },
+      {
+        "k": "Guests",
+        "v": "Up to ten"
+      },
+      {
+        "k": "Price",
+        "v": "From 180 per guest, or 1,400 for a private charter"
+      }
     ],
-    "includes": ["Skipper and crew", "Mezze and wine aboard", "Swim stop and snorkelling gear", "Tender from the beach"]
+    "includes": [
+      "Skipper and crew",
+      "Mezze and wine aboard",
+      "Swim stop and snorkelling gear",
+      "Tender from the beach"
+    ]
   },
   {
     "id": "diving-snorkelling",
@@ -116,20 +211,39 @@
     "category": "Water",
     "summary": "Guided dives on the reef at the mouth of the bay, and a wreck at eighteen metres an hour east.",
     "image": "/assets/placeholder/dive-02.svg",
-    "gallery": ["/assets/placeholder/dive-03.svg", "/assets/placeholder/beach-05.svg"],
-    "prefer": ["experience-diving", "dive"],
+    "prefer": [
+      "experience-diving",
+      "dive"
+    ],
     "lede": "Clear water, granite reef and almost no current, which makes this an unusually good place to learn.",
     "body": [
       "The reef at the mouth of Kolymbithres starts at four metres and drops to sixteen. Visibility runs to thirty metres in June, and there is enough structure for octopus, moray and, twice a season, a turtle.",
       "We work with a PADI centre in Naoussa: try dives from the beach, open water certification over four days, and guided dives for anyone already qualified. Snorkelling gear is free at the beach club and the reef is reachable by swimming."
     ],
     "details": [
-      { "k": "Try dive", "v": "From the beach, two hours, 140" },
-      { "k": "Certification", "v": "PADI Open Water, four days, 620" },
-      { "k": "Guided dive", "v": "Two tanks, 150" },
-      { "k": "Snorkelling", "v": "Gear included at the beach club" }
+      {
+        "k": "Try dive",
+        "v": "From the beach, two hours, 140"
+      },
+      {
+        "k": "Certification",
+        "v": "PADI Open Water, four days, 620"
+      },
+      {
+        "k": "Guided dive",
+        "v": "Two tanks, 150"
+      },
+      {
+        "k": "Snorkelling",
+        "v": "Gear included at the beach club"
+      }
     ],
-    "includes": ["PADI instructors", "All equipment", "Transfer to the dive sites", "Underwater photographs on request"]
+    "includes": [
+      "PADI instructors",
+      "All equipment",
+      "Transfer to the dive sites",
+      "Underwater photographs on request"
+    ]
   },
   {
     "id": "yoga-movement",
@@ -138,20 +252,39 @@
     "category": "Wellness",
     "summary": "Sunrise practice on the timber deck above the bay, six mornings a week, no charge.",
     "image": "/assets/placeholder/yoga-01.svg",
-    "gallery": ["/assets/placeholder/yoga-02.svg", "/assets/placeholder/spa-04.svg"],
-    "prefer": ["experience-yoga", "yoga"],
+    "prefer": [
+      "experience-yoga",
+      "yoga"
+    ],
     "lede": "Held at seven, when the sea is flat and the deck is still cool underfoot.",
     "body": [
       "Practice is at seven, Tuesday to Sunday, on the deck built out over the rock at the north end of the property. It is unhurried hatha most mornings, with a longer vinyasa on Saturdays, and everyone from complete beginners upwards comes.",
       "Private sessions, pilates and breathwork can be booked in the spa or on your own terrace. Two of our instructors also run a swim and stretch morning, which is exactly what it sounds like."
     ],
     "details": [
-      { "k": "When", "v": "07:00, Tuesday to Sunday" },
-      { "k": "Where", "v": "The north deck" },
-      { "k": "Price", "v": "Included" },
-      { "k": "Private", "v": "90 per session, in the spa or your residence" }
+      {
+        "k": "When",
+        "v": "07:00, Tuesday to Sunday"
+      },
+      {
+        "k": "Where",
+        "v": "The north deck"
+      },
+      {
+        "k": "Price",
+        "v": "Included"
+      },
+      {
+        "k": "Private",
+        "v": "90 per session, in the spa or your residence"
+      }
     ],
-    "includes": ["Mats and props", "All levels welcome", "Private sessions on request", "Breathwork and pilates"]
+    "includes": [
+      "Mats and props",
+      "All levels welcome",
+      "Private sessions on request",
+      "Breathwork and pilates"
+    ]
   },
   {
     "id": "cooking-school",
@@ -160,20 +293,39 @@
     "category": "Table",
     "summary": "Tuesday mornings in the garden kitchen: the market at Parikia first, then lunch made from what you brought back.",
     "image": "/assets/placeholder/cooking-01.svg",
-    "gallery": ["/assets/placeholder/dining-02.svg", "/assets/placeholder/garden-06.svg"],
-    "prefer": ["experience-cooking", "cooking"],
+    "prefer": [
+      "experience-cooking",
+      "cooking"
+    ],
     "lede": "Four dishes, one long table, and a chef who will tell you honestly that the oregano matters more than the technique.",
     "body": [
       "The class starts at the market in Parikia at nine, with a chef who buys there every day and knows which stall to ignore. Back at the resort by eleven, the group cooks four dishes in the open garden kitchen, then eats them at the table under the pergola with wine.",
       "It is hands-on and deliberately small: six guests maximum, so everybody actually cooks. Recipes are sent afterwards, written the way they are cooked rather than the way they are published."
     ],
     "details": [
-      { "k": "When", "v": "Tuesdays, 09:00 to 14:00" },
-      { "k": "Guests", "v": "Six maximum" },
-      { "k": "Price", "v": "165 per guest, including the market and lunch" },
-      { "k": "Children", "v": "From ten, at half price" }
+      {
+        "k": "When",
+        "v": "Tuesdays, 09:00 to 14:00"
+      },
+      {
+        "k": "Guests",
+        "v": "Six maximum"
+      },
+      {
+        "k": "Price",
+        "v": "165 per guest, including the market and lunch"
+      },
+      {
+        "k": "Children",
+        "v": "From ten, at half price"
+      }
     ],
-    "includes": ["Market visit with the chef", "All ingredients", "Lunch and wine", "Recipes sent afterwards"]
+    "includes": [
+      "Market visit with the chef",
+      "All ingredients",
+      "Lunch and wine",
+      "Recipes sent afterwards"
+    ]
   },
   {
     "id": "wine-cellar",
@@ -182,20 +334,39 @@
     "category": "Table",
     "summary": "Four hundred labels under the main house, two thirds of them Greek, and a table for eight down there.",
     "image": "/assets/placeholder/wine-01.svg",
-    "gallery": ["/assets/placeholder/wine-02.svg", "/assets/placeholder/dining-03.svg"],
-    "prefer": ["experience-wine", "wine"],
+    "prefer": [
+      "experience-wine",
+      "wine"
+    ],
     "lede": "The cellar was dug before the pool was, which tells you where the priorities were.",
     "body": [
       "Four hundred labels, with real depth in Assyrtiko from Santorini, Malagousia, Xinomavro from the north and the small Parian producers who make maybe six thousand bottles a year and sell them to the island.",
       "Tastings run on Wednesdays and Sundays at six, sitting down, six wines with something to eat alongside each. The table down there seats eight and can be booked for dinner, which is the best seat in the house on a night when the wind is up."
     ],
     "details": [
-      { "k": "Tastings", "v": "Wednesdays and Sundays, 18:00" },
-      { "k": "Price", "v": "95 per guest, six wines" },
-      { "k": "Cellar table", "v": "Up to eight, dinner by arrangement" },
-      { "k": "Cellar list", "v": "Sent ahead for residences on request" }
+      {
+        "k": "Tastings",
+        "v": "Wednesdays and Sundays, 18:00"
+      },
+      {
+        "k": "Price",
+        "v": "95 per guest, six wines"
+      },
+      {
+        "k": "Cellar table",
+        "v": "Up to eight, dinner by arrangement"
+      },
+      {
+        "k": "Cellar list",
+        "v": "Sent ahead for residences on request"
+      }
     ],
-    "includes": ["Guided tasting, six wines", "Island cheese and charcuterie", "Private dinners in the cellar", "Bottles shipped home"]
+    "includes": [
+      "Guided tasting, six wines",
+      "Island cheese and charcuterie",
+      "Private dinners in the cellar",
+      "Bottles shipped home"
+    ]
   },
   {
     "id": "island-excursions",
@@ -204,20 +375,39 @@
     "category": "Island",
     "summary": "Marble quarries, mountain villages, the Byzantine church at Parikia, and the empty beaches on the south coast.",
     "image": "/assets/placeholder/excursion-01.svg",
-    "gallery": ["/assets/placeholder/village-01.svg", "/assets/placeholder/village-02.svg"],
-    "prefer": ["experience-excursions", "excursion"],
+    "prefer": [
+      "experience-excursions",
+      "excursion"
+    ],
     "lede": "Paros is bigger and stranger than the postcard of it, and worth two days of any week here.",
     "body": [
       "The concierge runs half and full day trips with drivers who grew up here: the ancient marble quarries at Marathi, the pottery and weaving in Lefkes, Naoussa's harbour before the evening crowd, and the long empty beaches at Faragas and Tripiti.",
       "Antiparos is twenty minutes by the ferry at Pounta, and the cave there is worth the steps. For anyone who would rather find it themselves, we keep a small fleet of cars and two Vespas."
     ],
     "details": [
-      { "k": "Half day", "v": "From 260 for up to four guests" },
-      { "k": "Full day", "v": "From 420, lunch arranged" },
-      { "k": "Self drive", "v": "Cars and Vespas from the house fleet" },
-      { "k": "Booking", "v": "The day before, through the concierge" }
+      {
+        "k": "Half day",
+        "v": "From 260 for up to four guests"
+      },
+      {
+        "k": "Full day",
+        "v": "From 420, lunch arranged"
+      },
+      {
+        "k": "Self drive",
+        "v": "Cars and Vespas from the house fleet"
+      },
+      {
+        "k": "Booking",
+        "v": "The day before, through the concierge"
+      }
     ],
-    "includes": ["Driver and vehicle", "Entries arranged", "Lunch booked ahead", "Route built around what you like"]
+    "includes": [
+      "Driver and vehicle",
+      "Entries arranged",
+      "Lunch booked ahead",
+      "Route built around what you like"
+    ]
   },
   {
     "id": "little-elysis",
@@ -226,19 +416,38 @@
     "category": "Island",
     "summary": "A kids club that is mostly outdoors: rock pools, boat building, bread making and a garden of their own.",
     "image": "/assets/placeholder/kids-02.svg",
-    "gallery": ["/assets/placeholder/garden-07.svg", "/assets/placeholder/beach-06.svg"],
-    "prefer": ["experience-kids", "kids"],
+    "prefer": [
+      "experience-kids",
+      "kids"
+    ],
     "lede": "Run by two people who would rather take eight children to the rock pools than put a screen on.",
     "body": [
       "Little Elysis is open every morning and, from July, through the afternoon. The day is rock pooling, boat building out of driftwood, bread in the garden kitchen, snorkelling for the older ones, and a plot in the vegetable garden that the children plant and pick themselves.",
       "Ages four to eleven. Babysitting for younger children is arranged with a day's notice, always with a member of staff you have already met."
     ],
     "details": [
-      { "k": "Ages", "v": "Four to eleven" },
-      { "k": "Open", "v": "09:30 to 13:00, and afternoons in July and August" },
-      { "k": "Price", "v": "Included" },
-      { "k": "Babysitting", "v": "35 per hour, a day's notice" }
+      {
+        "k": "Ages",
+        "v": "Four to eleven"
+      },
+      {
+        "k": "Open",
+        "v": "09:30 to 13:00, and afternoons in July and August"
+      },
+      {
+        "k": "Price",
+        "v": "Included"
+      },
+      {
+        "k": "Babysitting",
+        "v": "35 per hour, a day's notice"
+      }
     ],
-    "includes": ["Two qualified staff", "Lunch at the club", "Rock pooling and snorkelling", "Babysitting by arrangement"]
+    "includes": [
+      "Two qualified staff",
+      "Lunch at the club",
+      "Rock pooling and snorkelling",
+      "Babysitting by arrangement"
+    ]
   }
 ]
