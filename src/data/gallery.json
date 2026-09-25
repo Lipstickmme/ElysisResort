@@ -1,25 +1,284 @@
 {
   "_comment": "The gallery grid. Categories drive the filter chips on /gallery, and the first six frames are the strip on the landing page, so the order is the order a visitor meets them in. Every frame here is a supplied photograph; `prefer` still names the file that would replace it.",
   "items": [
-    { "id": "west-front", "title": "The west front", "category": "The Resort", "image": "/assets/img/elysis-hero-2.webp", "prefer": ["gallery-west-front"] },
-    { "id": "terrace-dusk", "title": "The terrace at dusk", "category": "The Resort", "image": "/assets/img/elysis-hero-1.webp", "prefer": ["gallery-terrace"] },
-    { "id": "fire-terrace", "title": "The fire terrace", "category": "The Resort", "image": "/assets/img/elysis-story.webp", "prefer": ["gallery-fire-terrace"] },
-    { "id": "pool-pergola", "title": "The pool under the pergola", "category": "The Pool", "image": "/assets/img/elysis-hero-3.webp", "prefer": ["gallery-pool-pergola"] },
-    { "id": "pool-loungers", "title": "Loungers above the bay", "category": "The Pool", "image": "/assets/img/experience-pool.webp", "prefer": ["gallery-pool"] },
-    { "id": "bonfire", "title": "Thursday, on the sand", "category": "Nights", "image": "/assets/img/experience-bonfire.webp", "prefer": ["gallery-bonfire"] },
-    { "id": "thalassa-table", "title": "Thalassa, laid for dinner", "category": "The Table", "image": "/assets/img/dining-thalassa.webp", "prefer": ["gallery-thalassa"] },
-    { "id": "olivo-terrace", "title": "Lunch at Olivo", "category": "The Table", "image": "/assets/img/dining-olivo.webp", "prefer": ["gallery-olivo"] },
-    { "id": "aegean-loft", "title": "The Aegean Loft Suite", "category": "Residences", "image": "/assets/img/suite-aegean-loft.webp", "prefer": ["gallery-aegean-loft"] },
-    { "id": "salt-white", "title": "Shutters, Salt White Suite", "category": "Residences", "image": "/assets/img/suite-salt-white.webp", "prefer": ["gallery-salt-white"] },
-    { "id": "cycladic-terrace", "title": "The Cycladic Terrace Suite", "category": "Residences", "image": "/assets/img/suite-cycladic-terrace.webp", "prefer": ["gallery-cycladic"] },
-    { "id": "thalassa-suite", "title": "Thalassa Pool Suite, doors open", "category": "Residences", "image": "/assets/img/suite-thalassa.webp", "prefer": ["gallery-thalassa-suite"] },
-    { "id": "kyma-suite", "title": "Kyma Pool Suite", "category": "Residences", "image": "/assets/img/suite-kyma.webp", "prefer": ["gallery-kyma"] },
-    { "id": "meltemi-suite", "title": "Meltemi Junior Suite", "category": "Residences", "image": "/assets/img/suite-meltemi.webp", "prefer": ["gallery-meltemi"] },
-    { "id": "helios-villa", "title": "The living room, Helios Pool Villa", "category": "Residences", "image": "/assets/img/villa-helios.webp", "prefer": ["gallery-helios"] },
-    { "id": "selene-villa", "title": "Selene Pool Villa", "category": "Residences", "image": "/assets/img/villa-selene.webp", "prefer": ["gallery-selene"] },
-    { "id": "oleander-villa", "title": "Oleander Villa, towards the beach", "category": "Residences", "image": "/assets/img/villa-oleander.webp", "prefer": ["gallery-oleander"] },
-    { "id": "anemos-residence", "title": "The loggia, Anemos Residence", "category": "Residences", "image": "/assets/img/residence-anemos.webp", "prefer": ["gallery-anemos"] },
-    { "id": "lighthouse-loft", "title": "Lighthouse Loft", "category": "Residences", "image": "/assets/img/signature-lighthouse.webp", "prefer": ["gallery-lighthouse"] },
-    { "id": "beach-house", "title": "The Elysis Beach House", "category": "Residences", "image": "/assets/img/signature-beach-house.webp", "prefer": ["gallery-beach-house"] }
+    {
+      "id": "west-front",
+      "title": "The west front",
+      "category": "The Resort",
+      "image": "/assets/img/elysis-hero-2.webp",
+      "prefer": [
+        "gallery-west-front"
+      ]
+    },
+    {
+      "id": "terrace-dusk",
+      "title": "The terrace at dusk",
+      "category": "The Resort",
+      "image": "/assets/img/elysis-hero-1.webp",
+      "prefer": [
+        "gallery-terrace"
+      ]
+    },
+    {
+      "id": "fire-terrace",
+      "title": "The fire terrace",
+      "category": "The Resort",
+      "image": "/assets/img/elysis-story.webp",
+      "prefer": [
+        "gallery-fire-terrace"
+      ]
+    },
+    {
+      "id": "pool-pergola",
+      "title": "The pool under the pergola",
+      "category": "The Pool",
+      "image": "/assets/img/elysis-hero-3.webp",
+      "prefer": [
+        "gallery-pool-pergola"
+      ]
+    },
+    {
+      "id": "pool-loungers",
+      "title": "Loungers above the bay",
+      "category": "The Pool",
+      "image": "/assets/img/experience-pool.webp",
+      "prefer": [
+        "gallery-pool"
+      ]
+    },
+    {
+      "id": "bonfire",
+      "title": "Thursday, on the sand",
+      "category": "Nights",
+      "image": "/assets/img/experience-bonfire.webp",
+      "prefer": [
+        "gallery-bonfire"
+      ]
+    },
+    {
+      "id": "thalassa-table",
+      "title": "Thalassa, laid for dinner",
+      "category": "The Table",
+      "image": "/assets/img/dining-thalassa.webp",
+      "prefer": [
+        "gallery-thalassa"
+      ]
+    },
+    {
+      "id": "olivo-terrace",
+      "title": "Lunch at Olivo",
+      "category": "The Table",
+      "image": "/assets/img/dining-olivo.webp",
+      "prefer": [
+        "gallery-olivo"
+      ]
+    },
+    {
+      "id": "aegean-loft",
+      "title": "The Aegean Loft Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-aegean-loft.webp",
+      "prefer": [
+        "gallery-aegean-loft"
+      ]
+    },
+    {
+      "id": "salt-white",
+      "title": "Shutters, Salt White Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-salt-white.webp",
+      "prefer": [
+        "gallery-salt-white"
+      ]
+    },
+    {
+      "id": "cycladic-terrace",
+      "title": "The Cycladic Terrace Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-cycladic-terrace.webp",
+      "prefer": [
+        "gallery-cycladic"
+      ]
+    },
+    {
+      "id": "thalassa-suite",
+      "title": "Thalassa Pool Suite, doors open",
+      "category": "Residences",
+      "image": "/assets/img/suite-thalassa.webp",
+      "prefer": [
+        "gallery-thalassa-suite"
+      ]
+    },
+    {
+      "id": "kyma-suite",
+      "title": "Kyma Pool Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-kyma.webp",
+      "prefer": [
+        "gallery-kyma"
+      ]
+    },
+    {
+      "id": "meltemi-suite",
+      "title": "Meltemi Junior Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-meltemi.webp",
+      "prefer": [
+        "gallery-meltemi"
+      ]
+    },
+    {
+      "id": "helios-villa",
+      "title": "The living room, Helios Pool Villa",
+      "category": "Residences",
+      "image": "/assets/img/villa-helios.webp",
+      "prefer": [
+        "gallery-helios"
+      ]
+    },
+    {
+      "id": "selene-villa",
+      "title": "Selene Pool Villa",
+      "category": "Residences",
+      "image": "/assets/img/villa-selene.webp",
+      "prefer": [
+        "gallery-selene"
+      ]
+    },
+    {
+      "id": "oleander-villa",
+      "title": "Oleander Villa, towards the beach",
+      "category": "Residences",
+      "image": "/assets/img/villa-oleander.webp",
+      "prefer": [
+        "gallery-oleander"
+      ]
+    },
+    {
+      "id": "anemos-residence",
+      "title": "The loggia, Anemos Residence",
+      "category": "Residences",
+      "image": "/assets/img/residence-anemos.webp",
+      "prefer": [
+        "gallery-anemos"
+      ]
+    },
+    {
+      "id": "lighthouse-loft",
+      "title": "Lighthouse Loft",
+      "category": "Residences",
+      "image": "/assets/img/signature-lighthouse.webp",
+      "prefer": [
+        "gallery-lighthouse"
+      ]
+    },
+    {
+      "id": "beach-house",
+      "title": "The Elysis Beach House",
+      "category": "Residences",
+      "image": "/assets/img/signature-beach-house.webp",
+      "prefer": [
+        "gallery-beach-house"
+      ]
+    },
+    {
+      "id": "passage",
+      "title": "The passage to the residences",
+      "category": "The Resort",
+      "image": "/assets/img/gallery-passage.webp",
+      "prefer": [
+        "gallery-passage"
+      ]
+    },
+    {
+      "id": "beach-club-pool",
+      "title": "The beach club pool",
+      "category": "The Pool",
+      "image": "/assets/img/experience-beach-club.webp",
+      "prefer": [
+        "gallery-beach-club-pool"
+      ]
+    },
+    {
+      "id": "alati-counter",
+      "title": "The counter at Alati",
+      "category": "The Table",
+      "image": "/assets/img/dining-alati.webp",
+      "prefer": [
+        "gallery-alati-counter"
+      ]
+    },
+    {
+      "id": "private-dining",
+      "title": "The private dining room",
+      "category": "The Table",
+      "image": "/assets/img/dining-private.webp",
+      "prefer": [
+        "gallery-private-dining"
+      ]
+    },
+    {
+      "id": "bath-house",
+      "title": "The bath house",
+      "category": "The Spa",
+      "image": "/assets/img/experience-spa.webp",
+      "prefer": [
+        "gallery-bath-house"
+      ]
+    },
+    {
+      "id": "olive-garden",
+      "title": "Olive Garden Suite",
+      "category": "Residences",
+      "image": "/assets/img/suite-olive-garden.webp",
+      "prefer": [
+        "gallery-olive-garden"
+      ]
+    },
+    {
+      "id": "myrtos-villa",
+      "title": "Myrtos Villa",
+      "category": "Residences",
+      "image": "/assets/img/villa-myrtos.webp",
+      "prefer": [
+        "gallery-myrtos-villa"
+      ]
+    },
+    {
+      "id": "kastro-residence",
+      "title": "Kastro Residence, the old stone",
+      "category": "Residences",
+      "image": "/assets/img/residence-kastro.webp",
+      "prefer": [
+        "gallery-kastro-residence"
+      ]
+    },
+    {
+      "id": "elaia-residence",
+      "title": "Elaia Family Residence",
+      "category": "Residences",
+      "image": "/assets/img/residence-elaia.webp",
+      "prefer": [
+        "gallery-elaia-residence"
+      ]
+    },
+    {
+      "id": "aithra-terrace",
+      "title": "The Aithra Penthouse terrace",
+      "category": "Residences",
+      "image": "/assets/img/signature-aithra.webp",
+      "prefer": [
+        "gallery-aithra-terrace"
+      ]
+    },
+    {
+      "id": "nefeli-estate",
+      "title": "Nefeli Estate",
+      "category": "Residences",
+      "image": "/assets/img/signature-nefeli.webp",
+      "prefer": [
+        "gallery-nefeli-estate"
+      ]
+    }
   ]
 }

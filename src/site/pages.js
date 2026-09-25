@@ -537,7 +537,7 @@ const galleryContent = `
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous">&lsaquo;</button>
-    <figure class="lightbox-figure"><img id="lightbox-img" src="" alt="" /><figcaption id="lightbox-cap"></figcaption></figure>
+    <figure class="lightbox-figure"><img id="lightbox-img" alt="" /><figcaption id="lightbox-cap"></figcaption></figure>
     <button class="lightbox-nav next" id="lightbox-next" aria-label="Next">&rsaquo;</button>
   </div>`;
 
