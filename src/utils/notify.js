@@ -171,8 +171,6 @@ module.exports = {
   send,
   sendEmail,
   reservation,
-  // The name this was called when the form was a contact form.
-  enquiry: reservation,
   application,
   chatMessage,
   defaultTo,

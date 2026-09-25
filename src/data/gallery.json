@@ -279,6 +279,78 @@
       "prefer": [
         "gallery-nefeli-estate"
       ]
+    },
+    {
+      "id": "sailing",
+      "title": "Coming back in under sail",
+      "category": "On the water",
+      "image": "/assets/img/experience-sailing.webp",
+      "prefer": [
+        "gallery-sailing"
+      ]
+    },
+    {
+      "id": "reef",
+      "title": "The reef at the mouth of the bay",
+      "category": "On the water",
+      "image": "/assets/img/experience-diving.webp",
+      "prefer": [
+        "gallery-reef"
+      ]
+    },
+    {
+      "id": "yoga-deck",
+      "title": "Seven o'clock on the north deck",
+      "category": "The Spa",
+      "image": "/assets/img/experience-yoga.webp",
+      "prefer": [
+        "gallery-yoga-deck"
+      ]
+    },
+    {
+      "id": "cooking",
+      "title": "Four dishes, one long table",
+      "category": "The Table",
+      "image": "/assets/img/experience-cooking.webp",
+      "prefer": [
+        "gallery-cooking"
+      ]
+    },
+    {
+      "id": "cellar-table",
+      "title": "The cellar table",
+      "category": "The Table",
+      "image": "/assets/img/experience-wine.webp",
+      "prefer": [
+        "gallery-cellar-table"
+      ]
+    },
+    {
+      "id": "village-lane",
+      "title": "A lane in the old village",
+      "category": "The Island",
+      "image": "/assets/img/experience-excursions.webp",
+      "prefer": [
+        "gallery-village-lane"
+      ]
+    },
+    {
+      "id": "rock-pools",
+      "title": "The rock pools",
+      "category": "The Island",
+      "image": "/assets/img/experience-kids.webp",
+      "prefer": [
+        "gallery-rock-pools"
+      ]
+    },
+    {
+      "id": "ampeli-bar",
+      "title": "Ampeli, after the sun goes",
+      "category": "Nights",
+      "image": "/assets/img/dining-ampeli.webp",
+      "prefer": [
+        "gallery-ampeli-bar"
+      ]
     }
   ]
 }

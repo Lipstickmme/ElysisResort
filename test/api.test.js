@@ -212,14 +212,6 @@ async function withApp(env, fn) {
         assert.match(booked.message, /2 adults, 1 child/);
         console.log('  ok  reservation enquiry persisted, with the stay in the message');
 
-        // The name the form used to post to still reaches the same desk.
-        const legacy = await req(base, 'POST', '/api/contact', {
-          name: 'Tom Bakker', email: 'tom@example.nl',
-          message: 'Writing from an old bookmark of the contact form.',
-        });
-        assert.strictEqual(legacy.status, 201, JSON.stringify(legacy.body));
-        assert.strictEqual(sb.db.enquiries.rows.length, 2);
-        console.log('  ok  /api/contact still lands, for anything still posting to it');
 
         const bad = await req(base, 'POST', '/api/reservations', {
           name: 'X', email: 'nope', message: 'short',

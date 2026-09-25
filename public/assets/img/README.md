@@ -1,8 +1,12 @@
 # Photography
 
-This folder holds the resort's own photographs. Anything without one falls back
-to the drawn artwork in `../placeholder/`, so the site is never broken for want
-of a picture; a drawing is simply a slot that has not been shot yet.
+This folder holds the resort's own photographs. Every slot on the site has one;
+`../placeholder/` now holds only the floor plans and the page underlay, which
+are drawings on purpose.
+
+If a photograph is ever removed, its slot looks for the same name in any other
+format (`.jpg`, `.png`) before it gives up, and `npm run photos` reports it.
+`npm run placeholders` can redraw stand-in artwork for any slot that needs it.
 
 `npm run photos` prints what is photographed, what is not, and the exact file
 name each empty slot is waiting for. That list comes out of the content, so it
@@ -44,5 +48,7 @@ stand-ins.
 
 ## Originals
 
-The PNGs here are the supplied originals and are kept as the master copies. The
-site serves the WebP beside them. Deleting a PNG is safe once its WebP exists.
+The PNGs and JPEGs here are the supplied masters. The site serves the WebP copy
+beside each one, and `.vercelignore` keeps the masters out of the deploy upload,
+so they cost nothing in production. Deleting a master is safe once its WebP
+exists; keeping it means a future re-crop does not need a re-upload.

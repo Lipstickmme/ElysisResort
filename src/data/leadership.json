@@ -3,8 +3,11 @@
     "id": "marina-stavrou",
     "name": "Marina Stavrou",
     "role": "General Manager",
-    "image": "/assets/placeholder/portrait-01.svg",
-    "prefer": ["gm", "portrait-gm"],
+    "image": "/assets/img/gm.webp",
+    "prefer": [
+      "gm",
+      "portrait-gm"
+    ],
     "quote": "Eighteen residences is not a limitation. It is the whole promise, and everything else follows from it.",
     "bio": "Marina grew up in Naoussa, two bays east of here, and spent fifteen years in hotels in Athens, Paris and Kyoto before coming home to open Elysis in 2019. They read every message that arrives through this site, and answer most of them personally."
   }

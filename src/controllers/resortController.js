@@ -14,7 +14,6 @@ exports.get = (req, res) => {
     lede: resort.lede,
     story: resort.story,
     facts: resort.facts,
-    stats: resort.stats,
     arrival: resort.arrival,
     rates: resort.rates,
     residences: content.suites.length,

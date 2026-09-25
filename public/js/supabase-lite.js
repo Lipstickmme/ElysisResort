@@ -182,6 +182,4 @@
   }
 
   global.ElysisSupabase = { createClient };
-  // The name this was published under before the site was a resort.
-  global.MerkelSupabase = global.ElysisSupabase;
 })(window);

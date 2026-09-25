@@ -14,7 +14,7 @@
     "terrace": "18 m² private terrace with day bed",
     "position": "Upper terrace, west wing",
     "minStay": "2 nights",
-    "image": "/assets/placeholder/suite-sea-01.svg",
+    "image": "/assets/img/suite-aegean-loft.webp",
     "plan": "/assets/placeholder/plan-01.svg",
     "prefer": [
       "suite-aegean-loft",
@@ -66,7 +66,7 @@
     "terrace": "22 m² walled garden",
     "position": "Garden wing, ground level",
     "minStay": "2 nights",
-    "image": "/assets/placeholder/suite-garden-01.svg",
+    "image": "/assets/img/suite-olive-garden.webp",
     "plan": "/assets/placeholder/plan-02.svg",
     "prefer": [
       "suite-olive-garden",
@@ -118,7 +118,7 @@
     "terrace": "26 m² terrace with dining table",
     "position": "Mid terrace, sea side",
     "minStay": "2 nights",
-    "image": "/assets/placeholder/suite-terrace-02.svg",
+    "image": "/assets/img/suite-cycladic-terrace.webp",
     "plan": "/assets/placeholder/plan-03.svg",
     "prefer": [
       "suite-cycladic-terrace",
@@ -170,7 +170,7 @@
     "terrace": "14 m² courtyard terrace",
     "position": "Courtyard wing, upper level",
     "minStay": "2 nights",
-    "image": "/assets/placeholder/suite-garden-02.svg",
+    "image": "/assets/img/suite-salt-white.webp",
     "plan": "/assets/placeholder/plan-04.svg",
     "prefer": [
       "suite-salt-white",
@@ -222,7 +222,7 @@
     "terrace": "24 m² terrace, part shaded",
     "position": "North terrace, sea side",
     "minStay": "2 nights",
-    "image": "/assets/placeholder/suite-sea-03.svg",
+    "image": "/assets/img/suite-meltemi.webp",
     "plan": "/assets/placeholder/plan-05.svg",
     "prefer": [
       "suite-meltemi",
@@ -274,7 +274,7 @@
     "terrace": "34 m² terrace with 4 x 3 m plunge pool",
     "position": "Lower terrace, sea side",
     "minStay": "3 nights",
-    "image": "/assets/placeholder/villa-01.svg",
+    "image": "/assets/img/suite-thalassa.webp",
     "plan": "/assets/placeholder/plan-06.svg",
     "prefer": [
       "suite-thalassa",
@@ -326,7 +326,7 @@
     "terrace": "38 m² terrace with 5 x 3 m pool",
     "position": "West point, sea side",
     "minStay": "3 nights",
-    "image": "/assets/placeholder/villa-02.svg",
+    "image": "/assets/img/suite-kyma.webp",
     "plan": "/assets/placeholder/plan-07.svg",
     "prefer": [
       "suite-kyma",
@@ -378,7 +378,7 @@
     "terrace": "60 m² terrace with 8 x 3 m pool",
     "position": "South slope, private drive",
     "minStay": "3 nights",
-    "image": "/assets/placeholder/villa-03.svg",
+    "image": "/assets/img/villa-helios.webp",
     "plan": "/assets/placeholder/plan-08.svg",
     "prefer": [
       "villa-helios",
@@ -430,7 +430,7 @@
     "terrace": "64 m² terrace with 8 x 3 m pool",
     "position": "North slope, private drive",
     "minStay": "3 nights",
-    "image": "/assets/placeholder/villa-04.svg",
+    "image": "/assets/img/villa-selene.webp",
     "plan": "/assets/placeholder/plan-09.svg",
     "prefer": [
       "villa-selene",
@@ -482,7 +482,7 @@
     "terrace": "80 m² terrace with 10 x 4 m pool",
     "position": "Garden terraces, private drive",
     "minStay": "4 nights",
-    "image": "/assets/placeholder/villa-05.svg",
+    "image": "/assets/img/villa-oleander.webp",
     "plan": "/assets/placeholder/plan-10.svg",
     "prefer": [
       "villa-oleander",
@@ -534,7 +534,7 @@
     "terrace": "72 m² terrace with 9 x 4 m pool",
     "position": "Upper grove, private drive",
     "minStay": "4 nights",
-    "image": "/assets/placeholder/villa-06.svg",
+    "image": "/assets/img/villa-myrtos.webp",
     "plan": "/assets/placeholder/plan-11.svg",
     "prefer": [
       "villa-myrtos",
@@ -586,7 +586,7 @@
     "terrace": "95 m² terrace with 12 x 4 m pool",
     "position": "West headland, private drive",
     "minStay": "4 nights",
-    "image": "/assets/placeholder/residence-01.svg",
+    "image": "/assets/img/residence-anemos.webp",
     "plan": "/assets/placeholder/plan-12.svg",
     "prefer": [
       "residence-anemos",
@@ -638,7 +638,7 @@
     "terrace": "120 m² terrace with 14 x 4 m pool",
     "position": "Old tower terrace, private drive",
     "minStay": "5 nights",
-    "image": "/assets/placeholder/residence-02.svg",
+    "image": "/assets/img/residence-kastro.webp",
     "plan": "/assets/placeholder/plan-13.svg",
     "prefer": [
       "residence-kastro",
@@ -690,7 +690,7 @@
     "terrace": "100 m² terrace with 12 x 5 m pool, shallow end",
     "position": "Garden terraces, private drive",
     "minStay": "4 nights",
-    "image": "/assets/placeholder/residence-03.svg",
+    "image": "/assets/img/residence-elaia.webp",
     "plan": "/assets/placeholder/plan-14.svg",
     "prefer": [
       "residence-elaia",
@@ -742,7 +742,7 @@
     "terrace": "70 m² over two levels, roof terrace",
     "position": "The point, above the beach path",
     "minStay": "4 nights",
-    "image": "/assets/placeholder/penthouse-01.svg",
+    "image": "/assets/img/signature-lighthouse.webp",
     "plan": "/assets/placeholder/plan-15.svg",
     "prefer": [
       "signature-lighthouse",
@@ -794,7 +794,7 @@
     "terrace": "140 m² roof terrace with 10 x 4 m pool",
     "position": "Above the main house, private lift",
     "minStay": "5 nights",
-    "image": "/assets/placeholder/penthouse-02.svg",
+    "image": "/assets/img/signature-aithra.webp",
     "plan": "/assets/placeholder/plan-16.svg",
     "prefer": [
       "signature-aithra",
@@ -846,7 +846,7 @@
     "terrace": "110 m² deck with 10 x 4 m pool, on the sand",
     "position": "South end of the private beach",
     "minStay": "5 nights",
-    "image": "/assets/placeholder/beach-house-01.svg",
+    "image": "/assets/img/signature-beach-house.webp",
     "plan": "/assets/placeholder/plan-17.svg",
     "prefer": [
       "signature-beach-house",
@@ -898,7 +898,7 @@
     "terrace": "220 m² terraces with 18 x 5 m pool",
     "position": "The ridge, gated, own drive",
     "minStay": "7 nights",
-    "image": "/assets/placeholder/residence-04.svg",
+    "image": "/assets/img/signature-nefeli.webp",
     "plan": "/assets/placeholder/plan-18.svg",
     "prefer": [
       "signature-nefeli",

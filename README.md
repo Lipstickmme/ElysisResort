@@ -137,7 +137,8 @@ public/                    Built pages and everything the browser loads
   css/, js/
 scripts/
   build-pages.js           Builds every page. `npm run build`
-  make-placeholders.js     Draws the stand-in artwork. `npm run placeholders`
+  make-placeholders.js     Draws the floor plans and any stand-in artwork
+                           still needed. `npm run placeholders`
   make-brand-icons.js      Draws the favicons. `npm run icons`
   check-vercel-upload.js   Proves the deploy would still build
 supabase/migrations/       0001 schema, 0002 mailbox, 0003 reservations
@@ -165,7 +166,7 @@ What visitors send:
 
 | Method | Route                  | What                                           |
 | ------ | ---------------------- | ---------------------------------------------- |
-| POST   | `/api/reservations`    | A reservation enquiry (`/api/contact` also)    |
+| POST   | `/api/reservations`    | A reservation enquiry                          |
 | POST   | `/api/applications`    | A job application                              |
 | POST   | `/api/chat/message`    | A chat message, server-side path               |
 | POST   | `/api/chat/notify`     | Ask the server for the holding reply           |
@@ -199,21 +200,21 @@ Resend.
 
 ## Images
 
-Twenty photographs are in `public/assets/img/`, covering the whole landing page,
-every page header, the gallery, twelve of the eighteen residences, two of the
-five kitchens and two experiences. Every other slot falls back to drawn artwork
-from `scripts/make-placeholders.js`, so nothing is ever broken or blank.
+Every image slot on the site is a photograph: the whole landing page, every page
+header, all eighteen residences, all eleven experiences, the five kitchens, the
+host and thirty nine gallery frames. Floor plans stay drawn, because a plan is a
+drawing.
 
-- `npm run photos` prints what is photographed and the exact file name each
-  empty slot is waiting for. The list is generated from the content.
-- `npm run optimise` writes the WebP copies the site actually serves (the
-  supplied photographs: 24 MB as PNG, 1.9 MB as WebP).
-- Adding one is a file drop: name it after the slot and rebuild. See
-  `public/assets/img/README.md`.
+- `npm run photos` prints what is photographed and, if a slot ever loses its
+  file, the name it is waiting for. The list is generated from the content.
+- `npm run optimise` writes the WebP copies the site actually serves. The
+  supplied masters are 37 MB; what visitors download is 3.6 MB. The masters stay
+  in the repository but are excluded from the deploy upload by `.vercelignore`.
+- Adding or replacing one is a file drop: name it after the slot and rebuild.
+  See `public/assets/img/README.md`.
 
-Floor plans are drawn on purpose. Extra gallery frames are optional: a file
-named `<slot>-2`, `-3` or `-4` beside a hero opens a gallery band on that page
-by itself.
+Extra frames are optional: a file named `<slot>-2`, `-3` or `-4` beside a hero
+opens a gallery band on that page by itself.
 
 ## Configuration
 

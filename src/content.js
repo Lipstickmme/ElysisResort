@@ -23,7 +23,6 @@ const galleryRaw = require('./data/gallery.json');
 const resort = require('./data/resort.json');
 const leadershipRaw = require('./data/leadership.json');
 const careers = require('./data/careers.json');
-const team = require('./data/team.json');
 
 /** Resolve `image`, `gallery[]` and `plan` on one content entry. */
 function withMedia(entry) {
@@ -92,7 +91,6 @@ module.exports = {
   resort,
   leadership,
   careers,
-  team,
   collections,
   images,
   rate,

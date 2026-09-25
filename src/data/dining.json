@@ -7,7 +7,7 @@
     "hours": "19:00 to 23:00, daily",
     "dress": "As you are, but bring a layer",
     "seats": 48,
-    "image": "/assets/placeholder/dining-04.svg",
+    "image": "/assets/img/dining-thalassa.webp",
     "prefer": [
       "dining-thalassa",
       "restaurant-01"
@@ -46,7 +46,7 @@
     "hours": "08:00 to 17:00, daily",
     "dress": "Swimwear with a cover-up is fine",
     "seats": 60,
-    "image": "/assets/placeholder/dining-06.svg",
+    "image": "/assets/img/dining-olivo.webp",
     "prefer": [
       "dining-olivo",
       "restaurant-02"
@@ -85,7 +85,7 @@
     "hours": "12:00 to 18:00, and 21:00 to late on Fridays",
     "dress": "Barefoot",
     "seats": 24,
-    "image": "/assets/placeholder/bar-05.svg",
+    "image": "/assets/img/dining-alati.webp",
     "prefer": [
       "dining-alati",
       "restaurant-03"
@@ -124,7 +124,7 @@
     "hours": "11:00 to 00:30, daily",
     "dress": "Anything",
     "seats": 40,
-    "image": "/assets/placeholder/bar-06.svg",
+    "image": "/assets/img/dining-ampeli.webp",
     "prefer": [
       "dining-ampeli",
       "bar-01"
@@ -163,7 +163,7 @@
     "hours": "By arrangement, a day's notice",
     "dress": "Yours to decide",
     "seats": 16,
-    "image": "/assets/placeholder/dining-09.svg",
+    "image": "/assets/img/dining-private.webp",
     "prefer": [
       "dining-private",
       "restaurant-04"

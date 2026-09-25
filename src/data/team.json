@@ -1,6 +1,0 @@
-[
-  { "id": "marina", "name": "Marina Stavrou", "role": "General Manager", "discipline": "The house", "initials": "MS" },
-  { "id": "dimitris", "name": "Dimitris Pavlou", "role": "Executive Chef", "discipline": "Kitchens", "initials": "DP" },
-  { "id": "eleni", "name": "Eleni Marangou", "role": "Head of Guest Relations", "discipline": "Concierge", "initials": "EM" },
-  { "id": "yannis", "name": "Yannis Roussos", "role": "Beach and Water Sports", "discipline": "The bay", "initials": "YR" }
-]

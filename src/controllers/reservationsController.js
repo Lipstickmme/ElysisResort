@@ -73,8 +73,7 @@ function summarise(record) {
 }
 
 /**
- * POST /api/reservations  (and POST /api/contact, the name the form used to
- * have, kept so an older page or an integration does not break)
+ * POST /api/reservations
  */
 exports.create = async (req, res, next) => {
   try {

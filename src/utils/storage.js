@@ -165,7 +165,6 @@ const applications = createStore({
 });
 
 module.exports = {
-  createStore,
   applications,
   // The enquiry store is the original API of this module; callers predate the
   // factory and there is no reason to make them spell it out.

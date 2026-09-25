@@ -247,4 +247,4 @@ function page(opts) {
   ].join('\n');
 }
 
-module.exports = { page, nav, footer, chatWidget, head, reserveForm, underlay, brand, esc };
+module.exports = { page, reserveForm, esc };

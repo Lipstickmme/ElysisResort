@@ -5,7 +5,7 @@
     "title": "The Beach Club",
     "category": "Water",
     "summary": "Four hundred metres of private shoreline, twenty eight loungers, and a kitchen that sends lunch down to the sand.",
-    "image": "/assets/placeholder/beach-02.svg",
+    "image": "/assets/img/experience-beach-club.webp",
     "prefer": [
       "experience-beach-club",
       "beach"
@@ -46,7 +46,7 @@
     "title": "The Infinity Pool",
     "category": "Water",
     "summary": "Twenty five metres on the main terrace, heated from April, with the bay filling the far edge.",
-    "image": "/assets/placeholder/pool-08.svg",
+    "image": "/assets/img/experience-pool.webp",
     "prefer": [
       "experience-pool",
       "pool"
@@ -87,7 +87,7 @@
     "title": "Elysis Spa and Hammam",
     "category": "Wellness",
     "summary": "Four treatment rooms cut into the rock, a marble hammam, and therapists who work with island oil and salt.",
-    "image": "/assets/placeholder/spa-01.svg",
+    "image": "/assets/img/experience-spa.webp",
     "prefer": [
       "experience-spa",
       "spa"
@@ -128,7 +128,7 @@
     "title": "Bonfire Nights",
     "category": "Evening",
     "summary": "Thursday, on the sand: driftwood fire, a lamb on the spit, raki, and whoever on the island turns up with an instrument.",
-    "image": "/assets/placeholder/bonfire-02.svg",
+    "image": "/assets/img/experience-bonfire.webp",
     "prefer": [
       "experience-bonfire",
       "bonfire"
@@ -169,7 +169,7 @@
     "title": "Sunset Sailing",
     "category": "Water",
     "summary": "A twelve metre catamaran out of the bay at six, around Antiparos, back under the stars.",
-    "image": "/assets/placeholder/sail-01.svg",
+    "image": "/assets/img/experience-sailing.webp",
     "prefer": [
       "experience-sailing",
       "sail"
@@ -210,7 +210,7 @@
     "title": "Diving and Snorkelling",
     "category": "Water",
     "summary": "Guided dives on the reef at the mouth of the bay, and a wreck at eighteen metres an hour east.",
-    "image": "/assets/placeholder/dive-02.svg",
+    "image": "/assets/img/experience-diving.webp",
     "prefer": [
       "experience-diving",
       "dive"
@@ -251,7 +251,7 @@
     "title": "Yoga and Movement",
     "category": "Wellness",
     "summary": "Sunrise practice on the timber deck above the bay, six mornings a week, no charge.",
-    "image": "/assets/placeholder/yoga-01.svg",
+    "image": "/assets/img/experience-yoga.webp",
     "prefer": [
       "experience-yoga",
       "yoga"
@@ -292,7 +292,7 @@
     "title": "The Cooking School",
     "category": "Table",
     "summary": "Tuesday mornings in the garden kitchen: the market at Parikia first, then lunch made from what you brought back.",
-    "image": "/assets/placeholder/cooking-01.svg",
+    "image": "/assets/img/experience-cooking.webp",
     "prefer": [
       "experience-cooking",
       "cooking"
@@ -333,7 +333,7 @@
     "title": "The Wine Cellar",
     "category": "Table",
     "summary": "Four hundred labels under the main house, two thirds of them Greek, and a table for eight down there.",
-    "image": "/assets/placeholder/wine-01.svg",
+    "image": "/assets/img/experience-wine.webp",
     "prefer": [
       "experience-wine",
       "wine"
@@ -374,7 +374,7 @@
     "title": "Island Excursions",
     "category": "Island",
     "summary": "Marble quarries, mountain villages, the Byzantine church at Parikia, and the empty beaches on the south coast.",
-    "image": "/assets/placeholder/excursion-01.svg",
+    "image": "/assets/img/experience-excursions.webp",
     "prefer": [
       "experience-excursions",
       "excursion"
@@ -415,7 +415,7 @@
     "title": "Little Elysis",
     "category": "Island",
     "summary": "A kids club that is mostly outdoors: rock pools, boat building, bread making and a garden of their own.",
-    "image": "/assets/placeholder/kids-02.svg",
+    "image": "/assets/img/experience-kids.webp",
     "prefer": [
       "experience-kids",
       "kids"

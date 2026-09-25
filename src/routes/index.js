@@ -17,14 +17,10 @@ router.use('/suites', require('./suites'));
 router.use('/experiences', require('./experiences'));
 router.use('/dining', require('./dining'));
 router.use('/gallery', require('./gallery'));
-router.use('/team', require('./team'));
 router.use('/careers', require('./careers'));
 router.use('/leadership', require('./leadership'));
 
 router.use('/reservations', require('./reservations'));
-// The name the reservation form posted to when this was a contact form. Kept
-// so a cached page, a bookmark or an integration still reaches the desk.
-router.use('/contact', require('./reservations'));
 
 router.use('/applications', require('./applications'));
 router.use('/chat', require('./chat'));

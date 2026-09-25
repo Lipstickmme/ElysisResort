@@ -9,22 +9,40 @@
     "There are eighteen residences and no more. That number is the whole idea. It means a terrace nobody overlooks, a beach that never fills, a kitchen that can cook for you rather than for a service, and a team that learns your name on the first morning rather than the last."
   ],
   "facts": [
-    { "k": "Residences", "v": "18" },
-    { "k": "Private bay", "v": "400 m of shoreline" },
-    { "k": "Opened", "v": "2019" },
-    { "k": "Season", "v": "April to October" }
-  ],
-  "stats": [
-    { "value": 18, "suffix": "", "label": "Residences, and no more" },
-    { "value": 400, "suffix": " m", "label": "Of private shoreline" },
-    { "value": 4, "suffix": "", "label": "Kitchens and bars" },
-    { "value": 24, "suffix": " h", "label": "Concierge, every day" }
+    {
+      "k": "Residences",
+      "v": "18"
+    },
+    {
+      "k": "Private bay",
+      "v": "400 m of shoreline"
+    },
+    {
+      "k": "Opened",
+      "v": "2019"
+    },
+    {
+      "k": "Season",
+      "v": "April to October"
+    }
   ],
   "arrival": [
-    { "k": "By air", "v": "Paros National Airport (PAS), 22 minutes by car. Athens (ATH) connects four times daily in season." },
-    { "k": "By sea", "v": "Parikia port, 18 minutes by car. Fast ferries from Piraeus in 3h 15m, Mykonos in 45m." },
-    { "k": "Transfers", "v": "Private car, launch, or helicopter arranged by the concierge before you travel." },
-    { "k": "The house", "v": "Arrival from 15:00, departure by 12:00. Both move when the house allows it." }
+    {
+      "k": "By air",
+      "v": "Paros National Airport (PAS), 22 minutes by car. Athens (ATH) connects four times daily in season."
+    },
+    {
+      "k": "By sea",
+      "v": "Parikia port, 18 minutes by car. Fast ferries from Piraeus in 3h 15m, Mykonos in 45m."
+    },
+    {
+      "k": "Transfers",
+      "v": "Private car, launch, or helicopter arranged by the concierge before you travel."
+    },
+    {
+      "k": "The house",
+      "v": "Arrival from 15:00, departure by 12:00. Both move when the house allows it."
+    }
   ],
   "rates": "Rates are per residence per night, in euro, including breakfast, the beach and pool clubs, wellness facilities, and transfers from Paros airport or Parikia port. A minimum stay applies in July and August."
 }

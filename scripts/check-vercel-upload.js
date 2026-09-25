@@ -76,4 +76,37 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log('OK: every JSON the build requires survives .vercelignore');
+// Every asset a built page asks for must survive the upload too. This is the
+// guard on .vercelignore excluding the photography masters: the site serves the
+// WebP copies, and a slot pointed back at a .png would 404 in production while
+// looking perfect locally.
+const pages = [];
+(function walk(dir) {
+  const abs = path.join(root, dir);
+  if (!fs.existsSync(abs)) return;
+  fs.readdirSync(abs).forEach((f) => {
+    const rel = path.join(dir, f);
+    if (fs.statSync(path.join(root, rel)).isDirectory()) return walk(rel);
+    if (f.endsWith('.html')) pages.push(rel);
+  });
+})('public');
+
+const uploadedSet = new Set(uploaded);
+const unreachable = new Set();
+pages.forEach((page) => {
+  const html = fs.readFileSync(path.join(root, page), 'utf8');
+  const re = /(?:src|href)="(\/assets\/[^"]+)"|url\('(\/assets\/[^']+)'\)/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const asset = path.join('public', (m[1] || m[2]).replace(/^\//, ''));
+    if (!uploadedSet.has(asset)) unreachable.add(`${m[1] || m[2]}  (asked for by ${page})`);
+  }
+});
+
+if (unreachable.size) {
+  console.error('\nFAIL: built pages ask for assets the deploy would not have:');
+  [...unreachable].slice(0, 20).forEach((a) => console.error('  ' + a));
+  process.exit(1);
+}
+
+console.log(`OK: every JSON the build requires, and every asset its ${pages.length} pages ask for, survives .vercelignore`);

@@ -11,3 +11,14 @@
 /test/
 /.github/
 *.log
+
+# The photography masters. The site serves the WebP copies beside them (see
+# scripts/optimise-images.js), so the originals are 37 MB uploaded on every
+# deploy and never requested. They stay in the repository as the masters.
+/public/assets/img/*.png
+/public/assets/img/*.jpg
+/public/assets/img/*.jpeg
+
+# Except the brand icons, which are served as PNG.
+!/public/favicon.png
+!/public/apple-touch-icon.png

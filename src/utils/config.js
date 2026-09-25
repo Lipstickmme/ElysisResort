@@ -114,8 +114,6 @@ module.exports = {
   mailboxAddress,
   forwardTo,
   houseName,
-  // The name this was called before the site was a resort.
-  studioName: houseName,
   parseAddress,
   ownAddresses,
   forwardWouldLoop,
