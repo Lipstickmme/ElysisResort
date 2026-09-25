@@ -141,7 +141,13 @@
   text-decoration: none;
   color: var(--ink);
 }
-.admin-brand img { height: 20px; width: auto; display: block; }
+.admin-brand img { height: 26px; width: 26px; display: block; }
+.admin-brand b {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+}
 .admin-brand span {
   font-family: var(--font-mono);
   font-size: 11px;

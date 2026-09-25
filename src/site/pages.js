@@ -704,7 +704,8 @@ const adminContent = `
     <div class="admin-shell" id="admin-shell" hidden>
       <header class="admin-bar">
         <a class="admin-brand" href="/">
-          <img src="/assets/brand/elysis-wordmark.svg" alt="Elysis" width="520" height="300" />
+          <img src="/assets/brand/elysis-mark.svg" alt="" width="100" height="100" />
+          <b>Elysis</b>
           <span>The desk</span>
         </a>
         <div class="admin-bar-end">

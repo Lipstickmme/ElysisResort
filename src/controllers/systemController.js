@@ -103,6 +103,22 @@ exports.health = async (req, res) => {
 
   const warnings = [];
 
+  // The quiet failure that matters most: a deployment with nothing set looks
+  // healthy, takes bookings, and writes them to a filesystem that Vercel throws
+  // away between requests. Running locally with no database is normal and says
+  // nothing, so this only speaks up where it would actually cost a booking.
+  const deployed = Boolean(process.env.VERCEL) || process.env.NODE_ENV === 'production';
+  if (deployed && !url && !service && !anon) {
+    warnings.push(
+      'No Supabase configuration at all. Reservation enquiries, applications and chat are written to local files, which do not persist on this platform: a booking taken here is lost. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.'
+    );
+  }
+  if (deployed && !resend && !to) {
+    warnings.push(
+      'No Resend configuration. Nothing is emailed, so a reservation enquiry is only ever seen by someone opening /admin. Set RESEND_API_KEY and FORM_TO.'
+    );
+  }
+
   if (url && !service) {
     warnings.push(
       'SUPABASE_URL is set but SUPABASE_SERVICE_ROLE_KEY is not. Enquiries cannot be written; the server falls back to local files, which do not persist on Vercel.'

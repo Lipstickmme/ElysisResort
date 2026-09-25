@@ -270,6 +270,70 @@ async function withApp(env, fn) {
     sb.close();
   }
 
+  /* ---- 5c. what the desk is actually sent when a booking comes in ---- */
+  {
+    const sb = await mock.start({});
+    sb.db.enquiries.columns.push('phone', 'arrival', 'departure', 'nights', 'adults', 'children', 'suite_id');
+    const realFetch = global.fetch;
+    const sentMail = [];
+    global.fetch = async (url, init) => {
+      if (String(url).startsWith('https://api.resend.com/')) {
+        sentMail.push({ auth: init.headers.Authorization, ...JSON.parse(init.body) });
+        return new Response(JSON.stringify({ id: 'resend-1' }), {
+          status: 200, headers: { 'Content-Type': 'application/json' },
+        });
+      }
+      return realFetch(url, init);
+    };
+
+    try {
+      await withApp(
+        {
+          SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`,
+          SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY,
+          SUPABASE_ANON_KEY: mock.ANON_KEY,
+          RESEND_API_KEY: 'test-key',
+          FORM_TO: 'reservations@elysisluxuryresort.com',
+          FORM_FROM: 'Elysis Luxury Resort <website@elysisluxuryresort.com>',
+        },
+        async (base) => {
+          const res = await req(base, 'POST', '/api/reservations', {
+            name: 'Ada Kolen', email: 'ada@example.com', phone: '+31 6 1234 5678',
+            suite: 'kyma-pool-suite', arrival: '2026-07-10', departure: '2026-07-17',
+            adults: 2, children: 1,
+            message: 'Our anniversary. Late arrival on the 10th.',
+          });
+          assert.strictEqual(res.status, 201, JSON.stringify(res.body));
+
+          assert.strictEqual(sentMail.length, 1, 'one notification per enquiry');
+          const mail = sentMail[0];
+          assert.strictEqual(mail.auth, 'Bearer test-key');
+          assert.deepStrictEqual(mail.to, ['reservations@elysisluxuryresort.com']);
+          assert.strictEqual(mail.from, 'Elysis Luxury Resort <website@elysisluxuryresort.com>');
+          // Replying to the notification must answer the guest, not the site.
+          assert.strictEqual(mail.reply_to, 'ada@example.com');
+          assert.match(mail.subject, /Kyma Pool Suite/);
+          assert.match(mail.subject, /Ada Kolen/);
+          // The desk should not have to open anything to answer.
+          assert.match(mail.text, /2026-07-10 to 2026-07-17 \(7 nights\)/);
+          assert.match(mail.text, /2 adults, 1 children/);
+          assert.match(mail.text, /\+31 6 1234 5678/);
+          assert.match(mail.text, /Our anniversary/);
+          console.log('  ok  the desk is emailed the guest, the residence, the stay and the party');
+
+          // And the same enquiry is in the database for /admin.
+          const row = sb.db.enquiries.rows[0];
+          assert.strictEqual(row.suite_id, 'kyma-pool-suite');
+          assert.strictEqual(row.nights, 7);
+          console.log('  ok  and it is on the desk at /admin as well');
+        }
+      );
+    } finally {
+      global.fetch = realFetch;
+      sb.close();
+    }
+  }
+
   /* ---- 6. job applications reach the same database ---- */
   {
     const sb = await mock.start({});
@@ -676,6 +740,36 @@ async function withApp(env, fn) {
 
     global.fetch = realFetch;
     sb.close();
+  }
+
+  /* ---- 15b. a deployment with nothing configured says so ---- */
+  {
+    const bare = { SUPABASE_URL: '', SUPABASE_ANON_KEY: '', SUPABASE_SERVICE_ROLE_KEY: '', RESEND_API_KEY: '', FORM_TO: '' };
+
+    // Running locally with no database is how development works. Say nothing.
+    delete process.env.VERCEL;
+    await withApp({ ...bare, NODE_ENV: 'development' }, async (base) => {
+      const res = await req(base, 'GET', '/api/health');
+      assert.strictEqual(res.body.status, 'ok');
+      assert.deepStrictEqual(res.body.warnings, [], 'local development is not a problem');
+      console.log('  ok  an unconfigured machine in development is left alone');
+    });
+
+    // The same thing deployed is a site quietly losing bookings.
+    await withApp({ ...bare, VERCEL: '1' }, async (base) => {
+      const res = await req(base, 'GET', '/api/health');
+      assert.strictEqual(res.body.status, 'degraded');
+      assert.strictEqual(res.body.storage, 'filesystem');
+      assert.ok(
+        res.body.warnings.some((w) => /a booking taken here is lost/.test(w)),
+        'the deployment is told bookings are lost: ' + JSON.stringify(res.body.warnings)
+      );
+      assert.ok(res.body.warnings.some((w) => /Nothing is emailed/.test(w)), 'and that nothing is emailed');
+      // A diagnosis must never hand out a value.
+      assert.ok(!JSON.stringify(res.body).includes(mock.SERVICE_KEY));
+      console.log('  ok  an unconfigured deployment is told what it is losing');
+    });
+    delete process.env.VERCEL;
   }
 
   /* ---- 16. the content behind the pages ---- */
