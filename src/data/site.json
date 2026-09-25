@@ -1,7 +1,7 @@
 {
   "_comment": "The resort's contact details. These are the values the pages are built with; anything changed under Settings at /admin overrides them on the next page load, with no rebuild and no deploy.",
   "address": "Kolymbithres Bay, Naoussa, 844 01 Paros, Cyclades, Greece",
-  "email": "reservations@elysisluxuryresort.com",
+  "email": "reservations@elysisresort.com",
   "phone": "",
   "hours": "Reservations 08:00 to 22:00 EET. Concierge around the clock."
 }

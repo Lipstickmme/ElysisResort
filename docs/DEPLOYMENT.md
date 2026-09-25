@@ -283,7 +283,7 @@ The endpoint is `POST /api/inbound/resend`.
    | Name | Value |
    | ---- | ----- |
    | `RESEND_WEBHOOK_SECRET` | the `whsec_...` signing secret |
-   | `MAILBOX_ADDRESS` | `reservations@yourdomain.com` |
+   | `MAILBOX_ADDRESS` | `Elysis Luxury Resort <reservations@yourdomain.com>` |
    | `FORWARD_TO` | your real inbox |
 
 5. **Redeploy**, then send a test message to `MAILBOX_ADDRESS`.
@@ -297,8 +297,13 @@ What happens on each delivery:
   lands on the conversation it belongs to.
 - It is forwarded to `FORWARD_TO` with a `Fwd:` subject and `reply_to` set to the
   original sender, so replying goes straight back to them. Forwarding is **skipped**
-  when `FORWARD_TO`, or the sender, is one of this site's own addresses, because that
-  would loop mail back into this webhook until the sending quota is gone.
+  when `FORWARD_TO` is one of this site's own addresses, because that would loop
+  mail back into this webhook until the sending quota is gone.
+- Mail **from** one of this site's own addresses (`FORM_FROM`, `MAILBOX_ADDRESS`,
+  `FORM_TO`) is acknowledged and dropped. That matters when `FORM_TO` is the same
+  address Resend Inbound receives on: every reservation notification is delivered
+  straight back here, and filing it would fill the desk's mailbox with copies of
+  what is already under Reservations.
 - Non-inbound events (delivery receipts and similar) are acknowledged and ignored,
   as is mail addressed to anything other than `MAILBOX_ADDRESS`.
 

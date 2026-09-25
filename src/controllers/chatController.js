@@ -48,7 +48,7 @@ function autoReply(text) {
     return 'We hire for the season from April. Open roles are on the Careers page, and speculative applications are read by the people you would work with.';
   }
   if (has('contact', 'call', 'phone', 'email', 'speak', 'human')) {
-    return 'You can write to reservations@elysisluxuryresort.com at any time, or leave your email here and the desk will reach you today.';
+    return 'You can write to reservations@elysisresort.com at any time, or leave your email here and the desk will reach you today.';
   }
   if (has('thanks', 'thank you', 'cheers', 'lovely', 'great')) {
     return 'With pleasure. Anything else I can arrange before you arrive?';

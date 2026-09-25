@@ -176,6 +176,17 @@ exports.resend = async (req, res, next) => {
       }
     }
 
+    // Mail this site sent itself is not correspondence. A deployment whose
+    // FORM_TO is the same address Resend Inbound receives on gets every
+    // reservation notification delivered straight back here; filing those
+    // would fill the desk's mailbox with copies of what is already under
+    // Reservations, each one apparently written by the site.
+    const sender = config.parseAddress(email.from).email;
+    if (sender && config.ownAddresses().has(sender)) {
+      console.log('[elysis] inbound: ignoring mail this site sent itself', "(" + sender + ")");
+      return res.status(200).json({ ok: true, ignored: 'own_notification' });
+    }
+
     // Archive onto a thread (best effort; never fails the webhook).
     let threadId = null;
     const supabase = getSupabase();
@@ -191,11 +202,11 @@ exports.resend = async (req, res, next) => {
     // addresses, and never forward mail we sent: either loops the message
     // straight back into this webhook until the sending quota is gone.
     const forwardTo = config.forwardTo();
-    const ours = config.ownAddresses();
-    const fromAddress = config.parseAddress(email.from).email;
     let forwarded = false;
 
-    if (forwardTo && (config.forwardWouldLoop() || ours.has(fromAddress))) {
+    // Mail from one of our own addresses never reaches here (it is ignored
+    // above), so this guard is about FORWARD_TO pointing back at us.
+    if (forwardTo && config.forwardWouldLoop()) {
       console.warn(
         '[elysis] not forwarding: FORWARD_TO or the sender is one of this site\'s own addresses, which would loop mail back into this webhook.'
       );

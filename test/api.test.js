@@ -293,8 +293,8 @@ async function withApp(env, fn) {
           SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY,
           SUPABASE_ANON_KEY: mock.ANON_KEY,
           RESEND_API_KEY: 'test-key',
-          FORM_TO: 'reservations@elysisluxuryresort.com',
-          FORM_FROM: 'Elysis Luxury Resort <website@elysisluxuryresort.com>',
+          FORM_TO: 'reservations@elysisresort.com',
+          FORM_FROM: 'Elysis Luxury Resort <website@elysisresort.com>',
         },
         async (base) => {
           const res = await req(base, 'POST', '/api/reservations', {
@@ -308,8 +308,8 @@ async function withApp(env, fn) {
           assert.strictEqual(sentMail.length, 1, 'one notification per enquiry');
           const mail = sentMail[0];
           assert.strictEqual(mail.auth, 'Bearer test-key');
-          assert.deepStrictEqual(mail.to, ['reservations@elysisluxuryresort.com']);
-          assert.strictEqual(mail.from, 'Elysis Luxury Resort <website@elysisluxuryresort.com>');
+          assert.deepStrictEqual(mail.to, ['reservations@elysisresort.com']);
+          assert.strictEqual(mail.from, 'Elysis Luxury Resort <website@elysisresort.com>');
           // Replying to the notification must answer the guest, not the site.
           assert.strictEqual(mail.reply_to, 'ada@example.com');
           assert.match(mail.subject, /Kyma Pool Suite/);
@@ -739,6 +739,76 @@ async function withApp(env, fn) {
     );
 
     global.fetch = realFetch;
+    sb.close();
+  }
+
+  /* ---- 15a. the site's own notifications do not become guest mail ---- */
+  {
+    const { sign } = require(ROOT + '/src/utils/webhookSignature');
+    const SECRET = 'whsec_' + Buffer.from('elysis-self-mail-secret').toString('base64');
+    const sb = await mock.start({});
+    await withApp(
+      {
+        SUPABASE_URL: `http://127.0.0.1:${sb.address().port}`,
+        SUPABASE_SERVICE_ROLE_KEY: mock.SERVICE_KEY,
+        SUPABASE_ANON_KEY: mock.ANON_KEY,
+        RESEND_WEBHOOK_SECRET: SECRET,
+        // The pairing a small house naturally picks: notifications are sent to
+        // the same address Resend Inbound receives on.
+        MAILBOX_ADDRESS: 'Elysis <reservations@elysisresort.com>',
+        FORM_TO: 'reservations@elysisresort.com',
+        FORM_FROM: 'Elysis <website@elysisresort.com>',
+        FORWARD_TO: '',
+        RESEND_API_KEY: '',
+      },
+      async (base) => {
+        const post = (payload) => {
+          const body = JSON.stringify(payload);
+          const id = 'msg_self_1';
+          const ts = Math.floor(Date.now() / 1000).toString();
+          return fetch(base + '/api/inbound/resend', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'svix-id': id,
+              'svix-timestamp': ts,
+              'svix-signature': sign(SECRET, id, ts, body),
+            },
+            body,
+          });
+        };
+
+        // The site's own reservation notification, delivered back to it.
+        const own = await post({
+          type: 'email.received',
+          data: {
+            from: 'Elysis <website@elysisresort.com>',
+            to: ['reservations@elysisresort.com'],
+            subject: 'Reservation enquiry: Kyma Pool Suite, Ada Kolen',
+            text: 'Name: Ada Kolen\nStay: 2026-07-10 to 2026-07-17',
+          },
+        });
+        assert.strictEqual(own.status, 200);
+        assert.strictEqual((await own.json()).ignored, 'own_notification');
+        assert.strictEqual(sb.db.email_threads.rows.length, 0, 'the desk mailbox stays clean');
+        console.log('  ok  a notification the site sent itself is not filed as guest mail');
+
+        // A real guest writing to the same address still lands.
+        const guest = await post({
+          type: 'email.received',
+          data: {
+            from: 'Klara Weiss <klara@example.com>',
+            to: ['reservations@elysisresort.com'],
+            subject: 'Private dining for twelve',
+            text: 'Is the cellar table free on the 14th?',
+          },
+        });
+        assert.strictEqual(guest.status, 200);
+        assert.strictEqual(sb.db.email_threads.rows.length, 1);
+        assert.strictEqual(sb.db.email_threads.rows[0].participant_email, 'klara@example.com');
+        console.log('  ok  and a guest writing to the same address still reaches the desk');
+      }
+    );
     sb.close();
   }
 
